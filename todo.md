@@ -42,3 +42,10 @@
 - [x] Update the TLCG gold token and relevant accent uses to the specified brighter #D4AF37 value.
 - [x] Preserve existing hero, navigation, expertise-list layout, typography, and responsive behavior.
 - [x] Verify gold contrast and presentation across desktop and mobile.
+
+## Hero, Industries, and contact refinements
+
+- [x] Enlarge and vertically align the supplied gold monogram beside the upper-left company text block without altering the hero background or overlay.
+- [x] Refine Industries We Support into the supplied two-column, gold-label layout with rules and readable content.
+- [x] Rework Let’s Talk into the supplied contact-information and enquiry-form composition, add marketing@toplinecommunicationsgroup.co.za, and direct submissions to that address.
+- [x] Validate desktop, tablet, and mobile presentation plus enquiry submission behavior.

@@ -48,21 +48,21 @@ button { border: 0; }
 
 .site-header { position: fixed; z-index: 40; top: 0; left: 0; width: 100%; display: flex; align-items: flex-start; justify-content: space-between; padding: 1.2rem clamp(1.25rem, 4vw, 4.5rem); transition: background 220ms cubic-bezier(0.23, 1, 0.32, 1), border-color 220ms cubic-bezier(0.23, 1, 0.32, 1), padding 220ms cubic-bezier(0.23, 1, 0.32, 1); border-bottom: 1px solid transparent; }
 .site-header.is-scrolled { padding-top: 0.75rem; padding-bottom: 0.75rem; background: rgba(8, 20, 15, 0.92); backdrop-filter: blur(14px); border-color: rgba(212, 175, 55, 0.25); }
-.brand-lockup { position: relative; z-index: 2; display: flex; align-items: flex-start; gap: 0.75rem; color: var(--ivory); text-decoration: none; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
+.brand-lockup { position: relative; z-index: 2; display: flex; align-items: center; gap: 1rem; color: var(--ivory); text-decoration: none; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
 .brand-lockup:hover { transform: translateY(-2px); }
-.brand-mark { display: block; width: 3rem; height: 3.35rem; flex: 0 0 auto; overflow: hidden; }
+.brand-mark { display: block; width: clamp(4.6rem, 6.9vw, 6.9rem); height: clamp(5.2rem, 7.65vw, 7.55rem); flex: 0 0 auto; overflow: hidden; }
 .brand-mark img, .footer-logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
-.brand-copy { display: flex; flex-direction: column; gap: 0.22rem; padding-top: 0.08rem; }
-.brand-copy strong { color: var(--ivory); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.25rem, 1.7vw, 1.85rem); font-weight: 600; letter-spacing: 0.025em; line-height: 0.9; text-transform: uppercase; }
-.brand-copy > span { color: rgba(241, 238, 230, 0.92); font-size: 0.61rem; font-weight: 600; letter-spacing: 0.05em; line-height: 1.15; text-transform: uppercase; }
-.brand-copy small { display: flex; align-items: center; gap: 0.45rem; margin-top: 0.27rem; color: rgba(241, 238, 230, 0.83); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.11em; line-height: 1.2; text-transform: uppercase; }
+.brand-copy { display: flex; flex-direction: column; gap: 0.32rem; padding-top: 0; }
+.brand-copy strong { color: var(--ivory); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.85rem, 2.65vw, 2.85rem); font-weight: 600; letter-spacing: 0.025em; line-height: 0.9; text-transform: uppercase; }
+.brand-copy > span { color: rgba(241, 238, 230, 0.92); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; line-height: 1.15; text-transform: uppercase; }
+.brand-copy small { display: flex; align-items: center; gap: 0.54rem; margin-top: 0.34rem; color: rgba(241, 238, 230, 0.83); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.11em; line-height: 1.2; text-transform: uppercase; }
 .brand-copy small i { display: inline-block; width: 0.22rem; height: 0.22rem; flex: 0 0 auto; background: #D4AF37; border-radius: 50%; }
-.desktop-nav { display: flex; gap: clamp(1rem, 2vw, 2.25rem); align-items: center; margin-left: auto; margin-right: 2rem; padding-top: 0.55rem; }
+.desktop-nav { display: flex; gap: clamp(1rem, 2vw, 2.25rem); align-items: center; margin-left: auto; margin-right: 2rem; padding-top: 1.35rem; }
 .desktop-nav button { position: relative; color: var(--ivory); background: transparent; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; padding: 0.45rem 0; }
 .desktop-nav button::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--gold-light); transition: right 210ms cubic-bezier(0.23, 1, 0.32, 1); }
 .desktop-nav button:hover::after, .desktop-nav button.is-active::after { right: 0; }
 .desktop-nav button.is-active { color: #D4AF37; }
-.menu-toggle { display: flex; gap: 0.55rem; align-items: center; color: var(--ivory); background: transparent; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.5rem 0; margin-top: 0.1rem; }
+.menu-toggle { display: flex; gap: 0.55rem; align-items: center; color: var(--ivory); background: transparent; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.5rem 0; margin-top: 0.9rem; }
 .mobile-nav { display: none; }
 
 .hero { min-height: 48rem; height: 100svh; position: relative; display: flex; align-items: flex-end; background: var(--verdant-deep); }
@@ -151,9 +151,11 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .why-difference-item > span { color: var(--gold-light); font-size: 0.69rem; font-weight: 700; letter-spacing: 0.13em; }
 .why-difference-item h3 { margin: 0 0 0.45rem; color: var(--ivory); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.5rem, 2vw, 2.15rem); font-weight: 500; letter-spacing: -0.035em; line-height: 0.95; }
 .why-difference-item p { margin: 0; color: rgba(241, 238, 230, 0.8); font-size: 0.88rem; line-height: 1.55; }
-.why-industries { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; border-top: 1px solid rgba(212, 185, 121, 0.52); border-bottom: 1px solid rgba(212, 185, 121, 0.52); padding: 1.35rem 0; }
-.why-industries span { color: var(--gold-light); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
-.why-industries p { margin: 0; color: rgba(241, 238, 230, 0.82); font-size: 0.88rem; line-height: 1.65; }
+.why-industries { display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: center; border-top: 1px solid rgba(212, 175, 55, 0.58); border-bottom: 1px solid rgba(212, 175, 55, 0.58); padding: 1.35rem 0; }
+.why-industries span { color: var(--gold-light); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.13em; line-height: 1.45; text-transform: uppercase; }
+.why-industries p { display: flex; flex-wrap: wrap; gap: 0.32rem 0; margin: 0; color: rgba(241, 238, 230, 0.88); font-size: 0.94rem; line-height: 1.7; }
+.industry-item { display: inline-flex; align-items: center; font-style: normal; white-space: nowrap; }
+.industry-item:not(:last-child)::after { content: "•"; margin: 0 0.68rem; color: #D4AF37; }
 .expertise-ledger { margin-top: 2rem; }
 .expertise-ledger .eyebrow { margin-bottom: 1.1rem; }
 .expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(212, 185, 121, 0.52); }
@@ -168,14 +170,16 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .expertise-group li::before { content: ""; position: absolute; left: -0.72rem; top: 0.48rem; width: 0.24rem; height: 0.24rem; background: #D4AF37; border-radius: 50%; }
 .why-ornament { display: none; }
 
-.contact { display: grid; grid-template-columns: minmax(16rem, 1fr) minmax(27rem, 1.15fr); gap: clamp(3rem, 9vw, 10rem); padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
-.contact-intro h2 { margin: 1.35rem 0 2.5rem; }
-.contact-copy { max-width: 29rem; }
-.contact-copy p { color: rgba(19, 33, 24, 0.76); font-size: 0.9rem; line-height: 1.7; }
-.contact-side { display: grid; grid-template-columns: minmax(12rem, 0.78fr) minmax(18rem, 1.22fr); gap: 2rem; align-self: start; }
-.contact-details { display: flex; flex-direction: column; gap: 0.7rem; color: rgba(19, 33, 24, 0.78); font-size: 0.86rem; font-style: normal; line-height: 1.5; }
-.contact-details strong { color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.85rem; font-weight: 500; letter-spacing: -0.03em; line-height: 0.9; }
-.contact-details a { color: var(--ink); text-decoration: none; border-bottom: 1px solid rgba(212, 175, 55, 0.65); width: max-content; max-width: 100%; overflow-wrap: anywhere; }
+.contact { display: grid; grid-template-columns: minmax(21rem, 0.86fr) minmax(28rem, 1.14fr); gap: clamp(3rem, 7vw, 8rem); padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
+.contact-intro { border-right: 1px solid rgba(212, 175, 55, 0.55); padding-right: clamp(2rem, 4vw, 4.5rem); }
+.contact-intro h2 { margin: 1.35rem 0 2.9rem; }
+.contact-details { display: flex; flex-direction: column; gap: 1.2rem; color: rgba(19, 33, 24, 0.8); font-size: 0.9rem; font-style: normal; line-height: 1.45; }
+.contact-detail { display: grid; grid-template-columns: 1.55rem minmax(0, 1fr); gap: 0.8rem; align-items: start; }
+.contact-detail > svg { margin-top: 0.08rem; color: #D4AF37; }
+.contact-detail > div { display: flex; flex-direction: column; gap: 0.28rem; }
+.contact-details strong { color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; }
+.contact-details a { color: var(--ink); text-decoration: none; width: max-content; max-width: 100%; overflow-wrap: anywhere; }
+.contact-details a:hover { color: var(--gold); }
 .contact-form { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; align-self: start; }
 .contact-form label { display: flex; flex-direction: column; gap: 0.75rem; min-height: 5.6rem; border-bottom: 1px solid rgba(19, 33, 24, 0.4); padding: 0.55rem 0; }
 .contact-form label span { color: rgba(19, 33, 24, 0.68); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -183,7 +187,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(19, 33, 24, 0.4); }
 .contact-form label:focus-within { border-color: var(--gold); }
 .contact-form .message-field { grid-column: 1 / -1; padding-top: 1rem; min-height: 8rem; }
-.submit-link { display: inline-flex; align-items: center; justify-content: space-between; width: max-content; gap: 2rem; margin-top: 2rem; padding: 0.85rem 0; color: var(--ink); background: transparent; border-bottom: 1px solid var(--gold); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; transition: color 180ms cubic-bezier(0.23, 1, 0.32, 1), gap 180ms cubic-bezier(0.23, 1, 0.32, 1); }
+.submit-link { display: inline-flex; align-items: center; justify-content: space-between; width: max-content; gap: 2rem; margin-top: 2rem; padding: 0.85rem 0; color: var(--ink); background: transparent; border-bottom: 1px solid var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; transition: color 180ms cubic-bezier(0.23, 1, 0.32, 1), gap 180ms cubic-bezier(0.23, 1, 0.32, 1); }
 .submit-link:hover { color: var(--gold); gap: 2.55rem; }
 .contact-quote { grid-column: 1 / -1; margin: 0.5rem 0 0; border-top: 1px solid rgba(19, 33, 24, 0.28); padding-top: 1.1rem; color: rgba(19, 33, 24, 0.74); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.2rem, 1.65vw, 1.75rem); font-style: italic; letter-spacing: -0.02em; line-height: 1.15; }
 
@@ -202,12 +206,13 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .site-header { padding: 0.9rem 1.25rem; }
   .site-header { align-items: center; }
   .brand-lockup { align-items: center; }
-  .brand-mark { width: 3.2rem; height: 3.55rem; }
+  .brand-mark { width: 3.85rem; height: 4.25rem; }
   .brand-copy { display: flex; gap: 0.12rem; padding-top: 0; }
   .brand-copy strong { font-size: 1.05rem; }
   .brand-copy > span { font-size: 0.43rem; letter-spacing: 0.04em; }
   .brand-copy small { gap: 0.28rem; margin-top: 0.14rem; font-size: 0.39rem; letter-spacing: 0.07em; }
   .brand-copy small i { width: 0.15rem; height: 0.15rem; }
+  .desktop-nav, .menu-toggle { padding-top: 0; margin-top: 0; }
   .mobile-nav { display: flex; position: fixed; inset: 0; z-index: -1; flex-direction: column; justify-content: center; gap: 0.25rem; padding: 7rem 1.5rem 2rem; background: var(--verdant-deep); opacity: 0; pointer-events: none; transition: opacity 240ms cubic-bezier(0.23, 1, 0.32, 1); }
   .mobile-nav.is-open { opacity: 1; pointer-events: auto; }
   .mobile-nav .eyebrow { color: var(--gold-light); margin-bottom: 2rem; }
@@ -260,7 +265,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .expertise-group + .expertise-group { border-top: 1px solid rgba(212, 185, 121, 0.42); }
   .expertise-group li { font-size: 0.86rem; }
   .contact { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.25rem; }
-  .contact-side { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-intro { border-right: 0; border-bottom: 1px solid rgba(212, 175, 55, 0.55); padding: 0 0 2.5rem; }
   .site-footer { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.25rem; }
   .footer-meta { justify-content: space-between; }
 }

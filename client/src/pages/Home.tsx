@@ -2,7 +2,7 @@
  * TLCG design note: Verdant Ledger uses an asymmetric editorial procession,
  * protected official logo placement, ivory reading fields, and restrained gold lines.
  */
-import { ArrowDownRight, ArrowUpRight, BarChart3, CalendarDays, Menu, Plus, Presentation, X } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, AtSign, BarChart3, CalendarDays, Globe2, MapPin, Menu, Phone, Plus, Presentation, UserRound, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
@@ -150,7 +150,19 @@ export default function Home() {
     scrollToSection(id);
   };
 
-  const keepFormLocal = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
+  const sendEnquiry = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const fields = [
+      ["Name", formData.get("name")],
+      ["Organisation", formData.get("organisation")],
+      ["Email", formData.get("email")],
+      ["Phone", formData.get("phone")],
+      ["Message", formData.get("message")],
+    ];
+    const body = fields.map(([label, value]) => `${label}: ${value || "—"}`).join("\n\n");
+    window.location.href = `mailto:marketing@toplinecommunicationsgroup.co.za?subject=${encodeURIComponent("TLCG website enquiry")}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <main id="home" className="site-shell">
@@ -308,7 +320,7 @@ export default function Home() {
           </div>
           <div className="why-industries">
             <span>Industries we support</span>
-            <p>{industries.join(" · ")}</p>
+            <p>{industries.map((industry) => <i className="industry-item" key={industry}>{industry}</i>)}</p>
           </div>
           <div className="expertise-ledger">
             <span className="eyebrow eyebrow-light">Where we add value</span>
@@ -329,31 +341,22 @@ export default function Home() {
         <div className="contact-intro" data-reveal>
           <span className="eyebrow">05 — Let’s Talk</span>
           <h2 id="contact-title">Let’s Start The<br /><em>Conversation.</em></h2>
-          <div className="contact-copy">
-            <p>Whether you’re launching a new brand, planning a high-impact event, strengthening stakeholder engagement or modernizing your marketing strategy, Top Line Communications Group (Pty) Ltd is ready to partner with you.</p>
-            <p>We believe the best results come from strong relationships, strategic thinking and flawless execution. We’d welcome the opportunity to learn more about your organization and explore how we can help you achieve your objectives.</p>
-          </div>
-        </div>
-        <div className="contact-side" data-reveal>
           <address className="contact-details">
-            <strong>Hellery Musas</strong>
-            <span>Managing Director | Principal Consultant</span>
-            <span>Top Line Communications Group (Pty) Ltd</span>
-            <a href="tel:+27837626871">+27 83 762 6871</a>
-            <a href="mailto:hellery@toplinecommunicationsgroup.co.za">hellery@toplinecommunicationsgroup.co.za</a>
-            <span>toplinecommunicationsgroup.co.za</span>
-            <span>Johannesburg, South Africa</span>
+            <div className="contact-detail contact-person"><UserRound size={18} strokeWidth={1.35} /><div><strong>Hellery Musas</strong><span>Managing Director | Principal Consultant</span><span>Top Line Communications Group (Pty) Ltd</span></div></div>
+            <div className="contact-detail"><Phone size={18} strokeWidth={1.35} /><a href="tel:+27837626871">+27 83 762 6871</a></div>
+            <div className="contact-detail"><AtSign size={18} strokeWidth={1.35} /><div><a href="mailto:hellery@toplinecommunicationsgroup.co.za">hellery@toplinecommunicationsgroup.co.za</a><a href="mailto:marketing@toplinecommunicationsgroup.co.za">marketing@toplinecommunicationsgroup.co.za</a></div></div>
+            <div className="contact-detail"><Globe2 size={18} strokeWidth={1.35} /><span>toplinecommunicationsgroup.co.za</span></div>
+            <div className="contact-detail"><MapPin size={18} strokeWidth={1.35} /><span>Johannesburg, South Africa</span></div>
           </address>
-          <form className="contact-form" onSubmit={keepFormLocal}>
-            <label><span>Name</span><input type="text" name="name" placeholder="Your name" /></label>
-            <label><span>Organisation</span><input type="text" name="organisation" placeholder="Your organisation" /></label>
-            <label><span>Email</span><input type="email" name="email" placeholder="you@organisation.com" /></label>
-            <label><span>Phone</span><input type="tel" name="phone" placeholder="+27" /></label>
-            <label className="message-field"><span>Message</span><textarea name="message" placeholder="Tell us what matters." rows={4} /></label>
-            <button className="submit-link" type="submit">Send enquiry <ArrowUpRight size={20} strokeWidth={1.3} /></button>
-          </form>
-          <blockquote className="contact-quote">“We don’t just execute marketing. We help organizations communicate with clarity, build brands with purpose and create experiences that people remember. Because every great business deserves a story worth telling.”</blockquote>
         </div>
+        <form className="contact-form" onSubmit={sendEnquiry} data-reveal>
+          <label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label>
+          <label><span>Organisation</span><input type="text" name="organisation" placeholder="Your organisation" /></label>
+          <label><span>Email</span><input type="email" name="email" placeholder="you@email.com" required /></label>
+          <label><span>Phone</span><input type="tel" name="phone" placeholder="+27" /></label>
+          <label className="message-field"><span>Message</span><textarea name="message" placeholder="Tell us what matters." rows={4} required /></label>
+          <button className="submit-link" type="submit">Send enquiry <ArrowUpRight size={20} strokeWidth={1.3} /></button>
+        </form>
       </section>
 
       <footer className="site-footer">
