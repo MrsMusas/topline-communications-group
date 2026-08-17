@@ -88,3 +88,10 @@
 - [x] Retain the official monogram and existing visual system unchanged.
 - [x] Keep a legal company-name reference only in an appropriate footer/legal context if one exists.
 - [x] Verify the public branding presentation across desktop and mobile.
+
+## Hero lockup proportion correction
+
+- [x] Reduce the current monogram from the oversized state to the reference-balanced dominant proportion.
+- [x] Vertically centre and tighten the TOP LINE, Communications Group, and services text block against the monogram.
+- [x] Preserve the official monogram asset, hero image, headline, navigation, colours, typography, and all other website sections.
+- [x] Verify the corrected proportional lockup across desktop, tablet, and mobile.
