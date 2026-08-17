@@ -109,6 +109,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
   const [selectedCapability, setSelectedCapability] = useState(0);
+  const [selectedDifference, setSelectedDifference] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -251,23 +252,25 @@ export default function Home() {
       <section id="experience" className="experience chapter" aria-labelledby="experience-title">
         <div className="experience-image" style={{ backgroundImage: `url(${EXPERIENCE_IMAGE})` }} aria-hidden="true" />
         <div className="experience-overlay" aria-hidden="true" />
-        <div className="experience-content">
-          <div data-reveal>
-            <span className="eyebrow eyebrow-light">02 — Selected Experience</span>
-            <h2 id="experience-title">Two decades of<br /><em>trusted delivery.</em></h2>
-          </div>
-          <div className="experience-note" data-reveal>
-            <span className="gold-rule" />
-            <p>Over the past two decades, our leadership has contributed to marketing, communications and event initiatives across respected national and international organizations.</p>
-          </div>
-        </div>
-        <div className="experience-roster" data-reveal aria-label="Selected TLCG experience">
-          {experienceItems.map((item) => (
-            <div className="experience-item" key={item.name}>
-              <strong>{item.name}</strong>
-              {item.descriptor ? <span>{item.descriptor}</span> : null}
+        <div className="experience-layout">
+          <div className="experience-content">
+            <div data-reveal>
+              <span className="eyebrow eyebrow-light">02 — Selected Experience</span>
+              <h2 id="experience-title">Two decades of<br /><em>trusted delivery.</em></h2>
             </div>
-          ))}
+            <div className="experience-note" data-reveal>
+              <span className="gold-rule" />
+              <p>Over the past two decades, our leadership has contributed to marketing, communications and event initiatives across respected national and international organizations.</p>
+            </div>
+          </div>
+          <div className="experience-roster" data-reveal aria-label="Selected TLCG experience">
+            {experienceItems.map((item) => (
+              <div className="experience-item" key={item.name}>
+                <strong>{item.name}</strong>
+                {item.descriptor ? <span>{item.descriptor}</span> : null}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
       </section>
@@ -312,12 +315,24 @@ export default function Home() {
           <span className="eyebrow eyebrow-light">04 — Why TLCG</span>
           <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
           <div className="why-difference-list">
-            {differenceItems.map((item) => (
-              <article className="why-difference-item" key={item.number}>
+            {differenceItems.map((item, index) => {
+              const isSelected = selectedDifference === index;
+              return (
+              <button
+                className={`why-difference-item ${isSelected ? "is-selected" : ""}`}
+                key={item.number}
+                type="button"
+                onMouseEnter={() => setSelectedDifference(index)}
+                onFocus={() => setSelectedDifference(index)}
+                onClick={() => setSelectedDifference((current) => current === index ? null : index)}
+                aria-pressed={isSelected}
+                aria-label={`Reveal ${item.title}`}
+              >
                 <span>{item.number}</span>
                 <div><h3>{item.title}</h3><p>{item.detail}</p></div>
-              </article>
-            ))}
+              </button>
+              );
+            })}
           </div>
           <div className="why-industries">
             <span>Industries we support</span>

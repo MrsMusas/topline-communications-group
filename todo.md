@@ -67,3 +67,10 @@
 - [x] Show only muted titles for inactive Capability rows and reveal the selected row description with a 300ms fade/slide and cream/gold highlight.
 - [x] Preserve the arrow-free layout, approved content, typography, colours, dividers, and all other website sections.
 - [x] Validate expansion behavior and visual hierarchy across desktop, tablet, and mobile.
+
+## Experience and Why TLCG interactive refinement
+
+- [x] Separate the Selected Experience headline and two-column client grid so they never overlap at desktop widths and stack cleanly on smaller screens.
+- [x] Add a muted-by-default, one-at-a-time hover/click differentiator reveal to Why TLCG with the supplied six entries and a 300ms TLCG gold/cream active state.
+- [x] Preserve existing Experience imagery, Why TLCG heading/content, palette, typography, and all other website sections.
+- [x] Validate desktop layout and mobile/touch behavior for both refinements.
