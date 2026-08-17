@@ -17,3 +17,9 @@
 - [x] Replace the existing four capability entries with TLCG’s six approved capabilities and descriptions.
 - [x] Preserve the existing Capabilities introduction, large editorial statement, visual styling, and responsive presentation.
 - [x] Retain a selectable/expandable treatment for each capability without changing any other website section.
+
+## Executive Summary content population
+
+- [x] Extract the authoritative positioning, contact information, differentiators, experience organisations, industries, and additional expertise from the Executive Summary.
+- [x] Replace interim copy across Home, Capabilities, Experience, Why TLCG, Approach, and Let’s Talk without redesigning the approved experience.
+- [x] Validate desktop and mobile readability, navigation, five-stage Approach interaction, six capabilities, and the unchanged official logo.

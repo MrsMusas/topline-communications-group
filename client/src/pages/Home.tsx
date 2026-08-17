@@ -27,36 +27,73 @@ const capabilityItems = [
   { number: "06", name: "Fractional Leadership", note: "Supporting organizations that need senior marketing expertise without hiring a full-time executive." },
 ];
 
+const experienceItems = [
+  { name: "FESPA", descriptor: "Profit for Purpose" },
+  { name: "doTERRA Africa", descriptor: "Africa" },
+  { name: "Amway", descriptor: "Global FMCG" },
+  { name: "HRG Rennies Travel", descriptor: "Corporate Travel" },
+  { name: "NYDA", descriptor: "National Youth Development Agency" },
+  { name: "South African Express Airways", descriptor: "" },
+  { name: "Avon Justine", descriptor: "Beauty & Direct Sales" },
+  { name: "Avroy Shlain", descriptor: "True To You" },
+];
+
+const differenceItems = [
+  { number: "01", title: "Strategic Thinking", detail: "We align marketing and communication strategies with business objectives." },
+  { number: "02", title: "Measurable Results", detail: "Every recommendation is designed to create meaningful business impact." },
+  { number: "03", title: "20+ Years of Corporate Experience", detail: "Supporting respected organizations across multiple industries." },
+  { number: "04", title: "AI-Enabled Delivery", detail: "We combine human expertise with AI-powered workflows to improve efficiency and accelerate execution." },
+  { number: "05", title: "Flexible Engagement Models", detail: "Project-based consulting, retainer partnerships, fractional leadership and event support." },
+  { number: "06", title: "Trusted Partnership", detail: "We become an extension of your team, delivering practical solutions that create lasting value." },
+];
+
+const expertiseGroups = [
+  {
+    title: "Strategy & Communications",
+    items: ["Marketing Strategy", "Corporate Communications", "Stakeholder Engagement", "Executive Messaging", "Brand Positioning", "Social Media Management"],
+  },
+  {
+    title: "Marketing & Automation",
+    items: ["Digital Marketing", "Content Marketing", "AI Marketing Workflows", "Marketing Automation", "Customer Experience", "CRM Journeys"],
+  },
+  {
+    title: "Programmes & Delivery",
+    items: ["Conference Marketing", "Executive Events", "Product Launches", "Promotions & Recognition Programmes", "Project & Supplier Management", "Budget & Performance Reporting"],
+  },
+];
+
+const industries = ["Corporate Organizations", "Professional Associations", "Financial Services", "Technology", "Education", "Healthcare", "Manufacturing", "Retail", "SMEs & Startups", "Non-Profit Organizations"];
+
 const approachSteps = [
   {
     number: "01",
     name: "Discover",
     summary: "Understand the business, audience and objectives.",
-    detail: "We begin by listening closely, identifying the business context, audience needs and objectives that will guide the work.",
+    detail: "Understand your business, audience and objectives.",
   },
   {
     number: "02",
     name: "Strategise",
     summary: "Develop tailored strategies and solutions.",
-    detail: "We turn insight into direction, shaping tailored strategies and solutions around the outcomes that matter most.",
+    detail: "Develop tailored strategies and solutions.",
   },
   {
     number: "03",
     name: "Execute",
     summary: "Deliver with excellence and precision.",
-    detail: "We bring the plan to life through clear production, trusted delivery and meticulous attention to every detail.",
+    detail: "Deliver with excellence and precision.",
   },
   {
     number: "04",
     name: "Measure",
     summary: "Evaluate performance against objectives.",
-    detail: "We evaluate performance against agreed objectives, using evidence to understand what is working and where to focus next.",
+    detail: "Evaluate performance against objectives.",
   },
   {
     number: "05",
     name: "Optimise",
     summary: "Improve through insight and innovation.",
-    detail: "We refine, learn and improve, using insight and innovation to strengthen outcomes over time.",
+    detail: "Improve through insight and innovation.",
   },
 ];
 
@@ -137,11 +174,11 @@ export default function Home() {
             <span className="eyebrow">Communications Group</span>
           </div>
           <div className="hero-title-wrap" data-reveal>
-            <p className="hero-kicker">TLCG / Strategic communications &amp; experiences</p>
-            <h1 id="hero-title">Make the<br /><em>moment</em> matter.</h1>
+            <p className="hero-kicker">Strategic marketing · communications · events</p>
+            <h1 id="hero-title" className="home-positioning">Helping organizations<br />build stronger brands,<br /><em>communicate with confidence,</em><br />and deliver exceptional experiences.</h1>
           </div>
           <div className="hero-foot" data-reveal>
-            <p>Strategic communications, live experience and creative production for moments with momentum.</p>
+            <p>A strategic marketing, communications and events consultancy driving meaningful engagement and measurable results.</p>
             <button type="button" className="round-link" onClick={() => scrollToSection("capabilities")} aria-label="Explore TLCG capabilities">
               <ArrowDownRight size={24} strokeWidth={1.3} />
             </button>
@@ -187,17 +224,23 @@ export default function Home() {
         <div className="experience-overlay" aria-hidden="true" />
         <div className="experience-content">
           <div data-reveal>
-            <span className="eyebrow eyebrow-light">02 — Experience</span>
-            <h2 id="experience-title">Where strategy<br />becomes <em>presence.</em></h2>
+            <span className="eyebrow eyebrow-light">02 — Selected Experience</span>
+            <h2 id="experience-title">Two decades of<br /><em>trusted delivery.</em></h2>
           </div>
           <div className="experience-note" data-reveal>
             <span className="gold-rule" />
-            <p>A visual archive for the people, messages and live moments that bring strategy into the room.</p>
+            <p>Over the past two decades, our leadership has contributed to marketing, communications and event initiatives across respected national and international organizations.</p>
           </div>
         </div>
-        <div className="experience-caption" data-reveal>
-          <span>Selected work / 01</span><span>Live experience</span>
+        <div className="experience-roster" data-reveal aria-label="Selected TLCG experience">
+          {experienceItems.map((item) => (
+            <div className="experience-item" key={item.name}>
+              <strong>{item.name}</strong>
+              {item.descriptor ? <span>{item.descriptor}</span> : null}
+            </div>
+          ))}
         </div>
+        <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
       </section>
 
       <section id="approach" className="approach chapter section-light" aria-labelledby="approach-title">
@@ -238,10 +281,29 @@ export default function Home() {
       <section id="why-tlcg" className="why chapter" aria-labelledby="why-title">
         <div className="why-frame" data-reveal>
           <span className="eyebrow eyebrow-light">04 — Why TLCG</span>
-          <h2 id="why-title">Built with<br /><em>discernment.</em></h2>
-          <div className="why-placeholder">
-            <span>What TLCG brings</span>
-            <p>Strategic perspective&nbsp;&nbsp; / &nbsp;&nbsp;Human connection&nbsp;&nbsp; / &nbsp;&nbsp;Exacting delivery</p>
+          <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
+          <div className="why-difference-list">
+            {differenceItems.map((item) => (
+              <article className="why-difference-item" key={item.number}>
+                <span>{item.number}</span>
+                <div><h3>{item.title}</h3><p>{item.detail}</p></div>
+              </article>
+            ))}
+          </div>
+          <div className="why-industries">
+            <span>Industries we support</span>
+            <p>{industries.join(" · ")}</p>
+          </div>
+          <div className="expertise-ledger">
+            <span className="eyebrow eyebrow-light">Where we add value</span>
+            <div className="expertise-grid">
+              {expertiseGroups.map((group) => (
+                <div className="expertise-group" key={group.title}>
+                  <h3>{group.title}</h3>
+                  <p>{group.items.join(" · ")}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="why-ornament" aria-hidden="true"><span>T</span><i /></div>
@@ -250,17 +312,32 @@ export default function Home() {
       <section id="talk" className="contact chapter section-light" aria-labelledby="contact-title">
         <div className="contact-intro" data-reveal>
           <span className="eyebrow">05 — Let’s Talk</span>
-          <h2 id="contact-title">Start a considered<br /><em>conversation.</em></h2>
-          <p className="section-deck">Share the situation, the audience or the moment you want to make matter.</p>
+          <h2 id="contact-title">Let’s Start The<br /><em>Conversation.</em></h2>
+          <div className="contact-copy">
+            <p>Whether you’re launching a new brand, planning a high-impact event, strengthening stakeholder engagement or modernizing your marketing strategy, Top Line Communications Group (Pty) Ltd is ready to partner with you.</p>
+            <p>We believe the best results come from strong relationships, strategic thinking and flawless execution. We’d welcome the opportunity to learn more about your organization and explore how we can help you achieve your objectives.</p>
+          </div>
         </div>
-        <form className="contact-form" onSubmit={keepFormLocal} data-reveal>
-          <label><span>Name</span><input type="text" name="name" placeholder="Your name" /></label>
-          <label><span>Organisation</span><input type="text" name="organisation" placeholder="Your organisation" /></label>
-          <label><span>Email</span><input type="email" name="email" placeholder="you@organisation.com" /></label>
-          <label><span>Phone</span><input type="tel" name="phone" placeholder="+27" /></label>
-          <label className="message-field"><span>Message</span><textarea name="message" placeholder="Tell us what matters." rows={4} /></label>
-          <button className="submit-link" type="submit">Send enquiry <ArrowUpRight size={20} strokeWidth={1.3} /></button>
-        </form>
+        <div className="contact-side" data-reveal>
+          <address className="contact-details">
+            <strong>Hellery Musas</strong>
+            <span>Managing Director | Principal Consultant</span>
+            <span>Top Line Communications Group (Pty) Ltd</span>
+            <a href="tel:+27837626871">+27 83 762 6871</a>
+            <a href="mailto:hellery@toplinecommunicationsgroup.co.za">hellery@toplinecommunicationsgroup.co.za</a>
+            <span>toplinecommunicationsgroup.co.za</span>
+            <span>Johannesburg, South Africa</span>
+          </address>
+          <form className="contact-form" onSubmit={keepFormLocal}>
+            <label><span>Name</span><input type="text" name="name" placeholder="Your name" /></label>
+            <label><span>Organisation</span><input type="text" name="organisation" placeholder="Your organisation" /></label>
+            <label><span>Email</span><input type="email" name="email" placeholder="you@organisation.com" /></label>
+            <label><span>Phone</span><input type="tel" name="phone" placeholder="+27" /></label>
+            <label className="message-field"><span>Message</span><textarea name="message" placeholder="Tell us what matters." rows={4} /></label>
+            <button className="submit-link" type="submit">Send enquiry <ArrowUpRight size={20} strokeWidth={1.3} /></button>
+          </form>
+          <blockquote className="contact-quote">“We don’t just execute marketing. We help organizations communicate with clarity, build brands with purpose and create experiences that people remember. Because every great business deserves a story worth telling.”</blockquote>
+        </div>
       </section>
 
       <footer className="site-footer">
