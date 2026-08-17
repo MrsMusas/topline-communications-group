@@ -36,3 +36,9 @@
 - [x] Add a smoothly animated #D4AF37 active-tab indicator to the existing desktop navigation.
 - [x] Convert the existing Where We Add Value content into the supplied icon-led, left-aligned bullet-list format while retaining headings and gold separators.
 - [x] Validate responsive layout and interaction behavior without changing the approved TLCG system.
+
+## Gold visibility correction
+
+- [x] Update the TLCG gold token and relevant accent uses to the specified brighter #D4AF37 value.
+- [x] Preserve existing hero, navigation, expertise-list layout, typography, and responsive behavior.
+- [x] Verify gold contrast and presentation across desktop and mobile.
