@@ -54,3 +54,9 @@
 
 - [x] Remove the unused outward arrow from each Capability row.
 - [x] Preserve the six-row editorial structure, approved typography, dividers, colours, spacing, and responsive layout.
+
+## Capabilities state and monogram refinement
+
+- [x] Restore one-at-a-time Capability hover/click highlighting with muted inactive rows and a 300ms transition, without reintroducing arrows.
+- [x] Enlarge the existing hero monogram while retaining its left-aligned lockup and all approved hero styling.
+- [x] Verify desktop and mobile active-state behavior, hierarchy, and responsive presentation.

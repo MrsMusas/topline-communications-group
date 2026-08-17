@@ -108,6 +108,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
+  const [selectedCapability, setSelectedCapability] = useState(0);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -225,14 +226,22 @@ export default function Home() {
         </div>
         <div className="capability-list" data-reveal>
           {capabilityItems.map((item, index) => {
-            const isSelected = index === 0;
+            const isSelected = selectedCapability === index;
             return (
               <article className={`capability-row ${isSelected ? "is-selected" : ""}`} key={item.number}>
-                <div className="capability-entry">
+                <button
+                  className="capability-entry"
+                  type="button"
+                  onClick={() => setSelectedCapability(index)}
+                  onMouseEnter={() => setSelectedCapability(index)}
+                  onFocus={() => setSelectedCapability(index)}
+                  aria-pressed={isSelected}
+                  aria-label={`Highlight ${item.name}`}
+                >
                   <span className="capability-number">{item.number}</span>
                   <h3>{item.name}</h3>
                   <p>{item.note}</p>
-                </div>
+                </button>
               </article>
             );
           })}
