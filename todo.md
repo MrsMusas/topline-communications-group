@@ -23,3 +23,9 @@
 - [x] Extract the authoritative positioning, contact information, differentiators, experience organisations, industries, and additional expertise from the Executive Summary.
 - [x] Replace interim copy across Home, Capabilities, Experience, Why TLCG, Approach, and Let’s Talk without redesigning the approved experience.
 - [x] Validate desktop and mobile readability, navigation, five-stage Approach interaction, six capabilities, and the unchanged official logo.
+
+## Why TLCG reference update
+
+- [x] Apply the full-width Why TLCG layout and exact #1B1F1C section background from the supplied reference.
+- [x] Preserve all existing differentiator, industries, and expertise content with the approved typography, gold rules, and spacing hierarchy.
+- [x] Confirm clean desktop, tablet, and mobile stacking without changing any other website section.

@@ -133,27 +133,29 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .approach-detail p { min-height: 0; max-width: 46rem; margin: 0; overflow: hidden; color: rgba(19, 33, 24, 0.76); font-size: clamp(1rem, 1.08vw, 1.14rem); font-weight: 500; line-height: 1.65; }
 .approach-list li.is-open .approach-detail { grid-template-rows: 1fr; padding: 0.1rem 2rem 1.55rem 0; }
 
-.why { display: grid; min-height: 42rem; place-items: center; padding: 6rem clamp(1.25rem, 8.3vw, 8rem); background: var(--verdant); color: var(--ivory); }
-.why-frame { position: relative; z-index: 1; width: min(100%, 82rem); padding: clamp(2rem, 5vw, 4.5rem); border: 1px solid rgba(212, 185, 121, 0.58); }
-.why-frame h2 { margin: 1.35rem 0 3.25rem; }
-.why-difference-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(212, 185, 121, 0.45); }
-.why-difference-item { display: grid; grid-template-columns: 2.3rem 1fr; gap: 0.85rem; min-height: 7.2rem; align-items: start; border-bottom: 1px solid rgba(212, 185, 121, 0.34); padding: 1.1rem 1rem 1.1rem 0; }
-.why-difference-item:nth-child(odd) { border-right: 1px solid rgba(212, 185, 121, 0.34); padding-right: 1.4rem; }
-.why-difference-item:nth-child(even) { padding-left: 1.4rem; }
+.why { display: block; min-height: 42rem; padding: clamp(2rem, 3.5vw, 4.5rem) clamp(1.25rem, 4vw, 5.5rem); background: #1B1F1C; color: var(--ivory); }
+.why-frame { position: relative; z-index: 1; width: 100%; max-width: none; padding: clamp(2rem, 4.25vw, 4rem); border: 1px solid rgba(212, 185, 121, 0.64); }
+.why-frame h2 { max-width: 40rem; margin: 1.35rem 0 3.7rem; }
+.why-difference-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(212, 185, 121, 0.52); }
+.why-difference-item { display: grid; grid-template-columns: 2.3rem 1fr; gap: 0.9rem; min-height: 8.6rem; align-items: start; padding: 1.35rem 1.5rem; border-right: 1px solid rgba(212, 185, 121, 0.42); }
+.why-difference-item:nth-child(odd), .why-difference-item:nth-child(even) { padding: 1.35rem 1.5rem; border-right: 1px solid rgba(212, 185, 121, 0.42); }
+.why-difference-item:nth-child(3n) { border-right: 0; }
+.why-difference-item:nth-child(n+4) { border-top: 1px solid rgba(212, 185, 121, 0.42); }
 .why-difference-item > span { color: var(--gold-light); font-size: 0.69rem; font-weight: 700; letter-spacing: 0.13em; }
 .why-difference-item h3 { margin: 0 0 0.45rem; color: var(--ivory); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.5rem, 2vw, 2.15rem); font-weight: 500; letter-spacing: -0.035em; line-height: 0.95; }
 .why-difference-item p { margin: 0; color: rgba(241, 238, 230, 0.8); font-size: 0.88rem; line-height: 1.55; }
-.why-industries { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; border-bottom: 1px solid rgba(212, 185, 121, 0.45); padding: 1.15rem 0; }
+.why-industries { display: grid; grid-template-columns: 10rem 1fr; gap: 1rem; border-top: 1px solid rgba(212, 185, 121, 0.52); border-bottom: 1px solid rgba(212, 185, 121, 0.52); padding: 1.35rem 0; }
 .why-industries span { color: var(--gold-light); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
 .why-industries p { margin: 0; color: rgba(241, 238, 230, 0.82); font-size: 0.88rem; line-height: 1.65; }
-.expertise-ledger { margin-top: 2.2rem; }
+.expertise-ledger { margin-top: 2rem; }
 .expertise-ledger .eyebrow { margin-bottom: 1.1rem; }
-.expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.3rem; }
-.expertise-group { border-top: 1px solid rgba(212, 185, 121, 0.42); padding-top: 0.85rem; }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(212, 185, 121, 0.52); }
+.expertise-group { min-height: 10.5rem; border-right: 1px solid rgba(212, 185, 121, 0.42); padding: 1.1rem 1.4rem 0 0; }
+.expertise-group + .expertise-group { padding-left: 1.4rem; }
+.expertise-group:last-child { border-right: 0; }
 .expertise-group h3 { margin: 0 0 0.7rem; color: var(--gold-light); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .expertise-group p { margin: 0; color: rgba(241, 238, 230, 0.8); font-size: 0.86rem; line-height: 1.7; }
-.why-ornament { position: absolute; right: -0.06em; bottom: -0.22em; color: rgba(212, 185, 121, 0.08); font-family: "Cormorant Garamond", Georgia, serif; font-size: min(54vw, 40rem); font-weight: 600; line-height: 0.7; pointer-events: none; }
-.why-ornament i { position: absolute; top: 22%; right: 9%; display: block; width: 12vw; height: 1px; background: rgba(212, 185, 121, 0.25); }
+.why-ornament { display: none; }
 
 .contact { display: grid; grid-template-columns: minmax(16rem, 1fr) minmax(27rem, 1.15fr); gap: clamp(3rem, 9vw, 10rem); padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
 .contact-intro h2 { margin: 1.35rem 0 2.5rem; }
@@ -228,12 +230,16 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .approach-detail { margin-left: 3.2rem; }
   .approach-detail p { padding-right: 0.35rem; font-size: 0.98rem; }
   .approach-list li.is-open .approach-detail { padding-bottom: 1.35rem; }
-  .why { min-height: 36rem; padding: 4rem 1.25rem; }
+  .why { min-height: 36rem; padding: 1.25rem; }
   .why-frame { padding: 2rem 1.4rem; }
   .why-difference-list { grid-template-columns: 1fr; }
-  .why-difference-item, .why-difference-item:nth-child(odd), .why-difference-item:nth-child(even) { border-right: 0; padding: 1rem 0; }
+  .why-difference-item, .why-difference-item:nth-child(odd), .why-difference-item:nth-child(even), .why-difference-item:nth-child(3n) { border-right: 0; padding: 1rem 0; }
+  .why-difference-item:nth-child(n+4) { border-top: 0; }
+  .why-difference-item + .why-difference-item { border-top: 1px solid rgba(212, 185, 121, 0.42); }
   .why-industries { grid-template-columns: 1fr; gap: 0.55rem; }
-  .expertise-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .expertise-grid { grid-template-columns: 1fr; gap: 0; }
+  .expertise-group, .expertise-group + .expertise-group { min-height: 0; border-right: 0; padding: 1rem 0; }
+  .expertise-group + .expertise-group { border-top: 1px solid rgba(212, 185, 121, 0.42); }
   .contact { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.25rem; }
   .contact-side { grid-template-columns: 1fr; gap: 2.5rem; }
   .site-footer { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.25rem; }
