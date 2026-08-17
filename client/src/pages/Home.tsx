@@ -2,7 +2,7 @@
  * TLCG design note: Verdant Ledger uses an asymmetric editorial procession,
  * protected official logo placement, ivory reading fields, and restrained gold lines.
  */
-import { ArrowDownRight, ArrowUpRight, Menu, Plus, X } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, BarChart3, CalendarDays, Menu, Plus, Presentation, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
@@ -50,14 +50,17 @@ const differenceItems = [
 const expertiseGroups = [
   {
     title: "Strategy & Communications",
+    icon: Presentation,
     items: ["Marketing Strategy", "Corporate Communications", "Stakeholder Engagement", "Executive Messaging", "Brand Positioning", "Social Media Management"],
   },
   {
     title: "Marketing & Automation",
+    icon: BarChart3,
     items: ["Digital Marketing", "Content Marketing", "AI Marketing Workflows", "Marketing Automation", "Customer Experience", "CRM Journeys"],
   },
   {
     title: "Programmes & Delivery",
+    icon: CalendarDays,
     items: ["Conference Marketing", "Executive Events", "Product Launches", "Promotions & Recognition Programmes", "Project & Supplier Management", "Budget & Performance Reporting"],
   },
 ];
@@ -106,6 +109,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
   const [selectedCapability, setSelectedCapability] = useState(0);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -120,17 +124,29 @@ export default function Home() {
     );
 
     nodes.forEach((node) => observer.observe(node));
+    const navigationNodes = document.querySelectorAll<HTMLElement>("main > section[id]");
+    const navigationObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-28% 0px -60% 0px", threshold: 0.01 },
+    );
+    navigationNodes.forEach((node) => navigationObserver.observe(node));
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
     return () => {
       observer.disconnect();
+      navigationObserver.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
   const navigate = (id: string) => {
     setMenuOpen(false);
+    setActiveSection(id);
     scrollToSection(id);
   };
 
@@ -139,13 +155,18 @@ export default function Home() {
   return (
     <main id="home" className="site-shell">
       <header className={`site-header ${scrolled || menuOpen ? "is-scrolled" : ""}`}>
-        <a className="brand-mark" href="#home" onClick={() => setMenuOpen(false)} aria-label="TLCG — return to home">
-          <img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" />
+        <a className="brand-lockup" href="#home" onClick={() => setMenuOpen(false)} aria-label="TLCG — return to home">
+          <span className="brand-mark"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></span>
+          <span className="brand-copy">
+            <strong>Top Line</strong>
+            <span>Communications Group (Pty) Ltd</span>
+            <small>Strategic Marketing <i /> Communications <i /> Events</small>
+          </span>
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map(([label, id]) => (
-            <button key={id} type="button" onClick={() => navigate(id)}>{label}</button>
+            <button className={activeSection === id ? "is-active" : ""} key={id} type="button" onClick={() => navigate(id)}>{label}</button>
           ))}
         </nav>
 
@@ -168,11 +189,6 @@ export default function Home() {
         <div className="hero-image" style={{ backgroundImage: `url(${HERO_IMAGE})` }} aria-hidden="true" />
         <div className="hero-noise" aria-hidden="true" />
         <div className="hero-content">
-          <div className="hero-topline" data-reveal>
-            <span className="eyebrow">Top Line</span>
-            <span className="gold-rule" />
-            <span className="eyebrow">Communications Group</span>
-          </div>
           <div className="hero-title-wrap" data-reveal>
             <p className="hero-kicker">Strategic marketing · communications · events</p>
             <h1 id="hero-title" className="home-positioning">Helping organizations<br />build stronger brands,<br /><em>communicate with confidence,</em><br />and deliver exceptional experiences.</h1>
@@ -299,8 +315,8 @@ export default function Home() {
             <div className="expertise-grid">
               {expertiseGroups.map((group) => (
                 <div className="expertise-group" key={group.title}>
-                  <h3>{group.title}</h3>
-                  <p>{group.items.join(" · ")}</p>
+                  <div className="expertise-heading"><span className="expertise-icon"><group.icon size={21} strokeWidth={1.35} /></span><h3>{group.title}</h3></div>
+                  <ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul>
                 </div>
               ))}
             </div>

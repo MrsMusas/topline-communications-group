@@ -29,3 +29,10 @@
 - [x] Apply the full-width Why TLCG layout and exact #1B1F1C section background from the supplied reference.
 - [x] Preserve all existing differentiator, industries, and expertise content with the approved typography, gold rules, and spacing hierarchy.
 - [x] Confirm clean desktop, tablet, and mobile stacking without changing any other website section.
+
+## Header, navigation, and expertise-list updates
+
+- [x] Move the official logo and company identity block into the hero’s upper-left presentation without altering the logo asset or hero imagery.
+- [x] Add a smoothly animated #D4AF37 active-tab indicator to the existing desktop navigation.
+- [x] Convert the existing Where We Add Value content into the supplied icon-led, left-aligned bullet-list format while retaining headings and gold separators.
+- [x] Validate responsive layout and interaction behavior without changing the approved TLCG system.
