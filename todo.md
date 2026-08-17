@@ -81,3 +81,10 @@
 - [x] Align TOP LINE, Communications Group, and Strategic Marketing • Communications • Events to the right of the monogram with the supplied hierarchy.
 - [x] Preserve the hero image, headline, navigation, colour palette, typography system, and all other hero styling.
 - [x] Verify proportional desktop, tablet, and mobile lockup behavior.
+
+## Public branding cleanup
+
+- [x] Remove “(Pty) Ltd” from all public-facing TLCG branding and website copy.
+- [x] Retain the official monogram and existing visual system unchanged.
+- [x] Keep a legal company-name reference only in an appropriate footer/legal context if one exists.
+- [x] Verify the public branding presentation across desktop and mobile.

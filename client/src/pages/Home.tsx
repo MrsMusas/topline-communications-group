@@ -358,7 +358,7 @@ export default function Home() {
           <span className="eyebrow">05 — Let’s Talk</span>
           <h2 id="contact-title">Let’s Start The<br /><em>Conversation.</em></h2>
           <address className="contact-details">
-            <div className="contact-detail contact-person"><UserRound size={18} strokeWidth={1.35} /><div><strong>Hellery Musas</strong><span>Managing Director | Principal Consultant</span><span>Top Line Communications Group (Pty) Ltd</span></div></div>
+            <div className="contact-detail contact-person"><UserRound size={18} strokeWidth={1.35} /><div><strong>Hellery Musas</strong><span>Managing Director | Principal Consultant</span><span>Top Line Communications Group</span></div></div>
             <div className="contact-detail"><Phone size={18} strokeWidth={1.35} /><a href="tel:+27837626871">+27 83 762 6871</a></div>
             <div className="contact-detail"><AtSign size={18} strokeWidth={1.35} /><div><a href="mailto:hellery@toplinecommunicationsgroup.co.za">hellery@toplinecommunicationsgroup.co.za</a><a href="mailto:marketing@toplinecommunicationsgroup.co.za">marketing@toplinecommunicationsgroup.co.za</a></div></div>
             <div className="contact-detail"><Globe2 size={18} strokeWidth={1.35} /><span>toplinecommunicationsgroup.co.za</span></div>
