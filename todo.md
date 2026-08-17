@@ -49,3 +49,8 @@
 - [x] Refine Industries We Support into the supplied two-column, gold-label layout with rules and readable content.
 - [x] Rework Let’s Talk into the supplied contact-information and enquiry-form composition, add marketing@toplinecommunicationsgroup.co.za, and direct submissions to that address.
 - [x] Validate desktop, tablet, and mobile presentation plus enquiry submission behavior.
+
+## Capabilities arrow cleanup
+
+- [x] Remove the unused outward arrow from each Capability row.
+- [x] Preserve the six-row editorial structure, approved typography, dividers, colours, spacing, and responsive layout.
