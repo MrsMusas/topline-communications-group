@@ -60,3 +60,10 @@
 - [x] Restore one-at-a-time Capability hover/click highlighting with muted inactive rows and a 300ms transition, without reintroducing arrows.
 - [x] Enlarge the existing hero monogram while retaining its left-aligned lockup and all approved hero styling.
 - [x] Verify desktop and mobile active-state behavior, hierarchy, and responsive presentation.
+
+## Fixed monogram and Capabilities expansion refinement
+
+- [x] Keep the existing hero monogram visually dominant without desktop, tablet, or mobile shrinkage.
+- [x] Show only muted titles for inactive Capability rows and reveal the selected row description with a 300ms fade/slide and cream/gold highlight.
+- [x] Preserve the arrow-free layout, approved content, typography, colours, dividers, and all other website sections.
+- [x] Validate expansion behavior and visual hierarchy across desktop, tablet, and mobile.
