@@ -95,3 +95,10 @@
 - [x] Vertically centre and tighten the TOP LINE, Communications Group, and services text block against the monogram.
 - [x] Preserve the official monogram asset, hero image, headline, navigation, colours, typography, and all other website sections.
 - [x] Verify the corrected proportional lockup across desktop, tablet, and mobile.
+
+## Reference-led hero lockup rebuild
+
+- [x] Rebuild the existing lockup as one responsive relationship with the official monogram left and the compact company text block anchored to its lower-right.
+- [x] Match the supplied hierarchy: TOP LINE, Communications Group, then Strategic Marketing • Communications • Events, without “(Pty) Ltd”.
+- [x] Preserve the supplied monogram asset, hero image, navigation, headline, typography system, animation, and all other site sections.
+- [x] Compare normal rendered desktop and mobile views against the supplied lockup relationship.
