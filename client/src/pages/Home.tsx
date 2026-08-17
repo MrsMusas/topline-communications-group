@@ -172,7 +172,7 @@ export default function Home() {
           <span className="brand-mark"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></span>
           <span className="brand-copy">
             <strong>Top Line</strong>
-            <span>Communications Group (Pty) Ltd</span>
+            <span>Communications Group</span>
             <small>Strategic Marketing <i /> Communications <i /> Events</small>
           </span>
         </a>

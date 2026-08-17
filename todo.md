@@ -74,3 +74,10 @@
 - [x] Add a muted-by-default, one-at-a-time hover/click differentiator reveal to Why TLCG with the supplied six entries and a 300ms TLCG gold/cream active state.
 - [x] Preserve existing Experience imagery, Why TLCG heading/content, palette, typography, and all other website sections.
 - [x] Validate desktop layout and mobile/touch behavior for both refinements.
+
+## Final hero brand lockup correction
+
+- [x] Keep the supplied gold monogram unchanged and visually dominant in the normal rendered hero/header state.
+- [x] Align TOP LINE, Communications Group, and Strategic Marketing • Communications • Events to the right of the monogram with the supplied hierarchy.
+- [x] Preserve the hero image, headline, navigation, colour palette, typography system, and all other hero styling.
+- [x] Verify proportional desktop, tablet, and mobile lockup behavior.
