@@ -52,10 +52,10 @@ button { border: 0; }
 .brand-mark:hover { transform: translateY(-2px); }
 .brand-mark img, .footer-logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .desktop-nav { display: flex; gap: clamp(1rem, 2vw, 2.25rem); align-items: center; margin-left: auto; margin-right: 2rem; }
-.desktop-nav button { position: relative; color: var(--ivory); background: transparent; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; padding: 0.45rem 0; }
+.desktop-nav button { position: relative; color: var(--ivory); background: transparent; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; padding: 0.45rem 0; }
 .desktop-nav button::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--gold-light); transition: right 210ms cubic-bezier(0.23, 1, 0.32, 1); }
 .desktop-nav button:hover::after { right: 0; }
-.menu-toggle { display: flex; gap: 0.55rem; align-items: center; color: var(--ivory); background: transparent; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.5rem 0; }
+.menu-toggle { display: flex; gap: 0.55rem; align-items: center; color: var(--ivory); background: transparent; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.5rem 0; }
 .mobile-nav { display: none; }
 
 .hero { min-height: 48rem; height: 100svh; position: relative; display: flex; align-items: flex-end; background: var(--verdant-deep); }
@@ -115,10 +115,15 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .approach-visual:hover img { transform: scale(1.04); }
 .image-label { position: absolute; bottom: 1rem; right: 1rem; color: var(--ivory); font-size: 0.61rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 .approach-list { grid-column: 1 / -1; margin: clamp(2rem, 5vw, 5rem) 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(19, 33, 24, 0.26); }
-.approach-list li { display: grid; grid-template-columns: 3.5rem 1fr 2rem; gap: 1rem; align-items: center; min-height: 5.8rem; border-bottom: 1px solid rgba(19, 33, 24, 0.26); }
-.approach-list li > span { color: var(--gold); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; }
+.approach-list li { border-bottom: 1px solid rgba(19, 33, 24, 0.26); }
+.approach-list button { display: grid; grid-template-columns: 3.5rem 1fr 2rem; width: 100%; gap: 1rem; align-items: center; min-height: 5.8rem; color: var(--ink); background: transparent; padding: 0; text-align: left; }
+.approach-list button > span { color: var(--gold); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; }
 .approach-list strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.85rem, 3vw, 3.25rem); font-weight: 500; letter-spacing: -0.04em; }
-.approach-list svg { color: var(--gold); justify-self: end; }
+.approach-list svg { color: var(--gold); justify-self: end; transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1); }
+.approach-list li.is-open svg { transform: rotate(45deg); }
+.approach-detail { display: grid; grid-template-rows: 0fr; margin-left: 3.5rem; overflow: hidden; transition: grid-template-rows 250ms cubic-bezier(0.23, 1, 0.32, 1), padding-bottom 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+.approach-detail p { min-height: 0; margin: 0; overflow: hidden; color: rgba(19, 33, 24, 0.66); font-size: 0.83rem; line-height: 1.65; }
+.approach-list li.is-open .approach-detail { grid-template-rows: 1fr; padding-bottom: 1.2rem; }
 
 .why { display: grid; min-height: 42rem; place-items: center; padding: 6rem clamp(1.25rem, 8.3vw, 8rem); background: var(--verdant); color: var(--ivory); }
 .why-frame { position: relative; z-index: 1; width: min(100%, 65rem); padding: clamp(2rem, 6vw, 5rem); border: 1px solid rgba(212, 185, 121, 0.58); }

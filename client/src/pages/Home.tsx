@@ -26,7 +26,11 @@ const capabilityItems = [
 ];
 
 const approachSteps = [
-  "Listen", "Frame", "Imagine", "Activate", "Evolve",
+  { number: "01", name: "Discover", detail: "Understand the business, audience and objectives." },
+  { number: "02", name: "Strategise", detail: "Develop tailored strategies and solutions." },
+  { number: "03", name: "Execute", detail: "Deliver with excellence and precision." },
+  { number: "04", name: "Measure", detail: "Evaluate performance against objectives." },
+  { number: "05", name: "Optimise", detail: "Improve through insight and innovation." },
 ];
 
 function scrollToSection(id: string) {
@@ -36,6 +40,7 @@ function scrollToSection(id: string) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -167,13 +172,26 @@ export default function Home() {
           <span className="image-label">From brief to presence</span>
         </div>
         <ol className="approach-list" data-reveal>
-          {approachSteps.map((step, index) => (
-            <li key={step}>
-              <span>0{index + 1}</span>
-              <strong>{step}</strong>
-              <Plus size={18} strokeWidth={1.2} />
-            </li>
-          ))}
+          {approachSteps.map((step, index) => {
+            const isOpen = openApproachStep === index;
+            return (
+              <li className={isOpen ? "is-open" : ""} key={step.name}>
+                <button
+                  type="button"
+                  onClick={() => setOpenApproachStep((current) => current === index ? null : index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`approach-detail-${index}`}
+                >
+                  <span>{step.number}</span>
+                  <strong>{step.name}</strong>
+                  <Plus size={18} strokeWidth={1.2} />
+                </button>
+                <div className="approach-detail" id={`approach-detail-${index}`} aria-hidden={!isOpen}>
+                  <p>{step.detail}</p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
