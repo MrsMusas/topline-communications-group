@@ -19,10 +19,12 @@ const navItems = [
 ] as const;
 
 const capabilityItems = [
-  { number: "01", name: "Communication Strategy", note: "Positioning, messaging and audience clarity." },
-  { number: "02", name: "Live Experiences", note: "Moments designed for attention and connection." },
-  { number: "03", name: "Creative Production", note: "Ideas made tangible with detail and pace." },
-  { number: "04", name: "Campaign Activation", note: "Joined-up work that carries the message further." },
+  { number: "01", name: "Brand & Strategy", note: "Helping organizations build stronger brands, launch campaigns and improve customer engagement." },
+  { number: "02", name: "Corporate Communications", note: "Internal communications, stakeholder messaging, executive messaging, PR and thought leadership." },
+  { number: "03", name: "Events & Experiences", note: "End-to-end event strategy, planning, communications and execution." },
+  { number: "04", name: "Digital Marketing", note: "Content strategy, LinkedIn, social media campaigns, AI-powered workflows and marketing automation." },
+  { number: "05", name: "Customer Engagement", note: "Customer experience, CRM journeys, onboarding campaigns and retention communications." },
+  { number: "06", name: "Fractional Leadership", note: "Supporting organizations that need senior marketing expertise without hiring a full-time executive." },
 ];
 
 const approachSteps = [
@@ -66,6 +68,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
+  const [selectedCapability, setSelectedCapability] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -157,14 +160,25 @@ export default function Home() {
           <h2 id="capabilities-title">The practical,<br /><em>made remarkable.</em></h2>
         </div>
         <div className="capability-list" data-reveal>
-          {capabilityItems.map((item) => (
-            <article className="capability-row" key={item.number}>
-              <span className="capability-number">{item.number}</span>
-              <h3>{item.name}</h3>
-              <p>{item.note}</p>
-              <span className="row-arrow"><ArrowUpRight size={20} strokeWidth={1.2} /></span>
-            </article>
-          ))}
+          {capabilityItems.map((item, index) => {
+            const isSelected = selectedCapability === index;
+            return (
+              <article className={`capability-row ${isSelected ? "is-selected" : ""}`} key={item.number}>
+                <button
+                  className="capability-trigger"
+                  type="button"
+                  onClick={() => setSelectedCapability(index)}
+                  aria-pressed={isSelected}
+                  aria-label={`Select ${item.name}`}
+                >
+                  <span className="capability-number">{item.number}</span>
+                  <h3>{item.name}</h3>
+                  <p>{item.note}</p>
+                  <span className="row-arrow"><ArrowUpRight size={20} strokeWidth={1.2} /></span>
+                </button>
+              </article>
+            );
+          })}
         </div>
       </section>
 
