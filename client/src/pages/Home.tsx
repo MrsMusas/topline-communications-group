@@ -26,11 +26,36 @@ const capabilityItems = [
 ];
 
 const approachSteps = [
-  { number: "01", name: "Discover", detail: "Understand the business, audience and objectives." },
-  { number: "02", name: "Strategise", detail: "Develop tailored strategies and solutions." },
-  { number: "03", name: "Execute", detail: "Deliver with excellence and precision." },
-  { number: "04", name: "Measure", detail: "Evaluate performance against objectives." },
-  { number: "05", name: "Optimise", detail: "Improve through insight and innovation." },
+  {
+    number: "01",
+    name: "Discover",
+    summary: "Understand the business, audience and objectives.",
+    detail: "We begin by listening closely, identifying the business context, audience needs and objectives that will guide the work.",
+  },
+  {
+    number: "02",
+    name: "Strategise",
+    summary: "Develop tailored strategies and solutions.",
+    detail: "We turn insight into direction, shaping tailored strategies and solutions around the outcomes that matter most.",
+  },
+  {
+    number: "03",
+    name: "Execute",
+    summary: "Deliver with excellence and precision.",
+    detail: "We bring the plan to life through clear production, trusted delivery and meticulous attention to every detail.",
+  },
+  {
+    number: "04",
+    name: "Measure",
+    summary: "Evaluate performance against objectives.",
+    detail: "We evaluate performance against agreed objectives, using evidence to understand what is working and where to focus next.",
+  },
+  {
+    number: "05",
+    name: "Optimise",
+    summary: "Improve through insight and innovation.",
+    detail: "We refine, learn and improve, using insight and innovation to strengthen outcomes over time.",
+  },
 ];
 
 function scrollToSection(id: string) {
@@ -182,8 +207,9 @@ export default function Home() {
                   aria-expanded={isOpen}
                   aria-controls={`approach-detail-${index}`}
                 >
-                  <span>{step.number}</span>
+                  <span className="approach-number">{step.number}</span>
                   <strong>{step.name}</strong>
+                  <span className="approach-summary">{step.summary}</span>
                   <Plus size={18} strokeWidth={1.2} />
                 </button>
                 <div className="approach-detail" id={`approach-detail-${index}`} aria-hidden={!isOpen}>
