@@ -128,6 +128,7 @@ export default function Home() {
   const [selectedCapability, setSelectedCapability] = useState<number | null>(null);
   const [selectedDifference, setSelectedDifference] = useState<number | null>(null);
   const [selectedClientStatement, setSelectedClientStatement] = useState(0);
+  const [selectedAboutBelief, setSelectedAboutBelief] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -365,22 +366,27 @@ export default function Home() {
       </section>
 
       <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
-        <div className="about-intro" data-reveal>
+        <div className="about-intro">
           <span className="eyebrow">05 — About TLCG</span>
           <h2 id="about-title">Built to make<br /><em>good work matter.</em></h2>
           <span className="gold-rule" />
         </div>
-        <div className="about-narrative" data-reveal>
-          <p>Top Line Communications Group is a strategic marketing, communications and events consultancy helping organisations communicate with clarity, build stronger brands and create meaningful experiences.</p>
-          <p>We bring together strategic thinking, communications expertise, creative production and event experience to help organisations turn ideas into purposeful action and memorable outcomes.</p>
-          <p>From corporate communications and brand strategy to campaigns, events and experiences, our approach is practical, considered and built around what each organisation needs to achieve.</p>
+        <div className="about-narrative">
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "0ms" } as React.CSSProperties}>Top Line Communications Group is a strategic marketing, communications and events consultancy helping organisations communicate with clarity, build stronger brands and create meaningful experiences.</p>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "110ms" } as React.CSSProperties}>We bring together strategic thinking, communications expertise, creative production and event experience to help organisations turn ideas into purposeful action and memorable outcomes.</p>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "220ms" } as React.CSSProperties}>From corporate communications and brand strategy to campaigns, events and experiences, our approach is practical, considered and built around what each organisation needs to achieve.</p>
           <strong>Strategic thinking. Practical delivery. Meaningful impact.</strong>
         </div>
         <div className="about-principles" data-reveal>
           <span className="eyebrow">What we believe</span>
-          <article><h3>Good communication should be clear.</h3><p>We believe communication works best when the message is clear, purposeful and relevant to the people it needs to reach.</p></article>
-          <article><h3>Good strategy should be useful.</h3><p>Good thinking is only valuable when it can be translated into practical, measurable work.</p></article>
-          <article><h3>Good experiences should be remembered.</h3><p>Whether it is a campaign, corporate event or audience experience, the details matter — because they shape how people feel, engage and remember.</p></article>
+          {[
+            { title: "Good communication should be clear.", detail: "We believe communication works best when the message is clear, purposeful and relevant to the people it needs to reach." },
+            { title: "Good strategy should be useful.", detail: "Good thinking is only valuable when it can be translated into practical, measurable work." },
+            { title: "Good experiences should be remembered.", detail: "Whether it is a campaign, corporate event or audience experience, the details matter — because they shape how people feel, engage and remember." },
+          ].map((belief, index) => {
+            const isActive = selectedAboutBelief === index;
+            return <button className={`about-belief ${isActive ? "is-active" : ""}`} key={belief.title} type="button" onMouseEnter={() => setSelectedAboutBelief(index)} onFocus={() => setSelectedAboutBelief(index)} onClick={() => setSelectedAboutBelief(index)} aria-expanded={isActive} aria-controls={`about-belief-detail-${index}`}><h3>{belief.title}</h3><p id={`about-belief-detail-${index}`}>{belief.detail}</p></button>;
+          })}
           <div className="about-approach-note"><span>Our approach</span><p>We listen first, understand the context, then bring together the right thinking, people and execution to move the work forward.</p><strong>Strategic thinking. Practical delivery. Meaningful impact.</strong></div>
         </div>
       </section>

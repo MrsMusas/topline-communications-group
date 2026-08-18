@@ -244,3 +244,10 @@
 - [x] Add the supplied business-led About TLCG section and copy without founder biography, duplicate Why TLCG content, invented claims, or additional media.
 - [x] Update desktop navigation to CAPABILITIES, EXPERIENCE, APPROACH, ABOUT TLCG, WHY TLCG, LET’S TALK; remove the desktop MENU label and hamburger while retaining the active underline behavior.
 - [x] Confirm the About anchor, portrait visibility, enquiry-form fields and mailto destination, desktop/mobile layouts, and unchanged approved sections; then run the production build.
+
+## Final About TLCG interaction polish
+
+- [x] Preserve all approved About TLCG copy and layout while making one What We Believe item active at a time with a subtle gold accent and revealed supporting explanation.
+- [x] Support desktop hover and click, mobile tap/click, keyboard focus, and smooth single-active transitions without adding controls, cards, arrows, or duplicate content.
+- [x] Add only a gentle staggered opacity-and-upward reveal to the three existing middle narrative paragraphs; keep the large About statement static.
+- [x] Verify desktop/mobile interaction, reduced-motion behavior, unchanged surrounding content, and the production build.
