@@ -211,3 +211,9 @@
 - [x] Use no video, stock, AI-generated, or other photography; preserve the approved Hero and all named existing sections unchanged.
 - [x] Prepare the selected stills for web performance and integrate them as a restrained editorial composition rather than a gallery, carousel, or equal-thumbnail grid.
 - [x] Verify desktop and mobile cropping, no overflow or layout shifts, Hero integrity, no video rendering, and a successful production build.
+
+## Public-web clearance for selected Experience photographs
+
+- [x] Record TLCG’s authorisation of the five integrated photographs as CLEARED FOR PUBLIC WEBSITE USE, using only the supplied neutral descriptors.
+- [x] Confirm that only those five cleared stills render publicly, with no video or other uncleared media re-enabled.
+- [x] Verify desktop and mobile rendering and complete a production build without changing the approved website design or content.
