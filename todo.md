@@ -110,3 +110,9 @@
 - [x] Add accurate Privacy Policy and Cookie Policy routes for Top Line Communications Group using neutral wording for unknown technical practices.
 - [x] Add understated footer links to both policies without adding them to main navigation.
 - [x] Validate marquee motion, policy routes, footer links, public-branding cleanup, and desktop/mobile presentation.
+
+## Experience marquee positioning correction
+
+- [x] Move the existing organisation marquee into its own full-width band at the bottom edge of Selected Experience.
+- [x] Preserve marquee content, typography, gold treatment, continuous right-to-left motion, and seamless loop.
+- [x] Verify the Experience content finishes before the marquee across desktop and mobile.

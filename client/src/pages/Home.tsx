@@ -263,14 +263,14 @@ export default function Home() {
               <p>Over the past two decades, our leadership has contributed to marketing, communications and event initiatives across respected national and international organizations.</p>
             </div>
           </div>
-          <div className="experience-marquee" data-reveal aria-label="Selected TLCG experience organisations">
-            <div className="experience-marquee-track">
-              {[...experienceItems, ...experienceItems].map((item, index) => (
-                <span className="experience-marquee-item" key={`${item.name}-${index}`}>
-                  {item.name}<i aria-hidden="true">•</i>
-                </span>
-              ))}
-            </div>
+        </div>
+        <div className="experience-marquee" data-reveal aria-label="Selected TLCG experience organisations">
+          <div className="experience-marquee-track">
+            {[...experienceItems, ...experienceItems].map((item, index) => (
+              <span className="experience-marquee-item" key={`${item.name}-${index}`}>
+                {item.name}<i aria-hidden="true">•</i>
+              </span>
+            ))}
           </div>
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>

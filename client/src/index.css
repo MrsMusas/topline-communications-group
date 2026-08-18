@@ -109,18 +109,18 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .capability-row.is-selected .capability-number { color: var(--gold); }
 .capability-row.is-selected p { max-height: 12rem; opacity: 1; transform: translateX(0); }
 
-.experience { min-height: 48rem; display: grid; align-items: center; color: var(--ivory); background: var(--verdant-deep); overflow: hidden; }
+.experience { min-height: 48rem; display: flex; flex-direction: column; justify-content: flex-end; color: var(--ivory); background: var(--verdant-deep); overflow: hidden; }
 .experience-image, .experience-overlay { position: absolute; inset: 0; }
 .experience-image { background-position: center; background-size: cover; filter: saturate(0.75) contrast(1.05); }
 .experience-overlay { background: linear-gradient(90deg, rgba(8, 20, 15, 0.91) 0%, rgba(8, 20, 15, 0.55) 50%, rgba(8, 20, 15, 0.18) 100%), linear-gradient(0deg, rgba(8, 20, 15, 0.82) 0%, transparent 54%); }
-.experience-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4.5rem); width: 100%; padding: clamp(6rem, 9vw, 8rem) 0 clamp(3rem, 6vw, 5rem); }
+.experience-layout { position: relative; z-index: 1; display: flex; width: 100%; min-height: clamp(36rem, 43vw, 46rem); align-items: center; padding: clamp(6rem, 9vw, 8rem) 0 clamp(3rem, 6vw, 5rem); }
 .experience-content { display: flex; flex-direction: column; align-items: flex-start; }
 .experience-content { padding: 0 clamp(1.25rem, 8.3vw, 8rem); }
 .experience-content h2 { max-width: 39rem; margin-top: 1.4rem; }
 .experience-note { max-width: 25rem; margin-top: 2.5rem; }
 .experience-note p { margin: 1rem 0 0; color: rgba(241, 238, 230, 0.78); font-size: 0.85rem; line-height: 1.7; }
 .experience-caption { position: absolute; z-index: 2; right: clamp(1.25rem, 4vw, 4.5rem); top: 7rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--gold-light); font-size: 0.61rem; letter-spacing: 0.17em; text-transform: uppercase; text-align: right; }
-.experience-marquee { width: 100%; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.58); border-bottom: 1px solid rgba(212, 175, 55, 0.38); background: rgba(8, 20, 15, 0.24); }
+.experience-marquee { position: relative; z-index: 1; width: 100%; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.58); border-bottom: 1px solid rgba(212, 175, 55, 0.38); background: rgba(8, 20, 15, 0.42); }
 .experience-marquee-track { display: flex; width: max-content; min-width: 100%; align-items: center; animation: experience-marquee 42s linear infinite; }
 .experience-marquee:hover .experience-marquee-track { animation-play-state: paused; }
 .experience-marquee-item { display: inline-flex; flex: 0 0 auto; align-items: center; gap: clamp(2rem, 4vw, 5rem); padding: 1.35rem clamp(1rem, 2vw, 2.5rem); color: rgba(241, 238, 230, 0.95); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.35rem, 2.1vw, 2.05rem); font-weight: 500; letter-spacing: -0.02em; white-space: nowrap; }
@@ -269,7 +269,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .capability-row.is-selected .capability-entry { padding-left: 0.35rem; }
   .hero-title-wrap .home-positioning { font-size: clamp(3.2rem, 11vw, 4.7rem); line-height: 0.88; }
   .experience { min-height: 0; }
-  .experience-layout { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 0 2.5rem; }
+  .experience-layout { min-height: 42rem; padding: 5rem 0 2.5rem; }
   .experience-content { align-items: flex-start; }
   .experience-content { padding: 0 1.25rem; }
   .experience-note { max-width: 27rem; margin-top: 2rem; }
