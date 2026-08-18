@@ -198,3 +198,9 @@
 - [ ] Confirm public web-use permission for the selected Victoria Falls aerial loop, Malaysia event-production still, and Malaysia tablescape still before reinstating any of them on the production website.
 - [x] Keep all unconfirmed selected media assets retained outside the public display, with their clearance status identified as a publish blocker.
 - [ ] Do not publish the TLCG website until the selected public-facing media has been cleared for use.
+
+## Permanent media-removal finalisation
+
+- [x] Permanently remove the Victoria Falls aerial loop and both selected Malaysia stills from TLCG website code, including rendering logic, asset references, and clearance-gate implementation.
+- [x] Remove the no-longer-needed media-clearance implementation note and restore the approved media-free Selected Experience layout without changing other approved content.
+- [x] Verify the production build, desktop, and mobile presentation contain no broken media references, empty media containers, or unusual Experience spacing.
