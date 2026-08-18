@@ -237,3 +237,10 @@
 - [x] Preserve the five cleared photographs, existing Experience copy, organisation marquee, and all other approved TLCG content and styling.
 - [x] Provide slow automatic movement, desktop hover pause, and a static reduced-motion state without controls, pagination, arrows, or additional content.
 - [x] Verify desktop and mobile rendering, seamless appearance, absence of overflow, and a successful production build.
+
+## Controlled About TLCG and Let’s Talk portrait addition
+
+- [x] Upload the supplied Managing Director portrait unchanged and add it as a balanced editorial visual within the existing Let’s Talk section without replacing contact content or form functionality.
+- [x] Add the supplied business-led About TLCG section and copy without founder biography, duplicate Why TLCG content, invented claims, or additional media.
+- [x] Update desktop navigation to CAPABILITIES, EXPERIENCE, APPROACH, ABOUT TLCG, WHY TLCG, LET’S TALK; remove the desktop MENU label and hamburger while retaining the active underline behavior.
+- [x] Confirm the About anchor, portrait visibility, enquiry-form fields and mailto destination, desktop/mobile layouts, and unchanged approved sections; then run the production build.

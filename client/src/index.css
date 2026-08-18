@@ -59,12 +59,12 @@ button { border: 0; }
 .brand-copy > span { color: rgba(241, 238, 230, 0.92); font-size: clamp(0.72rem, 0.9vw, 0.9rem); font-weight: 600; letter-spacing: 0.045em; line-height: 1.15; text-transform: none; white-space: nowrap; }
 .brand-copy small { display: flex; align-items: center; gap: 0.48rem; margin-top: 0.28rem; color: rgba(241, 238, 230, 0.83); font-size: clamp(0.56rem, 0.7vw, 0.68rem); font-weight: 700; letter-spacing: 0.1em; line-height: 1.2; text-transform: uppercase; white-space: nowrap; }
 .brand-copy small i { display: inline-block; width: 0.22rem; height: 0.22rem; flex: 0 0 auto; background: #D4AF37; border-radius: 50%; }
-.desktop-nav { display: flex; gap: clamp(1rem, 2vw, 2.25rem); align-items: center; margin-left: auto; margin-right: 2rem; padding-top: 1.35rem; }
+.desktop-nav { display: flex; gap: clamp(0.9rem, 1.5vw, 1.7rem); align-items: center; margin-left: auto; padding-top: 1.35rem; }
 .desktop-nav button { position: relative; color: var(--ivory); background: transparent; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; padding: 0.45rem 0; }
 .desktop-nav button::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--gold-light); transition: right 210ms cubic-bezier(0.23, 1, 0.32, 1); }
 .desktop-nav button:hover::after, .desktop-nav button.is-active::after { right: 0; }
 .desktop-nav button.is-active { color: #D4AF37; }
-.menu-toggle { display: flex; gap: 0.55rem; align-items: center; color: var(--ivory); background: transparent; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.5rem 0; margin-top: 0.9rem; }
+.menu-toggle { display: none; gap: 0.55rem; align-items: center; color: var(--ivory); background: transparent; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.5rem 0; margin-top: 0.9rem; }
 .mobile-nav { display: none; }
 
 .hero { min-height: 48rem; height: 100svh; position: relative; display: flex; align-items: flex-end; background: var(--verdant-deep); }
@@ -167,6 +167,23 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .approach-list li.is-open .approach-detail p { opacity: 1; transform: translateY(0); }
 .approach-list li.is-open .approach-detail { grid-template-rows: 1fr; padding: 0.1rem 2rem 1.55rem 0; }
 
+.about { display: grid; grid-template-columns: minmax(18rem, 0.84fr) minmax(21rem, 1fr) minmax(20rem, 0.98fr); gap: clamp(3rem, 6vw, 7rem); padding: clamp(5.5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); border-top: 1px solid rgba(19, 33, 24, 0.16); }
+.about-intro { display: flex; flex-direction: column; align-items: flex-start; }
+.about-intro h2 { max-width: 27rem; margin: 1.35rem 0 2.7rem; }
+.about-intro .gold-rule { width: 4.2rem; }
+.about-narrative { display: flex; flex-direction: column; align-items: flex-start; gap: 1.35rem; color: rgba(19, 33, 24, 0.76); font-size: 1.18rem; line-height: 1.66; }
+.about-narrative p { margin: 0; }
+.about-narrative strong, .about-approach-note strong { margin-top: 1rem; color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.65rem, 2.2vw, 2.35rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; }
+.about-principles { border-left: 1px solid rgba(19, 33, 24, 0.24); padding-left: clamp(1.5rem, 3vw, 3.5rem); }
+.about-principles > .eyebrow { margin-bottom: 1.8rem; }
+.about-principles article { border-top: 1px solid rgba(19, 33, 24, 0.2); padding: 1.3rem 0; }
+.about-principles article h3 { margin: 0 0 0.65rem; color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.65rem, 2.05vw, 2.25rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1; }
+.about-principles article p { margin: 0; color: rgba(19, 33, 24, 0.7); font-size: 1rem; line-height: 1.56; }
+.about-approach-note { margin-top: 1.4rem; border-top: 1px solid var(--gold); padding-top: 1.4rem; }
+.about-approach-note > span { color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.about-approach-note p { margin: 0.8rem 0 0; color: rgba(19, 33, 24, 0.76); font-size: 1rem; line-height: 1.55; }
+.about-approach-note strong { display: block; margin-top: 1.15rem; font-size: 1.55rem; }
+
 .why { display: block; min-height: 42rem; padding: clamp(2rem, 3.5vw, 4.5rem) clamp(1.25rem, 4vw, 5.5rem); background: #1B1F1C; color: var(--ivory); }
 .why-frame { position: relative; z-index: 1; width: 100%; max-width: none; padding: clamp(2rem, 4.25vw, 4rem); border: 1px solid rgba(212, 185, 121, 0.64); }
 .why-frame h2 { max-width: 40rem; margin: 1.35rem 0 3.7rem; }
@@ -201,7 +218,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .expertise-group li::before { content: ""; position: absolute; left: -0.72rem; top: 0.48rem; width: 0.24rem; height: 0.24rem; background: #D4AF37; border-radius: 50%; }
 .why-ornament { display: none; }
 
-.contact { display: grid; grid-template-columns: minmax(21rem, 0.86fr) minmax(28rem, 1.14fr); gap: clamp(3rem, 7vw, 8rem); padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
+.contact { display: grid; grid-template-columns: minmax(18rem, 0.78fr) minmax(12rem, 0.48fr) minmax(25rem, 1.05fr); gap: clamp(2.25rem, 4vw, 5.5rem); padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
 .contact-intro { border-right: 1px solid rgba(212, 175, 55, 0.55); padding-right: clamp(2rem, 4vw, 4.5rem); }
 .contact-intro h2 { margin: 1.35rem 0 2.9rem; }
 .contact-copy { display: grid; gap: 1rem; max-width: 34rem; margin: -1.6rem 0 2.2rem; color: rgba(19, 33, 24, 0.74); font-size: 1.1rem; line-height: 1.6; }
@@ -213,6 +230,8 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .contact-details strong { color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; }
 .contact-details a { color: var(--ink); text-decoration: none; width: max-content; max-width: 100%; overflow-wrap: anywhere; }
 .contact-details a:hover { color: var(--gold); }
+.contact-portrait { width: 100%; height: clamp(27rem, 34vw, 36rem); align-self: start; margin: 0; overflow: hidden; background: var(--verdant-deep); border-top: 1px solid var(--gold); border-bottom: 1px solid rgba(212, 175, 55, 0.68); }
+.contact-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 52% center; }
 .contact-form { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; align-self: start; }
 .contact-form label { display: flex; flex-direction: column; gap: 0.75rem; min-height: 5.6rem; border-bottom: 1px solid rgba(19, 33, 24, 0.4); padding: 0.55rem 0; }
 .contact-form label span { color: rgba(19, 33, 24, 0.68); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -269,6 +288,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .brand-copy small { gap: 0.26rem; margin-top: 0.16rem; font-size: clamp(0.36rem, 1.25vw, 0.43rem); letter-spacing: 0.05em; }
   .brand-copy small i { width: 0.15rem; height: 0.15rem; }
   .desktop-nav, .menu-toggle { padding-top: 0; margin-top: 0; }
+  .menu-toggle { display: flex; }
   .mobile-nav { display: flex; position: fixed; inset: 0; z-index: -1; flex-direction: column; justify-content: center; gap: 0.25rem; padding: 7rem 1.5rem 2rem; background: var(--verdant-deep); opacity: 0; pointer-events: none; transition: opacity 240ms cubic-bezier(0.23, 1, 0.32, 1); }
   .mobile-nav.is-open { opacity: 1; pointer-events: auto; }
   .mobile-nav .eyebrow { color: var(--gold-light); margin-bottom: 2rem; }
@@ -310,6 +330,10 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .approach-detail { margin-left: 3.2rem; }
   .approach-detail p { padding-right: 0.35rem; font-size: 1.18rem; }
   .approach-list li.is-open .approach-detail { padding-bottom: 1.35rem; }
+  .about { grid-template-columns: 1fr; gap: 2.6rem; padding: 5rem 1.25rem; }
+  .about-intro h2 { margin-bottom: 2rem; }
+  .about-narrative { gap: 1.15rem; font-size: 1.1rem; }
+  .about-principles { border-top: 1px solid rgba(19, 33, 24, 0.24); border-left: 0; padding-top: 2rem; padding-left: 0; }
   .why { min-height: 36rem; padding: 1.25rem; }
   .why-frame { padding: 2rem 1.4rem; }
   .why-supporting-label { margin: -1.7rem 0 1.45rem; }
@@ -326,6 +350,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .contact { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.25rem; }
   .contact-intro { border-right: 0; border-bottom: 1px solid rgba(212, 175, 55, 0.55); padding: 0 0 2.5rem; }
   .contact-copy { margin: -1.7rem 0 2rem; }
+  .contact-portrait { width: min(100%, 23rem); height: clamp(24rem, 112vw, 31rem); justify-self: start; margin-top: -0.4rem; }
   .testimonials { grid-template-columns: 1fr; gap: 2.75rem; padding: 5rem 1.25rem; }
   .client-statement button { grid-template-columns: 2.35rem minmax(0, 1fr); gap: 0.45rem 0.8rem; padding: 1.1rem 0; }
   .client-statement-number { padding-top: 0.4rem; }

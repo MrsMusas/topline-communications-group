@@ -9,6 +9,7 @@ const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
 const HERO_IMAGE = "/manus-storage/tlcg-hero-verdant_a29c23f4.jpg";
 const EXPERIENCE_IMAGE = "/manus-storage/tlcg-experience-human_978593af.jpg";
 const APPROACH_IMAGE = "/manus-storage/pasted_file_PbUGqO_image_540cd03e.png";
+const CONTACT_PORTRAIT = "/manus-storage/pasted_file_ApU5WI_image_bd8042d3.png";
 const EXPERIENCE_EVENT_STILLS = [
   { src: "/manus-storage/tlcg-malaysia-event-scale_be9e1a35.webp", alt: "Full TLCG event room prepared for guests" },
   { src: "/manus-storage/tlcg-malaysia-event-production_0bda992c.webp", alt: "TLCG event production and gifting preparations" },
@@ -21,6 +22,7 @@ const navItems = [
   ["Capabilities", "capabilities"],
   ["Experience", "experience"],
   ["Approach", "approach"],
+  ["About TLCG", "about-tlcg"],
   ["Why TLCG", "why-tlcg"],
   ["Let’s Talk", "talk"],
 ] as const;
@@ -362,9 +364,30 @@ export default function Home() {
         </ol>
       </section>
 
+      <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
+        <div className="about-intro" data-reveal>
+          <span className="eyebrow">05 — About TLCG</span>
+          <h2 id="about-title">Built to make<br /><em>good work matter.</em></h2>
+          <span className="gold-rule" />
+        </div>
+        <div className="about-narrative" data-reveal>
+          <p>Top Line Communications Group is a strategic marketing, communications and events consultancy helping organisations communicate with clarity, build stronger brands and create meaningful experiences.</p>
+          <p>We bring together strategic thinking, communications expertise, creative production and event experience to help organisations turn ideas into purposeful action and memorable outcomes.</p>
+          <p>From corporate communications and brand strategy to campaigns, events and experiences, our approach is practical, considered and built around what each organisation needs to achieve.</p>
+          <strong>Strategic thinking. Practical delivery. Meaningful impact.</strong>
+        </div>
+        <div className="about-principles" data-reveal>
+          <span className="eyebrow">What we believe</span>
+          <article><h3>Good communication should be clear.</h3><p>We believe communication works best when the message is clear, purposeful and relevant to the people it needs to reach.</p></article>
+          <article><h3>Good strategy should be useful.</h3><p>Good thinking is only valuable when it can be translated into practical, measurable work.</p></article>
+          <article><h3>Good experiences should be remembered.</h3><p>Whether it is a campaign, corporate event or audience experience, the details matter — because they shape how people feel, engage and remember.</p></article>
+          <div className="about-approach-note"><span>Our approach</span><p>We listen first, understand the context, then bring together the right thinking, people and execution to move the work forward.</p><strong>Strategic thinking. Practical delivery. Meaningful impact.</strong></div>
+        </div>
+      </section>
+
       <section id="why-tlcg" className="why chapter" aria-labelledby="why-title">
         <div className="why-frame" data-reveal>
-          <span className="eyebrow eyebrow-light">05 — Why TLCG</span>
+          <span className="eyebrow eyebrow-light">06 — Why TLCG</span>
           <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
           <p className="why-supporting-label">Why Organizations Choose Us</p>
           <div className="why-difference-list">
@@ -408,7 +431,7 @@ export default function Home() {
 
       <section id="talk" className="contact chapter section-light" aria-labelledby="contact-title">
         <div className="contact-intro" data-reveal>
-          <span className="eyebrow">06 — Let’s Talk</span>
+          <span className="eyebrow">07 — Let’s Talk</span>
           <h2 id="contact-title">Let’s Start the<br /><em>Conversation.</em></h2>
           <div className="contact-copy"><p>Whether you&apos;re launching a new brand, planning a high-impact event, strengthening stakeholder engagement or modernizing your marketing strategy, we&apos;re ready to partner with you.</p><p>We believe the best results come from strong relationships, strategic thinking and flawless execution. We&apos;d welcome the opportunity to learn more about your organization and explore how we can help you achieve your objectives.</p></div>
           <address className="contact-details">
@@ -419,6 +442,9 @@ export default function Home() {
             <div className="contact-detail"><MapPin size={18} strokeWidth={1.35} /><span>Johannesburg, South Africa</span></div>
           </address>
         </div>
+        <figure className="contact-portrait" data-reveal>
+          <img src={CONTACT_PORTRAIT} alt="Hellery Musas, Managing Director and Principal Consultant of TLCG" />
+        </figure>
         <form className="contact-form" onSubmit={sendEnquiry} data-reveal>
           <label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label>
           <label><span>Organisation</span><input type="text" name="organisation" placeholder="Your organisation" /></label>
