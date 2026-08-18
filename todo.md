@@ -155,3 +155,10 @@
 - [x] Remove only the duplicate Strategic Marketing • Communications • Events line above the hero headline.
 - [x] Preserve the brand-lockup descriptor, approved hierarchy, colours, layout, and animations.
 - [x] Verify global readability and responsive wrapping across desktop, tablet, and mobile.
+
+## Favicon and social-sharing launch branding
+
+- [x] Prepare browser, bookmark, and mobile shortcut favicon variants from the supplied official TLCG gold monogram without redrawing the mark.
+- [x] Create and upload a 1200×630 TLCG Open Graph image with the approved deep-green, gold, ivory, and editorial lockup treatment.
+- [x] Add canonical, description, Open Graph, Twitter/X, and favicon metadata using the intended production TLCG domain rather than a Manus URL.
+- [x] Verify compiled metadata, favicon build outputs, public asset responses, production build, and the unchanged website presentation.
