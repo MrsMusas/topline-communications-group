@@ -9,13 +9,13 @@ const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
 const HERO_IMAGE = "/manus-storage/tlcg-hero-verdant_a29c23f4.jpg";
 const EXPERIENCE_IMAGE = "/manus-storage/tlcg-experience-human_978593af.jpg";
 const APPROACH_IMAGE = "/manus-storage/pasted_file_PbUGqO_image_540cd03e.png";
-const EXPERIENCE_EVENT_STILLS = {
-  scale: "/manus-storage/tlcg-malaysia-event-scale_be9e1a35.webp",
-  production: "/manus-storage/tlcg-malaysia-event-production_0bda992c.webp",
-  arrival: "/manus-storage/tlcg-malaysia-venue-arrival_0b897b23.webp",
-  installation: "/manus-storage/tlcg-malaysia-outdoor-installation_09175222.webp",
-  tablescape: "/manus-storage/tlcg-malaysia-tablescape-detail_a92bce09.webp",
-};
+const EXPERIENCE_EVENT_STILLS = [
+  { src: "/manus-storage/tlcg-malaysia-event-scale_be9e1a35.webp", alt: "Full TLCG event room prepared for guests" },
+  { src: "/manus-storage/tlcg-malaysia-event-production_0bda992c.webp", alt: "TLCG event production and gifting preparations" },
+  { src: "/manus-storage/tlcg-malaysia-venue-arrival_0b897b23.webp", alt: "TLCG event venue arrival setting" },
+  { src: "/manus-storage/tlcg-malaysia-outdoor-installation_09175222.webp", alt: "TLCG outdoor event installation" },
+  { src: "/manus-storage/tlcg-malaysia-tablescape-detail_a92bce09.webp", alt: "TLCG event tablescape detail" },
+];
 
 const navItems = [
   ["Capabilities", "capabilities"],
@@ -281,22 +281,18 @@ export default function Home() {
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
         <div className="experience-stills" aria-label="Selected TLCG event photography">
-          <div className="experience-stills-grid">
-            <figure className="experience-still experience-still-scale">
-              <img src={EXPERIENCE_EVENT_STILLS.scale} alt="Full TLCG event room prepared for guests" loading="lazy" />
-            </figure>
-            <figure className="experience-still experience-still-arrival">
-              <img src={EXPERIENCE_EVENT_STILLS.arrival} alt="TLCG event venue arrival setting" loading="lazy" />
-            </figure>
-            <figure className="experience-still experience-still-production">
-              <img src={EXPERIENCE_EVENT_STILLS.production} alt="TLCG event production and gifting preparations" loading="lazy" />
-            </figure>
-            <figure className="experience-still experience-still-installation">
-              <img src={EXPERIENCE_EVENT_STILLS.installation} alt="TLCG outdoor event installation" loading="lazy" />
-            </figure>
-            <figure className="experience-still experience-still-tablescape">
-              <img src={EXPERIENCE_EVENT_STILLS.tablescape} alt="TLCG event tablescape detail" loading="lazy" />
-            </figure>
+          <div className="experience-stills-viewport">
+            <div className="experience-stills-track">
+              {[0, 1].map((sequenceIndex) => (
+                <div className="experience-stills-sequence" aria-hidden={sequenceIndex === 1} key={sequenceIndex}>
+                  {EXPERIENCE_EVENT_STILLS.map((still) => (
+                    <figure className="experience-still" key={`${sequenceIndex}-${still.src}`}>
+                      <img src={still.src} alt={sequenceIndex === 0 ? still.alt : ""} loading="lazy" />
+                    </figure>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

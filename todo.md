@@ -230,3 +230,10 @@
 - [x] Upload and use the supplied approved Approach image unchanged, replacing only the current Approach section image reference.
 - [x] Preserve the existing Approach text, accordion interaction, image footprint, responsive layout, and every other approved section unchanged.
 - [x] Verify the supplied image visibly renders at the existing Approach image position on desktop and mobile, with no overlap, distortion, or layout shift, then run the production build.
+
+## Selected Experience continuous image marquee
+
+- [x] Replace only the five-photo static Selected Experience composition with a seamless right-to-left image marquee that duplicates the sequence technically for looping.
+- [x] Preserve the five cleared photographs, existing Experience copy, organisation marquee, and all other approved TLCG content and styling.
+- [x] Provide slow automatic movement, desktop hover pause, and a static reduced-motion state without controls, pagination, arrows, or additional content.
+- [x] Verify desktop and mobile rendering, seamless appearance, absence of overflow, and a successful production build.
