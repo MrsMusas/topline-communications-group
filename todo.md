@@ -102,3 +102,11 @@
 - [x] Match the supplied hierarchy: TOP LINE, Communications Group, then Strategic Marketing • Communications • Events, without “(Pty) Ltd”.
 - [x] Preserve the supplied monogram asset, hero image, navigation, headline, typography system, animation, and all other site sections.
 - [x] Compare normal rendered desktop and mobile views against the supplied lockup relationship.
+
+## Final Experience, trust, and legal updates
+
+- [x] Replace the Experience organisation grid with a responsive, seamless, slow-moving typographic marquee using only the supplied organisation names.
+- [x] Add a clearly provisional Beta Testimonials section with no invented client feedback.
+- [x] Add accurate Privacy Policy and Cookie Policy routes for Top Line Communications Group using neutral wording for unknown technical practices.
+- [x] Add understated footer links to both policies without adding them to main navigation.
+- [x] Validate marquee motion, policy routes, footer links, public-branding cleanup, and desktop/mobile presentation.

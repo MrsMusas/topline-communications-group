@@ -8,12 +8,16 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import CookiePolicy from "./pages/CookiePolicy";
 import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/cookie-policy" component={CookiePolicy} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

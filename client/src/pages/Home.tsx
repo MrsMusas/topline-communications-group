@@ -263,21 +263,39 @@ export default function Home() {
               <p>Over the past two decades, our leadership has contributed to marketing, communications and event initiatives across respected national and international organizations.</p>
             </div>
           </div>
-          <div className="experience-roster" data-reveal aria-label="Selected TLCG experience">
-            {experienceItems.map((item) => (
-              <div className="experience-item" key={item.name}>
-                <strong>{item.name}</strong>
-                {item.descriptor ? <span>{item.descriptor}</span> : null}
-              </div>
-            ))}
+          <div className="experience-marquee" data-reveal aria-label="Selected TLCG experience organisations">
+            <div className="experience-marquee-track">
+              {[...experienceItems, ...experienceItems].map((item, index) => (
+                <span className="experience-marquee-item" key={`${item.name}-${index}`}>
+                  {item.name}<i aria-hidden="true">•</i>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
       </section>
 
+      <section id="testimonials" className="testimonials chapter section-light" aria-labelledby="testimonials-title">
+        <div className="testimonials-heading" data-reveal>
+          <span className="eyebrow">03 — Beta Testimonials</span>
+          <h2 id="testimonials-title">What Our<br /><em>Clients Say.</em></h2>
+          <p className="section-deck">Trusted partnerships. Meaningful work. Lasting impact.</p>
+        </div>
+        <div className="testimonial-placeholders" data-reveal aria-label="Approved beta testimonial placeholders">
+          {["01", "02", "03"].map((number) => (
+            <article className="testimonial-placeholder" key={number}>
+              <span>{number}</span>
+              <p>Approved beta/client feedback placeholder</p>
+              <small>To be populated before launch</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="approach" className="approach chapter section-light" aria-labelledby="approach-title">
         <div className="approach-copy" data-reveal>
-          <span className="eyebrow">03 — Approach</span>
+          <span className="eyebrow">04 — Approach</span>
           <h2 id="approach-title">A process with<br /><em>purpose in it.</em></h2>
           <p className="section-deck">Every engagement starts with listening, then moves with clear intention from first thought to final audience response.</p>
         </div>
@@ -312,7 +330,7 @@ export default function Home() {
 
       <section id="why-tlcg" className="why chapter" aria-labelledby="why-title">
         <div className="why-frame" data-reveal>
-          <span className="eyebrow eyebrow-light">04 — Why TLCG</span>
+          <span className="eyebrow eyebrow-light">05 — Why TLCG</span>
           <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
           <div className="why-difference-list">
             {differenceItems.map((item, index) => {
@@ -355,7 +373,7 @@ export default function Home() {
 
       <section id="talk" className="contact chapter section-light" aria-labelledby="contact-title">
         <div className="contact-intro" data-reveal>
-          <span className="eyebrow">05 — Let’s Talk</span>
+          <span className="eyebrow">06 — Let’s Talk</span>
           <h2 id="contact-title">Let’s Start The<br /><em>Conversation.</em></h2>
           <address className="contact-details">
             <div className="contact-detail contact-person"><UserRound size={18} strokeWidth={1.35} /><div><strong>Hellery Musas</strong><span>Managing Director | Principal Consultant</span><span>Top Line Communications Group</span></div></div>
@@ -378,7 +396,7 @@ export default function Home() {
       <footer className="site-footer">
         <a className="footer-logo" href="#home" aria-label="TLCG home"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></a>
         <div className="footer-statement"><span className="gold-rule" /> <p>Top Line Communications Group</p></div>
-        <div className="footer-meta"><span>© {new Date().getFullYear()} TLCG</span><a href="#home">Back to top <ArrowUpRight size={14} strokeWidth={1.3} /></a></div>
+        <div className="footer-meta"><span>© {new Date().getFullYear()} TLCG</span><span className="footer-policies"><a href="/privacy-policy">Privacy Policy</a><i aria-hidden="true">|</i><a href="/cookie-policy">Cookie Policy</a></span><a href="#home">Back to top <ArrowUpRight size={14} strokeWidth={1.3} /></a></div>
       </footer>
     </main>
   );
