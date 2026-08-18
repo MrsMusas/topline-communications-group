@@ -257,3 +257,9 @@
 - [x] Change only the full Approach section background to the existing TLCG deep brand green, preserving approved copy, layout, image, and accordion behavior.
 - [x] Apply warm ivory/cream text, approved gold step numbers and icons, and subtle low-opacity gold dividers with readable supporting and expanded accordion descriptions.
 - [x] Verify desktop/mobile contrast, unchanged accordion interaction and surrounding sections, then run the production build.
+
+## Focused Approach duplicate-copy cleanup
+
+- [x] Remove only the redundant right-hand Approach accordion/text panel, retaining the existing left-side label, headline, paragraph, approved image, and visual footprint.
+- [x] Preserve all other approved Approach and website copy, colours, typography, spacing, interactions, navigation, imagery, and footer unchanged.
+- [x] Verify desktop/mobile composition has no duplicate Approach copy, gaps, or layout shift, then run the production build.

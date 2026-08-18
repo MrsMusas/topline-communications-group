@@ -2,7 +2,7 @@
  * TLCG design note: Verdant Ledger uses an asymmetric editorial procession,
  * protected official logo placement, ivory reading fields, and restrained gold lines.
  */
-import { ArrowDownRight, ArrowUpRight, AtSign, BarChart3, CalendarDays, Globe2, MapPin, Menu, Phone, Plus, Presentation, UserRound, X } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, AtSign, BarChart3, CalendarDays, Globe2, MapPin, Menu, Phone, Presentation, UserRound, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 
 const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
@@ -84,39 +84,6 @@ const expertiseGroups = [
 
 const industries = ["Corporate Organizations", "Professional Associations", "Financial Services", "Technology", "Education", "Healthcare", "Manufacturing", "Retail", "SMEs & Startups", "Non-Profit Organizations"];
 
-const approachSteps = [
-  {
-    number: "01",
-    name: "Discover",
-    summary: "Understand your business, audience and objectives.",
-    detail: "We begin by listening closely. We dig beneath the surface to understand your goals, your challenges, your audience and the context in which you operate. This gives us clarity and ensures every decision is intentional.",
-  },
-  {
-    number: "02",
-    name: "Strategise",
-    summary: "Develop tailored strategies and solutions.",
-    detail: "We turn insight into direction. We develop tailored strategies and solutions that align with your objectives and are built to deliver meaningful impact.",
-  },
-  {
-    number: "03",
-    name: "Execute",
-    summary: "Deliver with excellence and precision.",
-    detail: "We bring the plan to life with excellence and precision. Our experienced team and trusted partners deliver seamlessly, on time and at the highest standard.",
-  },
-  {
-    number: "04",
-    name: "Measure",
-    summary: "Evaluate performance against objectives.",
-    detail: "We evaluate performance against objectives using clear metrics and real insights. We track what matters to understand what’s working.",
-  },
-  {
-    number: "05",
-    name: "Optimise",
-    summary: "Improve through insight and innovation.",
-    detail: "We refine, learn and improve. Through insight and innovation, we enhance outcomes and create greater impact over time.",
-  },
-];
-
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -124,7 +91,6 @@ function scrollToSection(id: string) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
   const [selectedCapability, setSelectedCapability] = useState<number | null>(null);
   const [selectedDifference, setSelectedDifference] = useState<number | null>(null);
   const [selectedClientStatement, setSelectedClientStatement] = useState(0);
@@ -340,29 +306,6 @@ export default function Home() {
           <img src={APPROACH_IMAGE} alt="Editorial planning materials arranged on a forest green table" />
           <span className="image-label">From brief to presence</span>
         </div>
-        <ol className="approach-list" data-reveal>
-          {approachSteps.map((step, index) => {
-            const isOpen = openApproachStep === index;
-            return (
-              <li className={isOpen ? "is-open" : ""} key={step.name}>
-                <button
-                  type="button"
-                  onClick={() => setOpenApproachStep((current) => current === index ? null : index)}
-                  aria-expanded={isOpen}
-                  aria-controls={`approach-detail-${index}`}
-                >
-                  <span className="approach-number">{step.number}</span>
-                  <strong>{step.name}</strong>
-                  <span className="approach-summary">{step.summary}</span>
-                  <Plus size={18} strokeWidth={1.2} />
-                </button>
-                <div className="approach-detail" id={`approach-detail-${index}`} aria-hidden={!isOpen}>
-                  <p>{step.detail}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
       </section>
 
       <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
