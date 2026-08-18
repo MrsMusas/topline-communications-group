@@ -2,9 +2,11 @@ import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import path from "node:path";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+import { submitWebsiteEnquiry } from "./server/brevo";
 
 // =============================================================================
 // Manus Debug Collector - Vite Plugin
@@ -203,7 +205,54 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function writeJson(res: ServerResponse, status: number, body: object) {
+  res.statusCode = status;
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.end(JSON.stringify(body));
+}
+
+function vitePluginEnquiryDelivery(): Plugin {
+  return {
+    name: "tlcg-enquiry-delivery",
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use("/api/enquiry", (req: IncomingMessage, res: ServerResponse, next) => {
+        if (req.method !== "POST") return next();
+
+        let rawBody = "";
+        let requestTooLarge = false;
+
+        req.on("data", (chunk: Buffer) => {
+          if (requestTooLarge) return;
+
+          if (Buffer.byteLength(rawBody) + chunk.length > 16 * 1024) {
+            requestTooLarge = true;
+            return;
+          }
+
+          rawBody += chunk.toString();
+        });
+
+        req.on("end", () => {
+          void (async () => {
+            if (requestTooLarge) {
+              writeJson(res, 413, { success: false, error: "The submitted enquiry is too large." });
+              return;
+            }
+
+            try {
+              const result = await submitWebsiteEnquiry(JSON.parse(rawBody));
+              writeJson(res, result.status, result.body);
+            } catch {
+              writeJson(res, 400, { success: false, error: "Please check the form and try again." });
+            }
+          })();
+        });
+      });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginEnquiryDelivery()];
 
 export default defineConfig({
   plugins,

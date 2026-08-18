@@ -84,6 +84,12 @@ const expertiseGroups = [
 
 const industries = ["Corporate Organizations", "Professional Associations", "Financial Services", "Technology", "Education", "Healthcare", "Manufacturing", "Retail", "SMEs & Startups", "Non-Profit Organizations"];
 
+type EnquiryState =
+  | { status: "idle" }
+  | { status: "sending" }
+  | { status: "success" }
+  | { status: "error"; message: string };
+
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -96,6 +102,7 @@ export default function Home() {
   const [selectedClientStatement, setSelectedClientStatement] = useState(0);
   const [selectedAboutBelief, setSelectedAboutBelief] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [enquiryState, setEnquiryState] = useState<EnquiryState>({ status: "idle" });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -136,18 +143,41 @@ export default function Home() {
     scrollToSection(id);
   };
 
-  const sendEnquiry = (event: FormEvent<HTMLFormElement>) => {
+  const sendEnquiry = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const fields = [
-      ["Name", formData.get("name")],
-      ["Organisation", formData.get("organisation")],
-      ["Email", formData.get("email")],
-      ["Phone", formData.get("phone")],
-      ["Message", formData.get("message")],
-    ];
-    const body = fields.map(([label, value]) => `${label}: ${value || "—"}`).join("\n\n");
-    window.location.href = `mailto:marketing@toplinecommunicationsgroup.co.za?subject=${encodeURIComponent("TLCG website enquiry")}&body=${encodeURIComponent(body)}`;
+    if (enquiryState.status === "sending") return;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const value = (key: string) => String(formData.get(key) ?? "");
+    setEnquiryState({ status: "sending" });
+
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: value("name"),
+          organisation: value("organisation"),
+          email: value("email"),
+          phone: value("phone"),
+          message: value("message"),
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as { success?: boolean; error?: string } | null;
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.error || "We could not send your enquiry just now. Please try again shortly.");
+      }
+
+      form.reset();
+      setEnquiryState({ status: "success" });
+    } catch (error) {
+      setEnquiryState({
+        status: "error",
+        message: error instanceof Error ? error.message : "We could not send your enquiry just now. Please try again shortly.",
+      });
+    }
   };
 
   return (
@@ -394,13 +424,15 @@ export default function Home() {
         <figure className="contact-portrait" data-reveal>
           <img src={CONTACT_PORTRAIT} alt="Hellery Musas, Managing Director and Principal Consultant of TLCG" />
         </figure>
-        <form className="contact-form" onSubmit={sendEnquiry} data-reveal>
+        <form className="contact-form" onSubmit={sendEnquiry} data-reveal aria-busy={enquiryState.status === "sending"}>
           <label><span>Name</span><input type="text" name="name" placeholder="Your name" required /></label>
           <label><span>Organisation</span><input type="text" name="organisation" placeholder="Your organisation" /></label>
           <label><span>Email</span><input type="email" name="email" placeholder="you@email.com" required /></label>
           <label><span>Phone</span><input type="tel" name="phone" placeholder="+27" /></label>
           <label className="message-field"><span>Message</span><textarea name="message" placeholder="Tell us what matters." rows={4} required /></label>
-          <button className="submit-link" type="submit">Send enquiry <ArrowUpRight size={20} strokeWidth={1.3} /></button>
+          <button className="submit-link" type="submit" disabled={enquiryState.status === "sending"}>{enquiryState.status === "sending" ? "Sending enquiry…" : "Send enquiry"} <ArrowUpRight size={20} strokeWidth={1.3} /></button>
+          {enquiryState.status === "success" && <p className="contact-form-status is-success" role="status" aria-live="polite">Thank you — your enquiry has been sent. TLCG will be in touch shortly.</p>}
+          {enquiryState.status === "error" && <p className="contact-form-status is-error" role="alert">{enquiryState.message}</p>}
         </form>
       </section>
 

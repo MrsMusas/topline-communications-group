@@ -263,3 +263,15 @@
 - [x] Remove only the redundant right-hand Approach accordion/text panel, retaining the existing left-side label, headline, paragraph, approved image, and visual footprint.
 - [x] Preserve all other approved Approach and website copy, colours, typography, spacing, interactions, navigation, imagery, and footer unchanged.
 - [x] Verify desktop/mobile composition has no duplicate Approach copy, gaps, or layout shift, then run the production build.
+
+## Read-only Brevo sender-authorisation audit
+
+- [x] Inspect only existing TLCG project configuration for a Brevo transactional sender and determine whether `marketing@toplinecommunicationsgroup.co.za` is already authorised as a From address.
+- [x] Report the configured sender, intended enquiry sender, and any verification gap without exposing credentials or making changes.
+
+## Brevo transactional enquiry delivery
+
+- [x] Configure the server-only `BREVO_API_KEY` and verify that it is available without exposing the value in browser code, logs, source, or UI.
+- [x] Replace the Let’s Talk mailto action with a secure Brevo transactional-email procedure using `Top Line Communications Group <marketing@toplinecommunicationsgroup.co.za>` as From, the same address as recipient, and the visitor email as Reply-To.
+- [x] Preserve the existing form fields, design, portrait, contact copy, navigation, and all other approved TLCG content while adding genuine loading, success, and error states.
+- [x] Submit a real test enquiry, confirm Brevo accepts and delivers it to marketing@toplinecommunicationsgroup.co.za with the visitor email set as Reply-To, verify no email app opens, and run the production build.
