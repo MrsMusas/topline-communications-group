@@ -251,3 +251,9 @@
 - [x] Support desktop hover and click, mobile tap/click, keyboard focus, and smooth single-active transitions without adding controls, cards, arrows, or duplicate content.
 - [x] Add only a gentle staggered opacity-and-upward reveal to the three existing middle narrative paragraphs; keep the large About statement static.
 - [x] Verify desktop/mobile interaction, reduced-motion behavior, unchanged surrounding content, and the production build.
+
+## Approach deep-green visual treatment
+
+- [x] Change only the full Approach section background to the existing TLCG deep brand green, preserving approved copy, layout, image, and accordion behavior.
+- [x] Apply warm ivory/cream text, approved gold step numbers and icons, and subtle low-opacity gold dividers with readable supporting and expanded accordion descriptions.
+- [x] Verify desktop/mobile contrast, unchanged accordion interaction and surrounding sections, then run the production build.
