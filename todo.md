@@ -184,3 +184,17 @@
 - [x] Keep the approved Hero imagery, layout, typography, navigation, palette, section structure, and organisation list unchanged.
 - [x] Add selected TLCG-owned media as restrained cinematic loops and editorial visual evidence below the Hero, without galleries, player controls, invented project claims, or heavy loading behavior.
 - [x] Verify desktop and mobile cropping, visibility, performance-conscious media behavior, and absence of layout shifts or overflow.
+
+## Final pre-publish QA
+
+- [ ] Audit all navigation anchors, active states, interactive sections, policy routes, and Back to Top behavior.
+- [ ] Confirm Hero integrity, curated media loading, contact details, enquiry mailto routing, and the required contact-form fields.
+- [ ] Review desktop, tablet, and mobile for overflow, clipping, unreadable copy, responsive issues, and visible placeholder or debug content.
+- [ ] Run the production build, inspect public assets and runtime logs, and fix only verified defects.
+- [ ] Record PASSED, FIXED, and REMAINING items for the final publish-readiness report.
+
+## Media consent and publication permission
+
+- [ ] Confirm public web-use permission for the selected Victoria Falls aerial loop, Malaysia event-production still, and Malaysia tablescape still before reinstating any of them on the production website.
+- [x] Keep all unconfirmed selected media assets retained outside the public display, with their clearance status identified as a publish blocker.
+- [ ] Do not publish the TLCG website until the selected public-facing media has been cleared for use.

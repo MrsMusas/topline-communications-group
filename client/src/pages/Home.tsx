@@ -12,6 +12,9 @@ const APPROACH_IMAGE = "/manus-storage/tlcg-approach-craft_ecb4a89e.jpg";
 const EXPERIENCE_MEDIA_VIDEO = "/manus-storage/tlcg-victoria-falls-aerial-loop_3409f81b.mp4";
 const EXPERIENCE_MEDIA_PRODUCTION = "/manus-storage/tlcg-malaysia-event-production_89c750ff.webp";
 const EXPERIENCE_MEDIA_TABLESCAPE = "/manus-storage/tlcg-malaysia-tablescape_a359f69a.webp";
+// Publication clearance is pending for the Victoria Falls aerial loop and both Malaysia event stills.
+// Keep these retained source references, but do not render them publicly until TLCG confirms web-use permission.
+const PUBLIC_MEDIA_CLEARANCE_CONFIRMED = false;
 
 const navItems = [
   ["Capabilities", "capabilities"],
@@ -119,7 +122,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
-  const [selectedCapability, setSelectedCapability] = useState(0);
+  const [selectedCapability, setSelectedCapability] = useState<number | null>(null);
   const [selectedDifference, setSelectedDifference] = useState<number | null>(null);
   const [selectedClientStatement, setSelectedClientStatement] = useState(0);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -276,31 +279,33 @@ export default function Home() {
           </div>
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
-        <div className="experience-media" aria-labelledby="experience-media-title">
-          <div className="experience-media-inner">
-            <div className="experience-media-copy" data-reveal>
-              <span className="eyebrow">Beyond the brief</span>
-              <h3 id="experience-media-title">The moments<br /><em>around the moment.</em></h3>
-              <p>Destination experiences, event production and hospitality details brought together with care.</p>
-            </div>
-            <div className="experience-media-visuals" data-reveal>
-              <figure className="experience-media-reel">
-                <video autoPlay muted loop playsInline preload="metadata" aria-label="TLCG-owned aerial destination experience footage">
-                  <source src={EXPERIENCE_MEDIA_VIDEO} type="video/mp4" />
-                </video>
-                <figcaption>Destination experience footage</figcaption>
-              </figure>
-              <figure className="experience-media-still experience-media-production">
-                <img src={EXPERIENCE_MEDIA_PRODUCTION} alt="TLCG-owned photograph of event production and gifting details" loading="lazy" />
-                <figcaption>Event production detail</figcaption>
-              </figure>
-              <figure className="experience-media-still experience-media-tablescape">
-                <img src={EXPERIENCE_MEDIA_TABLESCAPE} alt="TLCG-owned photograph of a prepared event tablescape" loading="lazy" />
-                <figcaption>Hospitality detail</figcaption>
-              </figure>
+        {PUBLIC_MEDIA_CLEARANCE_CONFIRMED && (
+          <div className="experience-media" aria-labelledby="experience-media-title">
+            <div className="experience-media-inner">
+              <div className="experience-media-copy" data-reveal>
+                <span className="eyebrow">Beyond the brief</span>
+                <h3 id="experience-media-title">The moments<br /><em>around the moment.</em></h3>
+                <p>Destination experiences, event production and hospitality details brought together with care.</p>
+              </div>
+              <div className="experience-media-visuals" data-reveal>
+                <figure className="experience-media-reel">
+                  <video autoPlay muted loop playsInline preload="metadata" aria-label="TLCG-owned aerial destination experience footage">
+                    <source src={EXPERIENCE_MEDIA_VIDEO} type="video/mp4" />
+                  </video>
+                  <figcaption>Destination experience footage</figcaption>
+                </figure>
+                <figure className="experience-media-still experience-media-production">
+                  <img src={EXPERIENCE_MEDIA_PRODUCTION} alt="TLCG-owned photograph of event production and gifting details" loading="lazy" />
+                  <figcaption>Event production detail</figcaption>
+                </figure>
+                <figure className="experience-media-still experience-media-tablescape">
+                  <img src={EXPERIENCE_MEDIA_TABLESCAPE} alt="TLCG-owned photograph of a prepared event tablescape" loading="lazy" />
+                  <figcaption>Hospitality detail</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
 
       <section id="testimonials" className="testimonials chapter section-light" aria-labelledby="testimonials-title">
