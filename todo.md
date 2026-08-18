@@ -217,3 +217,10 @@
 - [x] Record TLCG’s authorisation of the five integrated photographs as CLEARED FOR PUBLIC WEBSITE USE, using only the supplied neutral descriptors.
 - [x] Confirm that only those five cleared stills render publicly, with no video or other uncleared media re-enabled.
 - [x] Verify desktop and mobile rendering and complete a production build without changing the approved website design or content.
+
+## Live Selected Experience photograph visibility investigation
+
+- [x] Inspect the live DOM, computed layout, and actual rendered preview to determine why the five cleared photographs are not visible to the visitor.
+- [x] Fix only the verified visibility defect so all five approved photographs appear within Selected Experience in the existing asymmetric editorial composition.
+- [x] Manually scroll the rendered desktop and mobile previews to confirm all five photographs are visible, in-section, and free of broken-image, overlap, or viewport issues.
+- [x] Re-run the production build and report the rendered location of each cleared photograph.

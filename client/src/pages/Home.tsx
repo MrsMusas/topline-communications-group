@@ -281,7 +281,7 @@ export default function Home() {
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
         <div className="experience-stills" aria-label="Selected TLCG event photography">
-          <div className="experience-stills-grid" data-reveal>
+          <div className="experience-stills-grid">
             <figure className="experience-still experience-still-scale">
               <img src={EXPERIENCE_EVENT_STILLS.scale} alt="Full TLCG event room prepared for guests" loading="lazy" />
             </figure>
