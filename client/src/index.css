@@ -48,12 +48,12 @@ button { border: 0; }
 
 .site-header { position: fixed; z-index: 40; top: 0; left: 0; width: 100%; display: flex; align-items: flex-start; justify-content: space-between; padding: 1.2rem clamp(1.25rem, 4vw, 4.5rem); transition: background 220ms cubic-bezier(0.23, 1, 0.32, 1), border-color 220ms cubic-bezier(0.23, 1, 0.32, 1), padding 220ms cubic-bezier(0.23, 1, 0.32, 1); border-bottom: 1px solid transparent; }
 .site-header.is-scrolled { padding-top: 0.75rem; padding-bottom: 0.75rem; background: rgba(8, 20, 15, 0.92); backdrop-filter: blur(14px); border-color: rgba(212, 175, 55, 0.25); }
-.brand-lockup { position: relative; z-index: 2; display: flex; align-items: flex-start; gap: clamp(0.48rem, 0.75vw, 0.78rem); color: var(--ivory); text-decoration: none; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
+.brand-lockup { position: relative; z-index: 2; display: flex; align-items: flex-start; gap: clamp(0.38rem, 0.55vw, 0.56rem); padding-bottom: 0.7rem; color: var(--ivory); text-decoration: none; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
 .brand-lockup:hover { transform: translateY(-2px); }
-.brand-mark { display: block; width: clamp(7.1rem, 11vw, 11.5rem); height: clamp(8rem, 12vw, 12.3rem); flex: 0 0 auto; overflow: hidden; }
+.brand-mark { display: block; width: clamp(4.1rem, 5.5vw, 5.75rem); height: clamp(4.6rem, 6vw, 6.15rem); flex: 0 0 auto; overflow: hidden; }
 .brand-mark img { width: 100%; height: 100%; display: block; object-fit: contain; transform: scale(3.05); transform-origin: center; }
 .footer-logo img { width: 100%; height: 100%; display: block; object-fit: contain; }
-.brand-copy { display: flex; flex-direction: column; gap: 0.24rem; padding-top: 0; transform: translateY(clamp(5rem, 8.4vw, 9.5rem)); }
+.brand-copy { display: flex; flex-direction: column; gap: 0.22rem; padding-top: 0; transform: translateY(clamp(2.2rem, 3.2vw, 3.3rem)); }
 .brand-copy strong { color: var(--ivory); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2rem, 2.75vw, 3.1rem); font-weight: 600; letter-spacing: 0.025em; line-height: 0.88; text-transform: uppercase; white-space: nowrap; }
 .brand-copy > span { color: rgba(241, 238, 230, 0.92); font-size: clamp(0.72rem, 0.9vw, 0.9rem); font-weight: 600; letter-spacing: 0.045em; line-height: 1.15; text-transform: none; white-space: nowrap; }
 .brand-copy small { display: flex; align-items: center; gap: 0.48rem; margin-top: 0.28rem; color: rgba(241, 238, 230, 0.83); font-size: clamp(0.56rem, 0.7vw, 0.68rem); font-weight: 700; letter-spacing: 0.1em; line-height: 1.2; text-transform: uppercase; white-space: nowrap; }
@@ -239,10 +239,10 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .desktop-nav { display: none; }
   .site-header { padding: 0.9rem 1.25rem; }
   .site-header { align-items: center; }
-  .brand-lockup { align-items: flex-start; gap: 0.42rem; }
-  .brand-mark { width: clamp(5.9rem, 19vw, 7.5rem); height: clamp(6.6rem, 21vw, 8.4rem); }
+  .brand-lockup { align-items: flex-start; gap: 0.3rem; padding-bottom: 0.6rem; }
+  .brand-mark { width: clamp(3rem, 9.5vw, 3.75rem); height: clamp(3.35rem, 10.5vw, 4.2rem); }
   .brand-mark img { transform: scale(2.85); }
-  .brand-copy { display: flex; gap: 0.12rem; padding-top: 0; transform: translateY(clamp(4rem, 15vw, 4.75rem)); }
+  .brand-copy { display: flex; gap: 0.12rem; padding-top: 0; transform: translateY(clamp(1.85rem, 7.5vw, 2.15rem)); }
   .brand-copy strong { font-size: clamp(1.2rem, 4.3vw, 1.45rem); }
   .brand-copy > span { font-size: clamp(0.46rem, 1.65vw, 0.55rem); letter-spacing: 0.035em; }
   .brand-copy small { gap: 0.26rem; margin-top: 0.16rem; font-size: clamp(0.36rem, 1.25vw, 0.43rem); letter-spacing: 0.05em; }

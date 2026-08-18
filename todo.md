@@ -116,3 +116,16 @@
 - [x] Move the existing organisation marquee into its own full-width band at the bottom edge of Selected Experience.
 - [x] Preserve marquee content, typography, gold treatment, continuous right-to-left motion, and seamless loop.
 - [x] Verify the Experience content finishes before the marquee across desktop and mobile.
+
+## Final organisation-marquee relocation
+
+- [x] Remove the existing organisation marquee from Selected Experience.
+- [x] Place the unchanged marquee after the complete Let’s Talk section and immediately before the footer.
+- [x] Verify the final page order, uninterrupted marquee motion, and mobile responsiveness.
+
+## Final hero sizing and divider-clearance correction
+
+- [x] Reduce the actual rendered official TLCG monogram by approximately half while retaining its dominance over the text.
+- [x] Position the full company text block close to the monogram with clear space above the hero gold divider.
+- [x] Preserve the supplied monogram asset, hero image, navigation, typography, gold treatment, hero content, and all other sections.
+- [x] Verify the normal desktop render for scale, alignment, and uninterrupted divider clearance.

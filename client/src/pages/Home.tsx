@@ -264,15 +264,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="experience-marquee" data-reveal aria-label="Selected TLCG experience organisations">
-          <div className="experience-marquee-track">
-            {[...experienceItems, ...experienceItems].map((item, index) => (
-              <span className="experience-marquee-item" key={`${item.name}-${index}`}>
-                {item.name}<i aria-hidden="true">•</i>
-              </span>
-            ))}
-          </div>
-        </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
       </section>
 
@@ -392,6 +383,16 @@ export default function Home() {
           <button className="submit-link" type="submit">Send enquiry <ArrowUpRight size={20} strokeWidth={1.3} /></button>
         </form>
       </section>
+
+      <div className="experience-marquee" data-reveal aria-label="Selected TLCG experience organisations">
+        <div className="experience-marquee-track">
+          {[...experienceItems, ...experienceItems].map((item, index) => (
+            <span className="experience-marquee-item" key={`${item.name}-${index}`}>
+              {item.name}<i aria-hidden="true">•</i>
+            </span>
+          ))}
+        </div>
+      </div>
 
       <footer className="site-footer">
         <a className="footer-logo" href="#home" aria-label="TLCG home"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></a>
