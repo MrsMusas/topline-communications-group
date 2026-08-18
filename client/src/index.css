@@ -129,12 +129,15 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 
 .testimonials { display: grid; grid-template-columns: minmax(17rem, 0.75fr) minmax(31rem, 1.25fr); gap: clamp(3rem, 8vw, 10rem); align-items: start; padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
 .testimonials-heading h2 { margin: 1.2rem 0 2.2rem; }
-.testimonial-placeholders { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(19, 33, 24, 0.28); }
-.testimonial-placeholder { min-height: 15.5rem; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.75rem; padding: 1.5rem 1.25rem; border-right: 1px solid rgba(19, 33, 24, 0.2); border-bottom: 1px solid rgba(19, 33, 24, 0.28); }
-.testimonial-placeholder:last-child { border-right: 0; }
-.testimonial-placeholder > span { color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; }
-.testimonial-placeholder p { margin: 0; color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.45rem, 2.1vw, 2rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.03; }
-.testimonial-placeholder small { color: rgba(19, 33, 24, 0.58); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.client-statement-list { border-top: 1px solid rgba(19, 33, 24, 0.28); }
+.client-statement { border-bottom: 1px solid rgba(19, 33, 24, 0.24); }
+.client-statement button { display: grid; grid-template-columns: 2.65rem minmax(10rem, 0.78fr) minmax(15rem, 1.22fr); width: 100%; gap: 0.35rem 1.25rem; padding: 1.25rem 0 1.2rem; background: transparent; color: var(--ink); text-align: left; opacity: 0.46; transition: opacity 220ms cubic-bezier(0.23, 1, 0.32, 1); }
+.client-statement button:hover, .client-statement button:focus-visible, .client-statement.is-selected button { opacity: 1; }
+.client-statement-number { padding-top: 0.62rem; color: var(--gold); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; }
+.client-statement h3 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.75rem, 2.15vw, 2.45rem); font-weight: 500; letter-spacing: -0.04em; line-height: 0.98; }
+.client-statement-summary { margin: 0; color: rgba(19, 33, 24, 0.86); font-size: clamp(1.03rem, 1.2vw, 1.2rem); font-weight: 600; line-height: 1.42; }
+.client-statement-detail { grid-column: 2 / -1; max-height: 0; margin: 0; overflow: hidden; color: rgba(19, 33, 24, 0.74); font-size: 1.02rem; font-weight: 500; line-height: 1.58; opacity: 0; transform: translateY(-0.3rem); transition: max-height 260ms cubic-bezier(0.23, 1, 0.32, 1), opacity 220ms cubic-bezier(0.23, 1, 0.32, 1), transform 220ms cubic-bezier(0.23, 1, 0.32, 1); }
+.client-statement.is-selected .client-statement-detail { max-height: 9rem; padding-top: 0.45rem; opacity: 1; transform: translateY(0); }
 
 .approach { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 7rem); padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8.3vw, 8rem); }
 .approach-copy { max-width: 33rem; }
@@ -314,9 +317,11 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .contact-intro { border-right: 0; border-bottom: 1px solid rgba(212, 175, 55, 0.55); padding: 0 0 2.5rem; }
   .contact-copy { margin: -1.7rem 0 2rem; }
   .testimonials { grid-template-columns: 1fr; gap: 2.75rem; padding: 5rem 1.25rem; }
-  .testimonial-placeholders { grid-template-columns: 1fr; }
-  .testimonial-placeholder, .testimonial-placeholder:last-child { min-height: 10rem; border-right: 0; padding: 1.35rem 0; }
-  .testimonial-placeholder + .testimonial-placeholder { border-top: 1px solid rgba(19, 33, 24, 0.2); }
+  .client-statement button { grid-template-columns: 2.35rem minmax(0, 1fr); gap: 0.45rem 0.8rem; padding: 1.1rem 0; }
+  .client-statement-number { padding-top: 0.4rem; }
+  .client-statement h3 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+  .client-statement-summary { grid-column: 2; font-size: 1.06rem; }
+  .client-statement-detail { grid-column: 2; font-size: 1.02rem; }
   .closing-statement { min-height: 0; padding: 5.5rem 1.25rem 6rem; }
   .closing-statement .eyebrow { margin-bottom: 1.4rem; }
   .closing-statement .gold-rule { margin-bottom: 1.85rem; }

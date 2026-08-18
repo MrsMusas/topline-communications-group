@@ -169,3 +169,11 @@
 - [x] Add a centred dedicated editorial statement section directly after Let’s Talk and directly before the unchanged organisation marquee.
 - [x] Apply the existing ivory, deep-green, and gold italic TLCG treatment while preserving the approved marquee design and animation.
 - [x] Verify desktop and mobile spacing, visibility, and final page order.
+
+## Final client-statements and policy pass
+
+- [x] Replace Beta Testimonials placeholders with the supplied five brand-perspective experience statements, without fabricating client reviews, quotes, names, or outcomes.
+- [x] Inspect the implemented contact, analytics, cookie, local-storage, and tracking behavior before making policy claims.
+- [x] Finalise the Privacy Policy conservatively for a South African business, including the requested POPIA-aware scope and a pre-launch legal-review disclaimer.
+- [x] Finalise the Cookie Policy based only on implemented technologies, retaining clear footer policy links and Back to Top.
+- [x] Verify desktop and mobile presentation, policy routes, contact details, tracking claims, and production build.

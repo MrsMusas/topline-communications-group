@@ -38,6 +38,14 @@ const experienceItems = [
   { name: "Avroy Shlain", descriptor: "True To You" },
 ];
 
+const clientExperienceStatements = [
+  { number: "01", title: "Clarity", summary: "A clearer path from challenge to action.", detail: "TLCG helps organisations make sense of complex marketing, communications and engagement challenges, turning insight into practical direction." },
+  { number: "02", title: "Collaboration", summary: "A partner who works alongside your team.", detail: "We work collaboratively, becoming an extension of your team and bringing strategic thinking, practical expertise and trusted delivery together." },
+  { number: "03", title: "Confidence", summary: "Confidence in the work and the way it gets delivered.", detail: "From strategy through execution, TLCG brings structure, experience and attention to detail so organisations can move forward with confidence." },
+  { number: "04", title: "Connection", summary: "Work that connects people, messages and moments.", detail: "We connect strategy, communications, marketing and experiences so that every element works together and creates a stronger overall impact." },
+  { number: "05", title: "Impact", summary: "Meaningful work designed to make a difference.", detail: "Every engagement is shaped around clear objectives, practical outcomes and work that creates lasting value for the organisation." },
+];
+
 const differenceItems = [
   { number: "01", title: "Strategic Thinking", detail: "We align marketing and communication strategies with business objectives." },
   { number: "02", title: "Measurable Results", detail: "Every recommendation is designed to create meaningful business impact." },
@@ -110,6 +118,7 @@ export default function Home() {
   const [openApproachStep, setOpenApproachStep] = useState<number | null>(null);
   const [selectedCapability, setSelectedCapability] = useState(0);
   const [selectedDifference, setSelectedDifference] = useState<number | null>(null);
+  const [selectedClientStatement, setSelectedClientStatement] = useState(0);
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -272,14 +281,27 @@ export default function Home() {
           <h2 id="testimonials-title">What Our<br /><em>Clients Say.</em></h2>
           <p className="section-deck">Trusted partnerships. Meaningful work. Lasting impact.</p>
         </div>
-        <div className="testimonial-placeholders" data-reveal aria-label="Approved beta testimonial placeholders">
-          {["01", "02", "03"].map((number) => (
-            <article className="testimonial-placeholder" key={number}>
-              <span>{number}</span>
-              <p>Approved beta/client feedback placeholder</p>
-              <small>To be populated before launch</small>
-            </article>
-          ))}
+        <div className="client-statement-list" data-reveal aria-label="The experience of working with TLCG">
+          {clientExperienceStatements.map((statement, index) => {
+            const isSelected = selectedClientStatement === index;
+            return (
+              <article className={`client-statement ${isSelected ? "is-selected" : ""}`} key={statement.number}>
+                <button
+                  type="button"
+                  onClick={() => setSelectedClientStatement(index)}
+                  onMouseEnter={() => setSelectedClientStatement(index)}
+                  onFocus={() => setSelectedClientStatement(index)}
+                  aria-pressed={isSelected}
+                  aria-label={`Highlight ${statement.title}`}
+                >
+                  <span className="client-statement-number">{statement.number}</span>
+                  <h3>{statement.title}</h3>
+                  <p className="client-statement-summary">{statement.summary}</p>
+                  <p className="client-statement-detail">{statement.detail}</p>
+                </button>
+              </article>
+            );
+          })}
         </div>
       </section>
 
