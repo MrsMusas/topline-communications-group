@@ -177,3 +177,10 @@
 - [x] Finalise the Privacy Policy conservatively for a South African business, including the requested POPIA-aware scope and a pre-launch legal-review disclaimer.
 - [x] Finalise the Cookie Policy based only on implemented technologies, retaining clear footer policy links and Back to Top.
 - [x] Verify desktop and mobile presentation, policy routes, contact details, tracking claims, and production build.
+
+## Curated real-world media integration
+
+- [x] Inspect the approved video and Malaysia event-photography package, then select only the strongest assets for the Experience narrative.
+- [x] Keep the approved Hero imagery, layout, typography, navigation, palette, section structure, and organisation list unchanged.
+- [x] Add selected TLCG-owned media as restrained cinematic loops and editorial visual evidence below the Hero, without galleries, player controls, invented project claims, or heavy loading behavior.
+- [x] Verify desktop and mobile cropping, visibility, performance-conscious media behavior, and absence of layout shifts or overflow.
