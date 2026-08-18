@@ -9,6 +9,13 @@ const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
 const HERO_IMAGE = "/manus-storage/tlcg-hero-verdant_a29c23f4.jpg";
 const EXPERIENCE_IMAGE = "/manus-storage/tlcg-experience-human_978593af.jpg";
 const APPROACH_IMAGE = "/manus-storage/tlcg-approach-craft_ecb4a89e.jpg";
+const EXPERIENCE_EVENT_STILLS = {
+  scale: "/manus-storage/tlcg-malaysia-event-scale_be9e1a35.webp",
+  production: "/manus-storage/tlcg-malaysia-event-production_0bda992c.webp",
+  arrival: "/manus-storage/tlcg-malaysia-venue-arrival_0b897b23.webp",
+  installation: "/manus-storage/tlcg-malaysia-outdoor-installation_09175222.webp",
+  tablescape: "/manus-storage/tlcg-malaysia-tablescape-detail_a92bce09.webp",
+};
 
 const navItems = [
   ["Capabilities", "capabilities"],
@@ -273,6 +280,25 @@ export default function Home() {
           </div>
         </div>
         <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
+        <div className="experience-stills" aria-label="Selected TLCG event photography">
+          <div className="experience-stills-grid" data-reveal>
+            <figure className="experience-still experience-still-scale">
+              <img src={EXPERIENCE_EVENT_STILLS.scale} alt="Full TLCG event room prepared for guests" loading="lazy" />
+            </figure>
+            <figure className="experience-still experience-still-arrival">
+              <img src={EXPERIENCE_EVENT_STILLS.arrival} alt="TLCG event venue arrival setting" loading="lazy" />
+            </figure>
+            <figure className="experience-still experience-still-production">
+              <img src={EXPERIENCE_EVENT_STILLS.production} alt="TLCG event production and gifting preparations" loading="lazy" />
+            </figure>
+            <figure className="experience-still experience-still-installation">
+              <img src={EXPERIENCE_EVENT_STILLS.installation} alt="TLCG outdoor event installation" loading="lazy" />
+            </figure>
+            <figure className="experience-still experience-still-tablescape">
+              <img src={EXPERIENCE_EVENT_STILLS.tablescape} alt="TLCG event tablescape detail" loading="lazy" />
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section id="testimonials" className="testimonials chapter section-light" aria-labelledby="testimonials-title">

@@ -204,3 +204,10 @@
 - [x] Permanently remove the Victoria Falls aerial loop and both selected Malaysia stills from TLCG website code, including rendering logic, asset references, and clearance-gate implementation.
 - [x] Remove the no-longer-needed media-clearance implementation note and restore the approved media-free Selected Experience layout without changing other approved content.
 - [x] Verify the production build, desktop, and mobile presentation contain no broken media references, empty media containers, or unusual Experience spacing.
+
+## Selected Malaysia event-photography integration
+
+- [x] Inspect only the newly approved package of eight Malaysia stills and select the strongest three to five for TLCG’s Experience narrative.
+- [x] Use no video, stock, AI-generated, or other photography; preserve the approved Hero and all named existing sections unchanged.
+- [x] Prepare the selected stills for web performance and integrate them as a restrained editorial composition rather than a gallery, carousel, or equal-thumbnail grid.
+- [x] Verify desktop and mobile cropping, no overflow or layout shifts, Hero integrity, no video rendering, and a successful production build.

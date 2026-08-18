@@ -120,6 +120,15 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 .experience-note { max-width: 25rem; margin-top: 2.5rem; }
 .experience-note p { margin: 1rem 0 0; color: rgba(241, 238, 230, 0.78); font-size: 1.08rem; line-height: 1.68; }
 .experience-caption { position: absolute; z-index: 2; right: clamp(1.25rem, 4vw, 4.5rem); top: 7rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--gold-light); font-size: 0.8rem; letter-spacing: 0.17em; text-transform: uppercase; text-align: right; }
+.experience-stills { position: relative; z-index: 3; width: 100%; background: var(--ivory); }
+.experience-stills-grid { display: grid; grid-template-columns: minmax(12rem, 1.15fr) minmax(10rem, 0.9fr) minmax(10rem, 0.9fr); grid-template-rows: repeat(3, minmax(9rem, 1fr)); grid-template-areas: "scale scale arrival" "scale scale production" "installation tablescape tablescape"; gap: clamp(0.65rem, 1.4vw, 1.4rem); min-height: clamp(34rem, 45vw, 48rem); padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 8.3vw, 8rem); }
+.experience-still { margin: 0; overflow: hidden; background: var(--verdant-deep); }
+.experience-still-scale { grid-area: scale; }
+.experience-still-arrival { grid-area: arrival; }
+.experience-still-production { grid-area: production; }
+.experience-still-installation { grid-area: installation; }
+.experience-still-tablescape { grid-area: tablescape; }
+.experience-still img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.82) contrast(1.02); }
 .experience-marquee { position: relative; z-index: 1; width: 100%; overflow: hidden; border-top: 1px solid rgba(212, 175, 55, 0.58); border-bottom: 1px solid rgba(212, 175, 55, 0.38); background: rgba(8, 20, 15, 0.42); }
 .experience-marquee-track { display: flex; width: max-content; min-width: 100%; align-items: center; animation: experience-marquee 42s linear infinite; }
 .experience-marquee:hover .experience-marquee-track { animation-play-state: paused; }
@@ -289,6 +298,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
   .experience-note p { font-size: 1.08rem; }
   .experience-marquee-item { gap: 1.75rem; padding: 1.1rem 0.9rem; font-size: 1.3rem; }
   .experience-caption { top: 7rem; right: 1.25rem; }
+  .experience-stills-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 16rem 12rem 14rem; grid-template-areas: "scale scale" "production arrival" "installation tablescape"; min-height: 0; gap: 0.75rem; padding: 4rem 1.25rem; }
   .approach { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.25rem; }
   .approach-visual { min-height: 19rem; margin-top: 0; }
   .approach-visual img { min-height: 19rem; }
