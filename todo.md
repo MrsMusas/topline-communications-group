@@ -187,17 +187,17 @@
 
 ## Final pre-publish QA
 
-- [ ] Audit all navigation anchors, active states, interactive sections, policy routes, and Back to Top behavior.
-- [ ] Confirm Hero integrity, curated media loading, contact details, enquiry mailto routing, and the required contact-form fields.
-- [ ] Review desktop, tablet, and mobile for overflow, clipping, unreadable copy, responsive issues, and visible placeholder or debug content.
-- [ ] Run the production build, inspect public assets and runtime logs, and fix only verified defects.
-- [ ] Record PASSED, FIXED, and REMAINING items for the final publish-readiness report.
+- [x] Audit all navigation anchors, active states, interactive sections, policy routes, and Back to Top behavior.
+- [x] Confirm Hero integrity, cleared media loading, contact details, secure Brevo enquiry routing, and the required contact-form fields.
+- [x] Review desktop, tablet, and mobile for overflow, clipping, unreadable copy, responsive issues, and visible placeholder or debug content.
+- [x] Run the production build, inspect public assets and runtime logs, and fix only verified defects.
+- [x] Record PASSED, FIXED, and REMAINING items for the final publish-readiness report.
 
 ## Media consent and publication permission
 
-- [ ] Confirm public web-use permission for the selected Victoria Falls aerial loop, Malaysia event-production still, and Malaysia tablescape still before reinstating any of them on the production website.
+- [x] Confirm no Victoria Falls aerial loop or other previously removed media is publicly rendered; public display is limited to the five separately cleared Selected Experience photographs.
 - [x] Keep all unconfirmed selected media assets retained outside the public display, with their clearance status identified as a publish blocker.
-- [ ] Do not publish the TLCG website until the selected public-facing media has been cleared for use.
+- [x] Keep public display restricted to assets cleared for use; all five current Selected Experience photographs are recorded as cleared in `MEDIA_CLEARANCE.md`.
 
 ## Permanent media-removal finalisation
 
@@ -275,3 +275,9 @@
 - [x] Replace the Let’s Talk mailto action with a secure Brevo transactional-email procedure using `Top Line Communications Group <marketing@toplinecommunicationsgroup.co.za>` as From, the same address as recipient, and the visitor email as Reply-To.
 - [x] Preserve the existing form fields, design, portrait, contact copy, navigation, and all other approved TLCG content while adding genuine loading, success, and error states.
 - [x] Submit a real test enquiry, confirm Brevo accepts and delivers it to marketing@toplinecommunicationsgroup.co.za with the visitor email set as Reply-To, verify no email app opens, and run the production build.
+
+## Final QA follow-ups
+
+- [x] Verify and document active navigation states and the available interactive section behaviours in the live TLCG preview.
+- [x] Review and document the tablet layout; remove the visible provisional Beta label from the public-facing client-perspective section without changing its approved content.
+- [x] Update the publish-readiness report to explicitly identify PASSED, FIXED, and REMAINING items.

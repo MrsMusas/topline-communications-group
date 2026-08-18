@@ -298,7 +298,7 @@ export default function Home() {
 
       <section id="testimonials" className="testimonials chapter section-light" aria-labelledby="testimonials-title">
         <div className="testimonials-heading" data-reveal>
-          <span className="eyebrow">03 — Beta Testimonials</span>
+          <span className="eyebrow">03 — Perspectives</span>
           <h2 id="testimonials-title">What Our<br /><em>Clients Say.</em></h2>
           <p className="section-deck">Trusted partnerships. Meaningful work. Lasting impact.</p>
         </div>
