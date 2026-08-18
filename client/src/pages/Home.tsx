@@ -72,31 +72,31 @@ const approachSteps = [
     number: "01",
     name: "Discover",
     summary: "Understand your business, audience and objectives.",
-    detail: "Understand your business, audience and objectives.",
+    detail: "We begin by listening closely. We dig beneath the surface to understand your goals, your challenges, your audience and the context in which you operate. This gives us clarity and ensures every decision is intentional.",
   },
   {
     number: "02",
     name: "Strategise",
     summary: "Develop tailored strategies and solutions.",
-    detail: "Develop tailored strategies and solutions.",
+    detail: "We turn insight into direction. We develop tailored strategies and solutions that align with your objectives and are built to deliver meaningful impact.",
   },
   {
     number: "03",
     name: "Execute",
     summary: "Deliver with excellence and precision.",
-    detail: "Deliver with excellence and precision.",
+    detail: "We bring the plan to life with excellence and precision. Our experienced team and trusted partners deliver seamlessly, on time and at the highest standard.",
   },
   {
     number: "04",
     name: "Measure",
     summary: "Evaluate performance against objectives.",
-    detail: "Evaluate performance against objectives.",
+    detail: "We evaluate performance against objectives using clear metrics and real insights. We track what matters to understand what’s working.",
   },
   {
     number: "05",
     name: "Optimise",
     summary: "Improve through insight and innovation.",
-    detail: "Improve through insight and innovation.",
+    detail: "We refine, learn and improve. Through insight and innovation, we enhance outcomes and create greater impact over time.",
   },
 ];
 

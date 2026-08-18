@@ -142,3 +142,9 @@
 - [x] Add the approved Why TLCG supporting label, Let’s Talk supporting paragraphs, and closing TLCG statement within the existing editorial structure.
 - [x] Preserve all existing muted-to-highlighted interactions, marquee behavior, logo treatment, and approved design without inventing testimonials, results, or case studies.
 - [x] Verify public branding contains no “(Pty) Ltd” and confirm copy is readable across desktop and mobile.
+
+## Approach teaser and detail refinement
+
+- [x] Present each Approach teaser only once in its default row.
+- [x] Add the supplied distinct detailed explanation to each selected Approach row with one-at-a-time expansion behavior.
+- [x] Preserve the approved five-row layout, editorial styling, and responsive interaction without changing any other section.
