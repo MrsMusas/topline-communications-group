@@ -162,3 +162,10 @@
 - [x] Create and upload a 1200×630 TLCG Open Graph image with the approved deep-green, gold, ivory, and editorial lockup treatment.
 - [x] Add canonical, description, Open Graph, Twitter/X, and favicon metadata using the intended production TLCG domain rather than a Manus URL.
 - [x] Verify compiled metadata, favicon build outputs, public asset responses, production build, and the unchanged website presentation.
+
+## Closing brand-statement relocation
+
+- [x] Remove the existing closing TLCG brand statement from the footer without redesigning the remaining footer information.
+- [x] Add a centred dedicated editorial statement section directly after Let’s Talk and directly before the unchanged organisation marquee.
+- [x] Apply the existing ivory, deep-green, and gold italic TLCG treatment while preserving the approved marquee design and animation.
+- [x] Verify desktop and mobile spacing, visibility, and final page order.

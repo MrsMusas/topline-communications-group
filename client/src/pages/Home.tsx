@@ -385,6 +385,14 @@ export default function Home() {
         </form>
       </section>
 
+      <section className="closing-statement section-light" aria-labelledby="closing-statement-title">
+        <div className="closing-statement-inner" data-reveal>
+          <span className="eyebrow">Top Line Communications Group</span>
+          <span className="gold-rule" />
+          <blockquote id="closing-statement-title">We don&apos;t just execute marketing. We help organizations communicate with clarity, build brands with purpose and create experiences that people remember.<br /><span>Because every great business deserves <em>a story worth telling.</em></span></blockquote>
+        </div>
+      </section>
+
       <div className="experience-marquee" data-reveal aria-label="Selected TLCG experience organisations">
         <div className="experience-marquee-track">
           {[...experienceItems, ...experienceItems].map((item, index) => (
@@ -397,7 +405,6 @@ export default function Home() {
 
       <footer className="site-footer">
         <a className="footer-logo" href="#home" aria-label="TLCG home"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></a>
-        <div className="footer-statement"><span className="gold-rule" /><div><p>Top Line Communications Group</p><blockquote>We don&apos;t just execute marketing. We help organizations communicate with clarity, build brands with purpose and create experiences that people remember. Because every great business deserves a story worth telling.</blockquote></div></div>
         <div className="footer-meta"><span>© {new Date().getFullYear()} TLCG</span><span className="footer-policies"><a href="/privacy-policy">Privacy Policy</a><i aria-hidden="true">|</i><a href="/cookie-policy">Cookie Policy</a></span><a href="#home">Back to top <ArrowUpRight size={14} strokeWidth={1.3} /></a></div>
       </footer>
     </main>
