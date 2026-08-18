@@ -135,3 +135,10 @@
 - [x] Keep the approved TLCG brand lockup intact while fixing its scroll stacking and separation.
 - [x] Prevent all page content from appearing beneath, through, or above the header lockup during scrolling.
 - [x] Verify clean header behavior at the top of the page and throughout the first content transition.
+
+## Final Executive Summary copy population
+
+- [x] Align public-facing copy across Hero, Capabilities, Experience, Approach, Why TLCG, expertise, industries, and Let’s Talk with the supplied final brief.
+- [x] Add the approved Why TLCG supporting label, Let’s Talk supporting paragraphs, and closing TLCG statement within the existing editorial structure.
+- [x] Preserve all existing muted-to-highlighted interactions, marquee behavior, logo treatment, and approved design without inventing testimonials, results, or case studies.
+- [x] Verify public branding contains no “(Pty) Ltd” and confirm copy is readable across desktop and mobile.

@@ -71,7 +71,7 @@ const approachSteps = [
   {
     number: "01",
     name: "Discover",
-    summary: "Understand the business, audience and objectives.",
+    summary: "Understand your business, audience and objectives.",
     detail: "Understand your business, audience and objectives.",
   },
   {
@@ -323,6 +323,7 @@ export default function Home() {
         <div className="why-frame" data-reveal>
           <span className="eyebrow eyebrow-light">05 — Why TLCG</span>
           <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
+          <p className="why-supporting-label">Why Organizations Choose Us</p>
           <div className="why-difference-list">
             {differenceItems.map((item, index) => {
               const isSelected = selectedDifference === index;
@@ -365,7 +366,8 @@ export default function Home() {
       <section id="talk" className="contact chapter section-light" aria-labelledby="contact-title">
         <div className="contact-intro" data-reveal>
           <span className="eyebrow">06 — Let’s Talk</span>
-          <h2 id="contact-title">Let’s Start The<br /><em>Conversation.</em></h2>
+          <h2 id="contact-title">Let’s Start the<br /><em>Conversation.</em></h2>
+          <div className="contact-copy"><p>Whether you&apos;re launching a new brand, planning a high-impact event, strengthening stakeholder engagement or modernizing your marketing strategy, we&apos;re ready to partner with you.</p><p>We believe the best results come from strong relationships, strategic thinking and flawless execution. We&apos;d welcome the opportunity to learn more about your organization and explore how we can help you achieve your objectives.</p></div>
           <address className="contact-details">
             <div className="contact-detail contact-person"><UserRound size={18} strokeWidth={1.35} /><div><strong>Hellery Musas</strong><span>Managing Director | Principal Consultant</span><span>Top Line Communications Group</span></div></div>
             <div className="contact-detail"><Phone size={18} strokeWidth={1.35} /><a href="tel:+27837626871">+27 83 762 6871</a></div>
@@ -396,7 +398,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <a className="footer-logo" href="#home" aria-label="TLCG home"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></a>
-        <div className="footer-statement"><span className="gold-rule" /> <p>Top Line Communications Group</p></div>
+        <div className="footer-statement"><span className="gold-rule" /><div><p>Top Line Communications Group</p><blockquote>We don&apos;t just execute marketing. We help organizations communicate with clarity, build brands with purpose and create experiences that people remember. Because every great business deserves a story worth telling.</blockquote></div></div>
         <div className="footer-meta"><span>© {new Date().getFullYear()} TLCG</span><span className="footer-policies"><a href="/privacy-policy">Privacy Policy</a><i aria-hidden="true">|</i><a href="/cookie-policy">Cookie Policy</a></span><a href="#home">Back to top <ArrowUpRight size={14} strokeWidth={1.3} /></a></div>
       </footer>
     </main>
