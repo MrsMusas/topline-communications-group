@@ -46,8 +46,9 @@ button { border: 0; }
 .gold-rule { display: inline-block; width: 3.15rem; height: 1px; background: var(--gold); }
 .chapter .eyebrow::after { content: ""; display: inline-block; width: 2.5rem; height: 1px; margin-left: 0.85rem; background: currentColor; opacity: 0.72; transform: translateY(-0.05rem); }
 
-.site-header { position: fixed; z-index: 40; top: 0; left: 0; width: 100%; display: flex; align-items: flex-start; justify-content: space-between; padding: 1.2rem clamp(1.25rem, 4vw, 4.5rem); transition: background 220ms cubic-bezier(0.23, 1, 0.32, 1), border-color 220ms cubic-bezier(0.23, 1, 0.32, 1), padding 220ms cubic-bezier(0.23, 1, 0.32, 1); border-bottom: 1px solid transparent; }
-.site-header.is-scrolled { padding-top: 0.75rem; padding-bottom: 0.75rem; background: rgba(8, 20, 15, 0.92); backdrop-filter: blur(14px); border-color: rgba(212, 175, 55, 0.25); }
+.site-header { position: fixed; z-index: 40; isolation: isolate; top: 0; left: 0; width: 100%; min-height: clamp(9rem, 10vw, 10.5rem); display: flex; align-items: flex-start; justify-content: space-between; padding: 1.2rem clamp(1.25rem, 4vw, 4.5rem); transition: background 220ms cubic-bezier(0.23, 1, 0.32, 1), border-color 220ms cubic-bezier(0.23, 1, 0.32, 1), padding 220ms cubic-bezier(0.23, 1, 0.32, 1); border-bottom: 1px solid transparent; }
+.site-header.is-scrolled { padding-top: 0.75rem; padding-bottom: 0.75rem; background: #08140f; box-shadow: 0 0.9rem 1.8rem rgba(5, 16, 11, 0.22); border-color: rgba(212, 175, 55, 0.25); }
+.site-header.is-scrolled::after { content: ""; position: absolute; z-index: -1; right: 0; bottom: -1.15rem; left: 0; height: 1.2rem; pointer-events: none; background: linear-gradient(to bottom, #08140f 0%, rgba(8, 20, 15, 0) 100%); }
 .brand-lockup { position: relative; z-index: 2; display: flex; align-items: flex-start; gap: clamp(0.38rem, 0.55vw, 0.56rem); padding-bottom: 0.7rem; color: var(--ivory); text-decoration: none; transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
 .brand-lockup:hover { transform: translateY(-2px); }
 .brand-mark { display: block; width: clamp(4.1rem, 5.5vw, 5.75rem); height: clamp(4.6rem, 6vw, 6.15rem); flex: 0 0 auto; overflow: hidden; }
@@ -237,7 +238,7 @@ h2 { font-size: clamp(3.7rem, 6.5vw, 7.3rem); margin-bottom: 0; }
 
 @media (max-width: 850px) {
   .desktop-nav { display: none; }
-  .site-header { padding: 0.9rem 1.25rem; }
+  .site-header { min-height: 6.8rem; padding: 0.9rem 1.25rem; }
   .site-header { align-items: center; }
   .brand-lockup { align-items: flex-start; gap: 0.3rem; padding-bottom: 0.6rem; }
   .brand-mark { width: clamp(3rem, 9.5vw, 3.75rem); height: clamp(3.35rem, 10.5vw, 4.2rem); }

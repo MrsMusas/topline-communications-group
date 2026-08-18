@@ -129,3 +129,9 @@
 - [x] Position the full company text block close to the monogram with clear space above the hero gold divider.
 - [x] Preserve the supplied monogram asset, hero image, navigation, typography, gold treatment, hero content, and all other sections.
 - [x] Verify the normal desktop render for scale, alignment, and uninterrupted divider clearance.
+
+## Header scroll-overlap correction
+
+- [x] Keep the approved TLCG brand lockup intact while fixing its scroll stacking and separation.
+- [x] Prevent all page content from appearing beneath, through, or above the header lockup during scrolling.
+- [x] Verify clean header behavior at the top of the page and throughout the first content transition.
