@@ -148,3 +148,10 @@
 - [x] Present each Approach teaser only once in its default row.
 - [x] Add the supplied distinct detailed explanation to each selected Approach row with one-at-a-time expansion behavior.
 - [x] Preserve the approved five-row layout, editorial styling, and responsive interaction without changing any other section.
+
+## Global supporting-copy readability and hero cleanup
+
+- [x] Increase secondary, explanatory, and supporting text to a comfortable reading scale without changing editorial display headings.
+- [x] Remove only the duplicate Strategic Marketing • Communications • Events line above the hero headline.
+- [x] Preserve the brand-lockup descriptor, approved hierarchy, colours, layout, and animations.
+- [x] Verify global readability and responsive wrapping across desktop, tablet, and mobile.

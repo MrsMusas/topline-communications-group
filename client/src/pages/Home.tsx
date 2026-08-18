@@ -203,7 +203,6 @@ export default function Home() {
         <div className="hero-noise" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-title-wrap" data-reveal>
-            <p className="hero-kicker">Strategic marketing · communications · events</p>
             <h1 id="hero-title" className="home-positioning">Helping organizations<br />build stronger brands,<br /><em>communicate with confidence,</em><br />and deliver exceptional experiences.</h1>
           </div>
           <div className="hero-foot" data-reveal>
