@@ -8,7 +8,7 @@ import { FormEvent, useEffect, useState } from "react";
 const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
 const HERO_IMAGE = "/manus-storage/tlcg-hero-verdant_a29c23f4.jpg";
 const EXPERIENCE_IMAGE = "/manus-storage/tlcg-experience-human_978593af.jpg";
-const APPROACH_IMAGE = "/manus-storage/tlcg-approach-craft_ecb4a89e.jpg";
+const APPROACH_IMAGE = "/manus-storage/pasted_file_PbUGqO_image_540cd03e.png";
 const EXPERIENCE_EVENT_STILLS = {
   scale: "/manus-storage/tlcg-malaysia-event-scale_be9e1a35.webp",
   production: "/manus-storage/tlcg-malaysia-event-production_0bda992c.webp",

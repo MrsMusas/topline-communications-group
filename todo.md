@@ -224,3 +224,9 @@
 - [x] Fix only the verified visibility defect so all five approved photographs appear within Selected Experience in the existing asymmetric editorial composition.
 - [x] Manually scroll the rendered desktop and mobile previews to confirm all five photographs are visible, in-section, and free of broken-image, overlap, or viewport issues.
 - [x] Re-run the production build and report the rendered location of each cleared photograph.
+
+## Approach image replacement
+
+- [x] Upload and use the supplied approved Approach image unchanged, replacing only the current Approach section image reference.
+- [x] Preserve the existing Approach text, accordion interaction, image footprint, responsive layout, and every other approved section unchanged.
+- [x] Verify the supplied image visibly renders at the existing Approach image position on desktop and mobile, with no overlap, distortion, or layout shift, then run the production build.
