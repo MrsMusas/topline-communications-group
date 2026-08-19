@@ -13,8 +13,9 @@ describe("TLCG section routes", () => {
     ]);
   });
 
-  it("keeps the requested homepage section order and resolves all non-home deep links", () => {
+  it("keeps the requested homepage section order and resolves the root and all non-home deep links", () => {
     expect(homepageSectionOrder).toEqual(["about-tlcg", "capabilities", "experience", "approach", "why-tlcg", "talk"]);
+    expect(sectionIdForPath("/")).toBe("about-tlcg");
     expect(sectionIdForPath("/capabilities")).toBe("capabilities");
     expect(sectionIdForPath("/experience")).toBe("experience");
     expect(sectionIdForPath("/approach")).toBe("approach");

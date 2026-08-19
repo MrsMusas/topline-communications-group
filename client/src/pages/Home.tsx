@@ -134,8 +134,18 @@ export default function Home() {
 
   useEffect(() => {
     const pendingTarget = pendingNavigationTarget.current;
-    const sectionId = pendingTarget ?? sectionIdForPath(location);
     pendingNavigationTarget.current = null;
+
+    // The root route starts at the approved About TLCG hero. Navigation to the
+    // About section still uses a pending target and retains its existing scroll.
+    if (!pendingTarget && location === "/") {
+      const frame = window.requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    const sectionId = pendingTarget ?? sectionIdForPath(location);
     if (!sectionId) return;
 
     let secondFrame: number | undefined;

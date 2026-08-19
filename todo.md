@@ -336,3 +336,17 @@
 - [x] Add a dedicated Vercel `api/enquiry.ts` POST Function that reuses server-side Brevo delivery logic, plus minimal SPA route rewrites that do not intercept `/api/enquiry`.
 - [x] Validate the production build, direct TLCG routes, `/api/enquiry` success and error paths, and existing `/manus-storage` media paths without changing design, content, or approved behaviour.
 - [x] Confirm the existing Vercel `BREVO_API_KEY` is available to Production without viewing or changing its value, verify client code contains no secret, then push the tested fix to private GitHub `main` without deploying or changing DNS, domains, email, or Brevo configuration.
+
+## Production enquiry and initial-position diagnosis
+
+- [x] Inspect actual Vercel Production Function logs and deployed `/api/enquiry` code to identify the exact enquiry failure without exposing or changing credentials, Brevo settings, DNS, domain, email records, or website design.
+- [x] Verify whether the Production Function is invoked, whether its server-only environment variable is available, whether the Brevo call is reached, and whether the response status is captured safely.
+- [x] Diagnose why a fresh visit to `/` opens partway through About TLCG rather than at the approved hero, distinguishing browser restoration from application route/scroll initialisation without changing section order or design.
+- [x] Report the exact causes and minimum production-safe corrections for approval; do not modify or push code before approval.
+
+## Approved production corrections
+
+- [x] Change only the Vercel enquiry Function import to its emitted ESM path and add focused compiled-import coverage without altering the Brevo implementation, settings, credentials, or form behaviour.
+- [x] Change only the root-route initial position to the top of the approved About TLCG hero while preserving all non-root route scrolling, active navigation, section order, content, and design.
+- [ ] Run focused compiled-import, full relevant, production build, endpoint, route, and active-navigation validation before pushing the approved correction to private GitHub `main`.
+- [ ] Verify the Vercel deployment loads `/` at the hero, preserves all section routes and active navigation, loads `/api/enquiry` without a module error, and delivers an authorised real production enquiry through Brevo.

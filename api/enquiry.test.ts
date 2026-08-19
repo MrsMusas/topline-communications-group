@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({ submitWebsiteEnquiry: vi.fn() }));
 
-vi.mock("../server/brevo", () => ({ submitWebsiteEnquiry: mocks.submitWebsiteEnquiry }));
+vi.mock("../server/brevo.js", () => ({ submitWebsiteEnquiry: mocks.submitWebsiteEnquiry }));
 
 import enquiryFunction from "./enquiry";
 

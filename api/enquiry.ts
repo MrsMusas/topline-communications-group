@@ -1,4 +1,4 @@
-import { submitWebsiteEnquiry } from "../server/brevo";
+import { submitWebsiteEnquiry } from "../server/brevo.js";
 
 const jsonHeaders = { "content-type": "application/json; charset=utf-8" };
 
