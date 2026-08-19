@@ -350,3 +350,10 @@
 - [x] Change only the root-route initial position to the top of the approved About TLCG hero while preserving all non-root route scrolling, active navigation, section order, content, and design.
 - [x] Run focused compiled-import, full relevant, production build, endpoint, route, and active-navigation validation before pushing the approved correction to private GitHub `main`.
 - [x] Verify the Vercel deployment loads `/` at the hero, preserves all section routes and active navigation, loads `/api/enquiry` without a module error, and delivers an authorised real production enquiry through Brevo.
+
+## Approved cosmetic label and header separator corrections
+
+- [x] Remove only the numeric prefixes and adjacent separator characters from the six existing section labels, leaving their approved text, order, typography, spacing, accents, routes, and behaviour unchanged.
+- [x] Restore only the thin subtle gold separator attached to the bottom edge of the fixed header so it remains stationary while page content scrolls.
+- [x] Validate desktop and mobile rendering plus relevant type/build checks, without changing functionality, Brevo, DNS, Vercel, domain settings, email records, or any other design element.
+- [x] Save the completed cosmetic correction for review and do not push to GitHub `main` until approval is received.

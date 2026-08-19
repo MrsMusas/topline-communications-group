@@ -262,7 +262,7 @@ export default function Home() {
 
       <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
         <div className="about-intro">
-          <span className="eyebrow">05 — About TLCG</span>
+          <span className="eyebrow">About TLCG</span>
           <h2 id="about-title">Built to make<br /><em>good work matter.</em></h2>
           <span className="gold-rule" />
         </div>
@@ -288,7 +288,7 @@ export default function Home() {
 
       <section id="capabilities" className="capabilities chapter section-light" aria-labelledby="capabilities-title">
         <div className="section-rail" data-reveal>
-          <span className="eyebrow">01 — Capabilities</span>
+          <span className="eyebrow">Capabilities</span>
           <span className="vertical-rule" />
         </div>
         <div className="capabilities-intro" data-reveal>
@@ -325,7 +325,7 @@ export default function Home() {
         <div className="experience-layout">
           <div className="experience-content">
             <div data-reveal>
-              <span className="eyebrow eyebrow-light">02 — Selected Experience</span>
+              <span className="eyebrow eyebrow-light">Selected Experience</span>
               <h2 id="experience-title">Two decades of<br /><em>trusted delivery.</em></h2>
             </div>
             <div className="experience-note" data-reveal>
@@ -384,7 +384,7 @@ export default function Home() {
 
       <section id="approach" className="approach chapter section-light" aria-labelledby="approach-title">
         <div className="approach-copy" data-reveal>
-          <span className="eyebrow">04 — Approach</span>
+          <span className="eyebrow">Approach</span>
           <h2 id="approach-title">A process with<br /><em>purpose in it.</em></h2>
           <p className="section-deck">Every engagement starts with listening, then moves with clear intention from first thought to final audience response.</p>
         </div>
@@ -396,7 +396,7 @@ export default function Home() {
 
       <section id="why-tlcg" className="why chapter" aria-labelledby="why-title">
         <div className="why-frame" data-reveal>
-          <span className="eyebrow eyebrow-light">06 — Why TLCG</span>
+          <span className="eyebrow eyebrow-light">Why TLCG</span>
           <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
           <p className="why-supporting-label">Why Organizations Choose Us</p>
           <div className="why-difference-list">
@@ -440,7 +440,7 @@ export default function Home() {
 
       <section id="talk" className="contact chapter section-light" aria-labelledby="contact-title">
         <div className="contact-intro" data-reveal>
-          <span className="eyebrow">07 — Let’s Talk</span>
+          <span className="eyebrow">Let’s Talk</span>
           <h2 id="contact-title">Let’s Start the<br /><em>Conversation.</em></h2>
           <div className="contact-copy"><p>Whether you&apos;re launching a new brand, planning a high-impact event, strengthening stakeholder engagement or modernizing your marketing strategy, we&apos;re ready to partner with you.</p><p>We believe the best results come from strong relationships, strategic thinking and flawless execution. We&apos;d welcome the opportunity to learn more about your organization and explore how we can help you achieve your objectives.</p></div>
           <address className="contact-details">
