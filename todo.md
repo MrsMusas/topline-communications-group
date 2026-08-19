@@ -310,3 +310,10 @@
 
 - [x] Activate the already-authorised, repository-scoped GitHub connector for the current TLCG task only; do not reconnect, reinstall, uninstall, or change repository permissions.
 - [x] Confirm the connector reports `enabled: true`, then verify repository access, source safety, and the approved `main` branch push without modifying the TLCG website, Vercel, or DNS.
+
+## Section-addressable TLCG routes
+
+- [x] Make `/` begin with About TLCG and then retain the requested section order: Capabilities, Experience, Approach, Why TLCG, and Let’s Talk.
+- [x] Add direct routes for `/capabilities`, `/experience`, `/approach`, `/why-tlcg`, and `/lets-talk`, each positioning the existing continuous page at its corresponding section.
+- [x] Preserve the approved layout, continuous-scroll experience, scroll-based active navigation, Brevo enquiry form, images, typography, colours, responsive styling, and all other existing functionality.
+- [x] Test all six direct routes, route-navigation clicks, and homepage scroll-active navigation; run the production build and retain the current GitHub `main` revision as the rollback point.

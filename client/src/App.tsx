@@ -15,10 +15,15 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/capabilities" component={Home} />
+      <Route path="/experience" component={Home} />
+      <Route path="/approach" component={Home} />
+      <Route path="/why-tlcg" component={Home} />
+      <Route path="/lets-talk" component={Home} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/cookie-policy" component={CookiePolicy} />
       <Route path="/404" component={NotFound} />
+      <Route path="/" component={Home} />
       <Route component={NotFound} />
     </Switch>
   );

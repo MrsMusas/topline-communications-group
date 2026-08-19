@@ -3,7 +3,9 @@
  * protected official logo placement, ivory reading fields, and restrained gold lines.
  */
 import { ArrowDownRight, ArrowUpRight, AtSign, BarChart3, CalendarDays, Globe2, MapPin, Menu, Phone, Presentation, UserRound, X } from "lucide-react";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { useLocation } from "wouter";
+import { navigationSections, sectionIdForPath } from "@/lib/sectionRoutes";
 
 const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
 const HERO_IMAGE = "/manus-storage/tlcg-hero-verdant_a29c23f4.jpg";
@@ -17,15 +19,6 @@ const EXPERIENCE_EVENT_STILLS = [
   { src: "/manus-storage/tlcg-malaysia-outdoor-installation_09175222.webp", alt: "TLCG outdoor event installation" },
   { src: "/manus-storage/tlcg-malaysia-tablescape-detail_a92bce09.webp", alt: "TLCG event tablescape detail" },
 ];
-
-const navItems = [
-  ["Capabilities", "capabilities"],
-  ["Experience", "experience"],
-  ["Approach", "approach"],
-  ["About TLCG", "about-tlcg"],
-  ["Why TLCG", "why-tlcg"],
-  ["Let’s Talk", "talk"],
-] as const;
 
 const capabilityItems = [
   { number: "01", name: "Brand & Strategy", note: "Helping organizations build stronger brands, launch campaigns and improve customer engagement." },
@@ -90,11 +83,12 @@ type EnquiryState =
   | { status: "success" }
   | { status: "error"; message: string };
 
-function scrollToSection(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+function scrollToSection(id: string, behavior: ScrollBehavior = "smooth") {
+  document.getElementById(id)?.scrollIntoView({ behavior, block: "start" });
 }
 
 export default function Home() {
+  const [location, setLocation] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [selectedCapability, setSelectedCapability] = useState<number | null>(null);
@@ -103,6 +97,7 @@ export default function Home() {
   const [selectedAboutBelief, setSelectedAboutBelief] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [enquiryState, setEnquiryState] = useState<EnquiryState>({ status: "idle" });
+  const pendingNavigationTarget = useRef<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -137,10 +132,35 @@ export default function Home() {
     };
   }, []);
 
-  const navigate = (id: string) => {
+  useEffect(() => {
+    const pendingTarget = pendingNavigationTarget.current;
+    const sectionId = pendingTarget ?? sectionIdForPath(location);
+    pendingNavigationTarget.current = null;
+    if (!sectionId) return;
+
+    let secondFrame: number | undefined;
+    const firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(() => {
+        scrollToSection(sectionId, pendingTarget ? "smooth" : "auto");
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      if (secondFrame) window.cancelAnimationFrame(secondFrame);
+    };
+  }, [location]);
+
+  const navigate = (id: string, path: string) => {
     setMenuOpen(false);
     setActiveSection(id);
-    scrollToSection(id);
+    if (location === path) {
+      scrollToSection(id);
+      return;
+    }
+
+    pendingNavigationTarget.current = id;
+    setLocation(path);
   };
 
   const sendEnquiry = async (event: FormEvent<HTMLFormElement>) => {
@@ -183,7 +203,7 @@ export default function Home() {
   return (
     <main id="home" className="site-shell">
       <header className={`site-header ${scrolled || menuOpen ? "is-scrolled" : ""}`}>
-        <a className="brand-lockup" href="#home" onClick={() => setMenuOpen(false)} aria-label="TLCG — return to home">
+        <a className="brand-lockup" href="/" onClick={(event) => { event.preventDefault(); setMenuOpen(false); setLocation("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="TLCG — return to home">
           <span className="brand-mark"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></span>
           <span className="brand-copy">
             <strong>Top Line</strong>
@@ -193,8 +213,8 @@ export default function Home() {
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.map(([label, id]) => (
-            <button className={activeSection === id ? "is-active" : ""} key={id} type="button" onClick={() => navigate(id)}>{label}</button>
+          {navigationSections.map(({ label, id, path }) => (
+            <button className={activeSection === id ? "is-active" : ""} key={id} type="button" onClick={() => navigate(id, path)}>{label}</button>
           ))}
         </nav>
 
@@ -205,8 +225,8 @@ export default function Home() {
 
         <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation">
           <span className="eyebrow">Navigate</span>
-          {navItems.map(([label, id], index) => (
-            <button key={id} type="button" onClick={() => navigate(id)}>
+          {navigationSections.map(({ label, id, path }, index) => (
+            <button key={id} type="button" onClick={() => navigate(id, path)}>
               <span>0{index + 1}</span>{label}<ArrowUpRight size={18} strokeWidth={1.4} />
             </button>
           ))}
@@ -222,12 +242,38 @@ export default function Home() {
           </div>
           <div className="hero-foot" data-reveal>
             <p>A strategic marketing, communications and events consultancy driving meaningful engagement and measurable results.</p>
-            <button type="button" className="round-link" onClick={() => scrollToSection("capabilities")} aria-label="Explore TLCG capabilities">
+            <button type="button" className="round-link" onClick={() => navigate("about-tlcg", "/")} aria-label="Explore TLCG">
               <ArrowDownRight size={24} strokeWidth={1.3} />
             </button>
           </div>
         </div>
         <div className="hero-index" aria-hidden="true"><span>01</span><i /></div>
+      </section>
+
+      <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
+        <div className="about-intro">
+          <span className="eyebrow">05 — About TLCG</span>
+          <h2 id="about-title">Built to make<br /><em>good work matter.</em></h2>
+          <span className="gold-rule" />
+        </div>
+        <div className="about-narrative">
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "0ms" } as React.CSSProperties}>Top Line Communications Group is a strategic marketing, communications and events consultancy helping organisations communicate with clarity, build stronger brands and create meaningful experiences.</p>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "110ms" } as React.CSSProperties}>We bring together strategic thinking, communications expertise, creative production and event experience to help organisations turn ideas into purposeful action and memorable outcomes.</p>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "220ms" } as React.CSSProperties}>From corporate communications and brand strategy to campaigns, events and experiences, our approach is practical, considered and built around what each organisation needs to achieve.</p>
+          <strong>Strategic thinking. Practical delivery. Meaningful impact.</strong>
+        </div>
+        <div className="about-principles" data-reveal>
+          <span className="eyebrow">What we believe</span>
+          {[
+            { title: "Good communication should be clear.", detail: "We believe communication works best when the message is clear, purposeful and relevant to the people it needs to reach." },
+            { title: "Good strategy should be useful.", detail: "Good thinking is only valuable when it can be translated into practical, measurable work." },
+            { title: "Good experiences should be remembered.", detail: "Whether it is a campaign, corporate event or audience experience, the details matter — because they shape how people feel, engage and remember." },
+          ].map((belief, index) => {
+            const isActive = selectedAboutBelief === index;
+            return <button className={`about-belief ${isActive ? "is-active" : ""}`} key={belief.title} type="button" onMouseEnter={() => setSelectedAboutBelief(index)} onFocus={() => setSelectedAboutBelief(index)} onClick={() => setSelectedAboutBelief(index)} aria-expanded={isActive} aria-controls={`about-belief-detail-${index}`}><h3>{belief.title}</h3><p id={`about-belief-detail-${index}`}>{belief.detail}</p></button>;
+          })}
+          <div className="about-approach-note"><span>Our approach</span><p>We listen first, understand the context, then bring together the right thinking, people and execution to move the work forward.</p><strong>Strategic thinking. Practical delivery. Meaningful impact.</strong></div>
+        </div>
       </section>
 
       <section id="capabilities" className="capabilities chapter section-light" aria-labelledby="capabilities-title">
@@ -335,32 +381,6 @@ export default function Home() {
         <div className="approach-visual" data-reveal>
           <img src={APPROACH_IMAGE} alt="Editorial planning materials arranged on a forest green table" />
           <span className="image-label">From brief to presence</span>
-        </div>
-      </section>
-
-      <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
-        <div className="about-intro">
-          <span className="eyebrow">05 — About TLCG</span>
-          <h2 id="about-title">Built to make<br /><em>good work matter.</em></h2>
-          <span className="gold-rule" />
-        </div>
-        <div className="about-narrative">
-          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "0ms" } as React.CSSProperties}>Top Line Communications Group is a strategic marketing, communications and events consultancy helping organisations communicate with clarity, build stronger brands and create meaningful experiences.</p>
-          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "110ms" } as React.CSSProperties}>We bring together strategic thinking, communications expertise, creative production and event experience to help organisations turn ideas into purposeful action and memorable outcomes.</p>
-          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "220ms" } as React.CSSProperties}>From corporate communications and brand strategy to campaigns, events and experiences, our approach is practical, considered and built around what each organisation needs to achieve.</p>
-          <strong>Strategic thinking. Practical delivery. Meaningful impact.</strong>
-        </div>
-        <div className="about-principles" data-reveal>
-          <span className="eyebrow">What we believe</span>
-          {[
-            { title: "Good communication should be clear.", detail: "We believe communication works best when the message is clear, purposeful and relevant to the people it needs to reach." },
-            { title: "Good strategy should be useful.", detail: "Good thinking is only valuable when it can be translated into practical, measurable work." },
-            { title: "Good experiences should be remembered.", detail: "Whether it is a campaign, corporate event or audience experience, the details matter — because they shape how people feel, engage and remember." },
-          ].map((belief, index) => {
-            const isActive = selectedAboutBelief === index;
-            return <button className={`about-belief ${isActive ? "is-active" : ""}`} key={belief.title} type="button" onMouseEnter={() => setSelectedAboutBelief(index)} onFocus={() => setSelectedAboutBelief(index)} onClick={() => setSelectedAboutBelief(index)} aria-expanded={isActive} aria-controls={`about-belief-detail-${index}`}><h3>{belief.title}</h3><p id={`about-belief-detail-${index}`}>{belief.detail}</p></button>;
-          })}
-          <div className="about-approach-note"><span>Our approach</span><p>We listen first, understand the context, then bring together the right thinking, people and execution to move the work forward.</p><strong>Strategic thinking. Practical delivery. Meaningful impact.</strong></div>
         </div>
       </section>
 
