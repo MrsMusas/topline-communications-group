@@ -291,22 +291,22 @@
 ## Private GitHub repository connection
 
 - [x] Verify the current TLCG project build, checkpoint scope, and `.gitignore` secret exclusions before publishing source control.
-- [ ] Connect the user’s GitHub account and create or reuse a private `topline-communications-group` repository without changing the TLCG design, deployment, or DNS.
-- [ ] Push the approved production-ready TLCG codebase, including the Brevo enquiry implementation, and confirm the private repository, branch, secret exclusions, and pushed build state.
+- [x] Connect the user’s GitHub account and create or reuse a private `topline-communications-group` repository without changing the TLCG design, deployment, or DNS.
+- [x] Push the approved production-ready TLCG codebase, including the Brevo enquiry implementation, and confirm the private repository, branch, secret exclusions, and pushed build state.
 
 ## Approved GitHub push target
 
-- [ ] Connect the TLCG source project to the existing private `MrsMusas/topline-communications-group` repository and use `main` for the approved production-ready codebase.
+- [x] Connect the TLCG source project to the existing private `MrsMusas/topline-communications-group` repository and use `main` for the approved production-ready codebase.
 - [x] Exclude all environment files, credentials, Manus backup files, and the 407 MB Task Data backup from the GitHub push.
-- [ ] Verify that the private repository contains the actual TLCG source and server-side Brevo integration without deploying to Vercel or changing DNS.
+- [x] Verify that the private repository contains the actual TLCG source and server-side Brevo integration without deploying to Vercel or changing DNS.
 
 ## GitHub connector/session diagnosis
 
 - [x] Diagnose why the authorised GitHub connector does not establish an active task session despite the existing selected-repository permission and authenticated MrsMusas browser session: the connector remains disabled in the active task configuration, while browser authentication does not grant sandbox Git/CLI transport credentials.
-- [ ] Use the already-authorised private repository access to complete the TLCG source push where technically available, without requesting a redundant connector reconnection.
-- [ ] If the connector path remains unavailable, identify the exact additional authorisation or transport credential required to push source while retaining the Vercel and DNS hold.
+- [x] Use the already-authorised private repository access to complete the TLCG source push where technically available, without requesting a redundant connector reconnection.
+- [x] Resolve the unavailable connector path through task-scoped activation; no additional repository authorisation or transport credential was required, and the Vercel/DNS hold remains in place.
 
 ## Existing-task GitHub connector activation
 
 - [x] Activate the already-authorised, repository-scoped GitHub connector for the current TLCG task only; do not reconnect, reinstall, uninstall, or change repository permissions.
-- [ ] Confirm the connector reports `enabled: true`, then verify repository access, source safety, and the approved `main` branch push without modifying the TLCG website, Vercel, or DNS.
+- [x] Confirm the connector reports `enabled: true`, then verify repository access, source safety, and the approved `main` branch push without modifying the TLCG website, Vercel, or DNS.
