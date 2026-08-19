@@ -18,11 +18,9 @@ async function startServer() {
     res.status(result.status).json(result.body);
   });
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+  // The local standalone server is intentionally built into server-dist while
+  // Vite emits the deployable frontend directly into dist.
+  const staticPath = path.resolve(__dirname, "..", "dist");
 
   app.use(express.static(staticPath));
 

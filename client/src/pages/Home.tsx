@@ -7,17 +7,17 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { navigationSections, sectionIdForPath } from "@/lib/sectionRoutes";
 
-const OFFICIAL_LOGO = "/manus-storage/LogoGoldMonograme_c7731889.png";
-const HERO_IMAGE = "/manus-storage/tlcg-hero-verdant_a29c23f4.jpg";
-const EXPERIENCE_IMAGE = "/manus-storage/tlcg-experience-human_978593af.jpg";
-const APPROACH_IMAGE = "/manus-storage/pasted_file_PbUGqO_image_540cd03e.png";
-const CONTACT_PORTRAIT = "/manus-storage/pasted_file_ApU5WI_image_bd8042d3.png";
+const OFFICIAL_LOGO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/CMKVmvzbobMUWdwK.png";
+const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/hjlQJwXnVXFrcXAm.jpg";
+const EXPERIENCE_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/wvHcqRowqmanLuPG.jpg";
+const APPROACH_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/edvaYkuYCtsIVwKf.png";
+const CONTACT_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/lPROkyXuwCVoDjYz.png";
 const EXPERIENCE_EVENT_STILLS = [
-  { src: "/manus-storage/tlcg-malaysia-event-scale_be9e1a35.webp", alt: "Full TLCG event room prepared for guests" },
-  { src: "/manus-storage/tlcg-malaysia-event-production_0bda992c.webp", alt: "TLCG event production and gifting preparations" },
-  { src: "/manus-storage/tlcg-malaysia-venue-arrival_0b897b23.webp", alt: "TLCG event venue arrival setting" },
-  { src: "/manus-storage/tlcg-malaysia-outdoor-installation_09175222.webp", alt: "TLCG outdoor event installation" },
-  { src: "/manus-storage/tlcg-malaysia-tablescape-detail_a92bce09.webp", alt: "TLCG event tablescape detail" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/DWThBqyzjEAtlGIm.webp", alt: "Full TLCG event room prepared for guests" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/QvjyLSxyuqOWRRno.webp", alt: "TLCG event production and gifting preparations" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/eRUYkqiNDMuPIuCZ.webp", alt: "TLCG event venue arrival setting" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/FVqlKVUpkDrKjecv.webp", alt: "TLCG outdoor event installation" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/zatrSfitRkjAAkln.webp", alt: "TLCG event tablescape detail" },
 ];
 
 const capabilityItems = [

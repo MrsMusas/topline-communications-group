@@ -323,3 +323,16 @@
 - [x] Add a sitemap using `https://toplinecommunicationsgroup.co.za` and the six approved public section routes only.
 - [x] Verify no secrets, environment files, API keys, credentials, Manus backups, or Task Data backups are included in the route-update commit.
 - [x] Push the approved route update and sitemap to the existing private `MrsMusas/topline-communications-group` repository on `main`, then verify the remote revision and sitemap inclusion without deploying to Vercel or changing DNS.
+
+## Vercel frontend-serving diagnosis
+
+- [x] Inspect the approved repository’s build scripts, Vite configuration, generated output, and server entry architecture to determine why Vercel serves the bundled server source at `/`.
+- [x] Inspect the Vercel deployment configuration and live HTTP behaviour without altering Vercel settings, DNS, production-domain configuration, email records, Brevo configuration, or credentials.
+- [x] Document the root cause and minimum production-safe fix that preserves the Vite frontend, direct section routes, and server-side Brevo enquiry endpoint; do not modify or push code without approval.
+
+## Approved Vercel architecture remediation
+
+- [x] Make the Vite frontend emit its built document shell and assets directly into the Vercel `dist` output directory while retaining a separate standalone local-server build output.
+- [x] Add a dedicated Vercel `api/enquiry.ts` POST Function that reuses server-side Brevo delivery logic, plus minimal SPA route rewrites that do not intercept `/api/enquiry`.
+- [x] Validate the production build, direct TLCG routes, `/api/enquiry` success and error paths, and existing `/manus-storage` media paths without changing design, content, or approved behaviour.
+- [ ] Confirm the existing Vercel `BREVO_API_KEY` is available to Production without viewing or changing its value, verify client code contains no secret, then push the tested fix to private GitHub `main` without deploying or changing DNS, domains, email, or Brevo configuration.
