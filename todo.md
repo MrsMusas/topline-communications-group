@@ -335,4 +335,4 @@
 - [x] Make the Vite frontend emit its built document shell and assets directly into the Vercel `dist` output directory while retaining a separate standalone local-server build output.
 - [x] Add a dedicated Vercel `api/enquiry.ts` POST Function that reuses server-side Brevo delivery logic, plus minimal SPA route rewrites that do not intercept `/api/enquiry`.
 - [x] Validate the production build, direct TLCG routes, `/api/enquiry` success and error paths, and existing `/manus-storage` media paths without changing design, content, or approved behaviour.
-- [ ] Confirm the existing Vercel `BREVO_API_KEY` is available to Production without viewing or changing its value, verify client code contains no secret, then push the tested fix to private GitHub `main` without deploying or changing DNS, domains, email, or Brevo configuration.
+- [x] Confirm the existing Vercel `BREVO_API_KEY` is available to Production without viewing or changing its value, verify client code contains no secret, then push the tested fix to private GitHub `main` without deploying or changing DNS, domains, email, or Brevo configuration.
