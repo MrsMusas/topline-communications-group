@@ -363,3 +363,9 @@
 - [x] Verify the approved cosmetic checkpoint includes only the numbered-label removal, fixed gold header separator, and associated QA/tracker documentation.
 - [x] Push the approved cosmetic checkpoint to the existing private GitHub `main` branch without making any other project, infrastructure, or configuration change.
 - [x] Verify the remote `main` revision and report the commit hash.
+
+## Fixed-header separator attachment correction
+
+- [x] Keep the existing TLCG dark header fixed while attaching the full-width gold separator directly to its bottom edge at an elegant, clearly visible 2px thickness.
+- [x] Verify that the header and gold separator remain stationary together while page content scrolls beneath them on desktop and mobile.
+- [x] Preserve all other approved TLCG design, routes, content, functionality, infrastructure, and credentials; save for preview review without pushing to GitHub `main`.
