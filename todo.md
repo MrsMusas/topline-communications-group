@@ -348,5 +348,5 @@
 
 - [x] Change only the Vercel enquiry Function import to its emitted ESM path and add focused compiled-import coverage without altering the Brevo implementation, settings, credentials, or form behaviour.
 - [x] Change only the root-route initial position to the top of the approved About TLCG hero while preserving all non-root route scrolling, active navigation, section order, content, and design.
-- [ ] Run focused compiled-import, full relevant, production build, endpoint, route, and active-navigation validation before pushing the approved correction to private GitHub `main`.
-- [ ] Verify the Vercel deployment loads `/` at the hero, preserves all section routes and active navigation, loads `/api/enquiry` without a module error, and delivers an authorised real production enquiry through Brevo.
+- [x] Run focused compiled-import, full relevant, production build, endpoint, route, and active-navigation validation before pushing the approved correction to private GitHub `main`.
+- [x] Verify the Vercel deployment loads `/` at the hero, preserves all section routes and active navigation, loads `/api/enquiry` without a module error, and delivers an authorised real production enquiry through Brevo.
