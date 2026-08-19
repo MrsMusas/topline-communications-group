@@ -284,9 +284,9 @@
 
 ## Production-domain connection audit
 
-- [ ] Inspect the current Vercel project to determine whether `toplinecommunicationsgroup.co.za` and `www.toplinecommunicationsgroup.co.za` are already configured, and record Vercel’s exact website DNS requirements.
-- [ ] Inspect public DNS for website-record conflicts while preserving all current MX, TXT, SPF, DKIM, DMARC, Brevo, and ImprovMX email configuration unchanged.
-- [ ] Provide precise, non-destructive domain-connection instructions and stop without making DNS or Vercel domain changes.
+- [x] Inspect the current Vercel project to determine whether `toplinecommunicationsgroup.co.za` and `www.toplinecommunicationsgroup.co.za` are already configured, and record Vercel’s exact website DNS requirements: the Vercel team has no project or attached domain, so no project-specific record value exists yet.
+- [x] Inspect public DNS for website-record conflicts while preserving all current MX, TXT, SPF, DKIM, DMARC, Brevo, and ImprovMX email configuration unchanged.
+- [x] Provide precise, non-destructive domain-connection instructions and stop without making DNS or Vercel domain changes.
 
 ## Private GitHub repository connection
 
