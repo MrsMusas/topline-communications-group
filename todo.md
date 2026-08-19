@@ -321,5 +321,5 @@
 ## Approved route update GitHub push
 
 - [x] Add a sitemap using `https://toplinecommunicationsgroup.co.za` and the six approved public section routes only.
-- [ ] Verify no secrets, environment files, API keys, credentials, Manus backups, or Task Data backups are included in the route-update commit.
-- [ ] Push the approved route update and sitemap to the existing private `MrsMusas/topline-communications-group` repository on `main`, then verify the remote revision and sitemap inclusion without deploying to Vercel or changing DNS.
+- [x] Verify no secrets, environment files, API keys, credentials, Manus backups, or Task Data backups are included in the route-update commit.
+- [x] Push the approved route update and sitemap to the existing private `MrsMusas/topline-communications-group` repository on `main`, then verify the remote revision and sitemap inclusion without deploying to Vercel or changing DNS.
