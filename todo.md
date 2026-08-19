@@ -357,3 +357,9 @@
 - [x] Restore only the thin subtle gold separator attached to the bottom edge of the fixed header so it remains stationary while page content scrolls.
 - [x] Validate desktop and mobile rendering plus relevant type/build checks, without changing functionality, Brevo, DNS, Vercel, domain settings, email records, or any other design element.
 - [x] Save the completed cosmetic correction for review and do not push to GitHub `main` until approval is received.
+
+## Approved cosmetic checkpoint GitHub push
+
+- [x] Verify the approved cosmetic checkpoint includes only the numbered-label removal, fixed gold header separator, and associated QA/tracker documentation.
+- [x] Push the approved cosmetic checkpoint to the existing private GitHub `main` branch without making any other project, infrastructure, or configuration change.
+- [x] Verify the remote `main` revision and report the commit hash.
