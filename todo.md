@@ -385,3 +385,9 @@
 - [x] Add a lightweight TLCG Insights navigation and route foundation for future thought leadership, without building a CMS, subscriptions, invented articles, or a complex blog system.
 - [x] Improve on-page SEO and AI discoverability through accurate metadata, semantic headings, descriptive copy, image alt text, internal linking, and structured business information for TLCG's Johannesburg market and real expertise.
 - [x] Preserve the approved TLCG visual identity, header, navigation styling, imagery, routes, enquiry workflow, Vercel configuration, DNS, domains, email, Brevo, and all public media-clearance constraints; validate relevant desktop/mobile views and tests before saving for review.
+
+## Approved authority and positioning checkpoint GitHub push
+
+- [x] Verify the validated authority and positioning checkpoint includes only the approved copy, Insights foundation, SEO, route, sitemap, test, and tracker changes.
+- [x] Push the approved authority and positioning checkpoint to the existing private GitHub `main` branch without making any further website, infrastructure, or configuration change.
+- [x] Verify the remote `main` revision and report the commit hash.
