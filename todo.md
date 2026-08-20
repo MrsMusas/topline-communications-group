@@ -417,4 +417,4 @@
 - [x] Add a static root `robots.txt` that permits normal public crawling and references only `https://www.toplinecommunicationsgroup.co.za/sitemap.xml`.
 - [x] Update the existing sitemap URLs only to use the canonical `https://www.toplinecommunicationsgroup.co.za` host while retaining the existing seven public routes: `/`, `/capabilities`, `/experience`, `/approach`, `/why-tlcg`, `/insights`, and `/lets-talk`.
 - [x] Run focused static-resource tests and the production build, then verify the built `robots.txt` and `sitemap.xml` are static resources rather than client-side routes.
-- [ ] Push the isolated correction to the existing private GitHub `main` branch, wait for the Vercel deployment, and report HTTP status codes and response validation for the final production `robots.txt` and `sitemap.xml` URLs.
+- [x] Push the isolated correction to the existing private GitHub `main` branch, wait for the Vercel deployment, and report HTTP status codes and response validation for the final production `robots.txt` and `sitemap.xml` URLs.
