@@ -404,3 +404,10 @@
 - [x] Verify the validated motion-refinement checkpoint includes only the approved industry reveal, Insights reveal, responsive spacing, regression test, and tracker changes.
 - [x] Push the approved motion-refinement checkpoint to the existing private GitHub `main` branch without making any further website, infrastructure, or configuration change.
 - [x] Verify the remote `main` revision and report the commit hash.
+
+## Industry color and visible-reveal correction
+
+- [x] Restore the existing Industries We Support labels to their approved white/light color, keeping gold only on the original separators and accents without changing typography or layout.
+- [x] Ensure the industry labels and gold separators visibly reveal one by one on first viewport entry, and the four existing Insights blocks visibly fade and slide in sequentially on first viewport entry; retain the approved reduced-motion fallback and spacing reduction.
+- [x] Visually verify the rendered page before pushing: light industry labels, sequential labels and separators, sequential Insights blocks, and the tighter Insights-to–Let’s Talk transition on desktop and mobile.
+- [ ] Push only this verified correction to the existing private GitHub `main` branch and report the remote commit hash.

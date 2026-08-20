@@ -434,7 +434,7 @@ export default function Home() {
           </div>
           <div className="why-industries" data-industry-reveal>
             <span>Industries we support</span>
-            <p>{industries.map((industry, index) => <span className="industry-token" key={industry} style={{ "--industry-delay": `${index * 82}ms` } as React.CSSProperties}><i className="industry-item">{industry}</i>{index < industries.length - 1 && <b className="industry-separator" aria-hidden="true">•</b>}</span>)}</p>
+            <p>{industries.map((industry, index) => <span className="industry-token" key={industry} style={{ "--industry-delay": `${index * 90}ms` } as React.CSSProperties}><i className="industry-item">{industry}</i>{index < industries.length - 1 && <b className="industry-separator" aria-hidden="true">•</b>}</span>)}</p>
           </div>
           <div className="expertise-ledger">
             <span className="eyebrow eyebrow-light">Where we add value</span>
@@ -467,7 +467,7 @@ export default function Home() {
             ["Business communication", "Communicating with clarity across teams and stakeholders."],
             ["Corporate events", "Creating experiences with a clear purpose."],
             ["Incentive travel", "Designing meaningful experiences beyond the itinerary."],
-          ].map(([topic, description], index) => <article className="insights-topic" key={topic} style={{ "--insights-delay": `${index * 110}ms` } as React.CSSProperties}><h3>{topic}</h3><p>{description}</p></article>)}
+          ].map(([topic, description], index) => <article className="insights-topic" key={topic} style={{ "--insights-delay": `${index * 130}ms` } as React.CSSProperties}><h3>{topic}</h3><p>{description}</p></article>)}
         </div>
       </section>
 

@@ -7,14 +7,15 @@ const stylesheet = readFileSync(new URL("./index.css", import.meta.url), "utf8")
 describe("TLCG industry, Insights, and contact-spacing refinements", () => {
   it("reveals industry tokens once in a sequential premium stagger", () => {
     expect(home).toContain('data-industry-reveal');
-    expect(home).toContain('`${index * 82}ms`');
+    expect(home).toContain('`${index * 90}ms`');
     expect(home).toContain('stagedObserver.unobserve(entry.target)');
-    expect(stylesheet).toContain('.why-industries[data-industry-reveal].is-visible .industry-token { animation: industry-token-in 480ms');
+    expect(stylesheet).toContain('.why-industries[data-industry-reveal].is-visible .industry-token { animation: industry-token-in 500ms');
+    expect(stylesheet).toContain('.industry-item { display: inline-flex; align-items: center; color: rgba(241, 238, 230, 0.88);');
   });
 
   it("reveals the four existing Insights blocks in a restrained one-time sequence", () => {
     expect(home).toContain('data-insights-reveal');
-    expect(home).toContain('`${index * 110}ms`');
+    expect(home).toContain('`${index * 130}ms`');
     expect(stylesheet).toContain('.insights-topics[data-insights-reveal].is-visible .insights-topic { animation: insights-topic-in 500ms');
   });
 
