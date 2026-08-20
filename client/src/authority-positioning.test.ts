@@ -23,7 +23,7 @@ describe("TLCG authority positioning", () => {
     expect(home).toContain('<section id="insights" className="insights chapter section-light"');
     expect(home).toContain("Insights platform in development.");
     expect(vercelConfig).toContain('{ "source": "/insights", "destination": "/index.html" }');
-    expect(sitemap).toContain("https://toplinecommunicationsgroup.co.za/insights");
+    expect(sitemap).toContain("https://www.toplinecommunicationsgroup.co.za/insights");
   });
 
   it("makes TLCG’s Johannesburg expertise legible to search and AI systems", () => {
