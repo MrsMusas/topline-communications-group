@@ -398,3 +398,9 @@
 - [x] Add a one-time, refined fade-and-slide-up reveal for the four existing Insights topic blocks in top-left, top-right, bottom-left, bottom-right order using a restrained ~500ms ease-out treatment and reduced-motion fallback.
 - [x] Reduce only the vertical space between the existing Insights and Let’s Talk sections to the approved responsive targets while preserving all copy, imagery, layout structure, and current TLCG visual styling.
 - [x] Validate desktop and mobile motion, spacing, and one-time behaviour without altering routes, forms, Brevo, Vercel configuration, DNS, domains, email, media, or any other functionality; save for review without pushing to GitHub `main`.
+
+## Approved motion-refinement checkpoint GitHub push
+
+- [x] Verify the validated motion-refinement checkpoint includes only the approved industry reveal, Insights reveal, responsive spacing, regression test, and tracker changes.
+- [x] Push the approved motion-refinement checkpoint to the existing private GitHub `main` branch without making any further website, infrastructure, or configuration change.
+- [x] Verify the remote `main` revision and report the commit hash.
