@@ -375,3 +375,13 @@
 - [x] Verify the final cosmetic checkpoint includes only the fixed-header 2px gold separator correction, focused regression coverage, and associated tracker documentation.
 - [x] Push the approved final cosmetic checkpoint to the existing private GitHub `main` branch without making any other project, infrastructure, or configuration change.
 - [x] Verify the remote `main` revision and report the commit hash.
+
+## TLCG authority and positioning improvements
+
+- [x] Strengthen the existing hero, About TLCG, capability, Selected Experience, and authority messaging around TLCG connecting strategy, communication, and experience to move organisations and business forward, while retaining the established visual design and avoiding generic agency claims.
+- [x] Present TLCG's over two decades of experience as practical evidence across marketing, communications, corporate events, social events, launches, awards, incentive programmes, travel, and corporate experiences without inventing clients, results, statistics, or awards.
+- [x] Preserve the approved six-capability structure while clarifying the interconnected core areas of Marketing, Communications, and Events & Experiences, and introduce the Clarify → Connect → Activate idea only where it fits naturally.
+- [x] Improve the existing contact CTA wording using the current enquiry mechanism, without adding forms or changing Brevo functionality.
+- [x] Add a lightweight TLCG Insights navigation and route foundation for future thought leadership, without building a CMS, subscriptions, invented articles, or a complex blog system.
+- [x] Improve on-page SEO and AI discoverability through accurate metadata, semantic headings, descriptive copy, image alt text, internal linking, and structured business information for TLCG's Johannesburg market and real expertise.
+- [x] Preserve the approved TLCG visual identity, header, navigation styling, imagery, routes, enquiry workflow, Vercel configuration, DNS, domains, email, Brevo, and all public media-clearance constraints; validate relevant desktop/mobile views and tests before saving for review.

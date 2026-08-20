@@ -13,17 +13,17 @@ const EXPERIENCE_IMAGE = "https://files.manuscdn.com/user_upload_by_module/sessi
 const APPROACH_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/edvaYkuYCtsIVwKf.png";
 const CONTACT_PORTRAIT = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/lPROkyXuwCVoDjYz.png";
 const EXPERIENCE_EVENT_STILLS = [
-  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/DWThBqyzjEAtlGIm.webp", alt: "Full TLCG event room prepared for guests" },
-  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/QvjyLSxyuqOWRRno.webp", alt: "TLCG event production and gifting preparations" },
-  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/eRUYkqiNDMuPIuCZ.webp", alt: "TLCG event venue arrival setting" },
-  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/FVqlKVUpkDrKjecv.webp", alt: "TLCG outdoor event installation" },
-  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/zatrSfitRkjAAkln.webp", alt: "TLCG event tablescape detail" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/DWThBqyzjEAtlGIm.webp", alt: "Corporate event experience: full-room scale prepared for guests" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/QvjyLSxyuqOWRRno.webp", alt: "Event production and gifting preparation for a corporate experience" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/eRUYkqiNDMuPIuCZ.webp", alt: "Venue arrival and guest experience setting" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/FVqlKVUpkDrKjecv.webp", alt: "Outdoor event installation and guest experience" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663898775121/zatrSfitRkjAAkln.webp", alt: "Hospitality detail for an event experience" },
 ];
 
 const capabilityItems = [
-  { number: "01", name: "Brand & Strategy", note: "Helping organizations build stronger brands, launch campaigns and improve customer engagement." },
-  { number: "02", name: "Corporate Communications", note: "Internal communications, stakeholder messaging, executive messaging, PR and thought leadership." },
-  { number: "03", name: "Events & Experiences", note: "End-to-end event strategy, planning, communications and execution." },
+  { number: "01", name: "Marketing", note: "Help organisations build visibility, communicate their value and connect with the right audiences." },
+  { number: "02", name: "Communications", note: "Help organisations communicate clearly, consistently and strategically with the people who matter." },
+  { number: "03", name: "Events & Experiences", note: "Plan and execute corporate events, launches, awards, incentives and experiences that achieve a clear purpose." },
   { number: "04", name: "Digital Marketing", note: "Content strategy, LinkedIn, social media campaigns, AI-powered workflows and marketing automation." },
   { number: "05", name: "Customer Engagement", note: "Customer experience, CRM journeys, onboarding campaigns and retention communications." },
   { number: "06", name: "Fractional Leadership", note: "Supporting organizations that need senior marketing expertise without hiring a full-time executive." },
@@ -49,10 +49,10 @@ const clientExperienceStatements = [
 ];
 
 const differenceItems = [
-  { number: "01", title: "Strategic Thinking", detail: "We align marketing and communication strategies with business objectives." },
-  { number: "02", title: "Measurable Results", detail: "Every recommendation is designed to create meaningful business impact." },
-  { number: "03", title: "20+ Years of Corporate Experience", detail: "Supporting respected organizations across multiple industries." },
-  { number: "04", title: "AI-Enabled Delivery", detail: "We combine human expertise with AI-powered workflows to improve efficiency and accelerate execution." },
+  { number: "01", title: "Connected Thinking", detail: "We bring strategy, communication and experience together around the outcome that matters." },
+  { number: "02", title: "Corporate Fluency", detail: "We understand the audiences, stakeholders and practical demands that shape corporate work." },
+  { number: "03", title: "2+ Decades of Experience", detail: "Practical experience across marketing, communications, events and meaningful corporate experiences." },
+  { number: "04", title: "From Plan to Presence", detail: "We take an idea from early direction through detailed planning to confident execution." },
   { number: "05", title: "Flexible Engagement Models", detail: "Project-based consulting, retainer partnerships, fractional leadership and event support." },
   { number: "06", title: "Trusted Partnership", detail: "We become an extension of your team, delivering practical solutions that create lasting value." },
 ];
@@ -248,10 +248,10 @@ export default function Home() {
         <div className="hero-noise" aria-hidden="true" />
         <div className="hero-content">
           <div className="hero-title-wrap" data-reveal>
-            <h1 id="hero-title" className="home-positioning">Helping organizations<br />build stronger brands,<br /><em>communicate with confidence,</em><br />and deliver exceptional experiences.</h1>
+            <h1 id="hero-title" className="home-positioning">Strategy.<br />Communication.<br /><em>Experience.</em><br />Impact.</h1>
           </div>
           <div className="hero-foot" data-reveal>
-            <p>A strategic marketing, communications and events consultancy driving meaningful engagement and measurable results.</p>
+            <p>For organisations that need to communicate with clarity, create experiences with purpose and move people — and business — forward.</p>
             <button type="button" className="round-link" onClick={() => navigate("about-tlcg", "/")} aria-label="Explore TLCG">
               <ArrowDownRight size={24} strokeWidth={1.3} />
             </button>
@@ -263,14 +263,14 @@ export default function Home() {
       <section id="about-tlcg" className="about chapter section-light" aria-labelledby="about-title">
         <div className="about-intro">
           <span className="eyebrow">About TLCG</span>
-          <h2 id="about-title">Built to make<br /><em>good work matter.</em></h2>
+          <h2 id="about-title">More than two decades,<br /><em>made useful.</em></h2>
           <span className="gold-rule" />
         </div>
         <div className="about-narrative">
-          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "0ms" } as React.CSSProperties}>Top Line Communications Group is a strategic marketing, communications and events consultancy helping organisations communicate with clarity, build stronger brands and create meaningful experiences.</p>
-          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "110ms" } as React.CSSProperties}>We bring together strategic thinking, communications expertise, creative production and event experience to help organisations turn ideas into purposeful action and memorable outcomes.</p>
-          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "220ms" } as React.CSSProperties}>From corporate communications and brand strategy to campaigns, events and experiences, our approach is practical, considered and built around what each organisation needs to achieve.</p>
-          <strong>Strategic thinking. Practical delivery. Meaningful impact.</strong>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "0ms" } as React.CSSProperties}>For more than two decades, Top Line Communications Group has helped organisations connect strategy, communication and experience around work that needs to move people — and business — forward.</p>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "110ms" } as React.CSSProperties}>Our practical experience spans marketing, corporate communications, launches, awards, corporate and social events, incentive programmes, travel and brand experiences.</p>
+          <p className="about-paragraph-reveal" data-reveal style={{ "--about-delay": "220ms" } as React.CSSProperties}>We understand corporate environments, build trusted client relationships and take ideas from early direction through planning to hands-on execution.</p>
+          <strong>Strategy. Communication. Experience. Impact.</strong>
         </div>
         <div className="about-principles" data-reveal>
           <span className="eyebrow">What we believe</span>
@@ -282,7 +282,7 @@ export default function Home() {
             const isActive = selectedAboutBelief === index;
             return <button className={`about-belief ${isActive ? "is-active" : ""}`} key={belief.title} type="button" onMouseEnter={() => setSelectedAboutBelief(index)} onFocus={() => setSelectedAboutBelief(index)} onClick={() => setSelectedAboutBelief(index)} aria-expanded={isActive} aria-controls={`about-belief-detail-${index}`}><h3>{belief.title}</h3><p id={`about-belief-detail-${index}`}>{belief.detail}</p></button>;
           })}
-          <div className="about-approach-note"><span>Our approach</span><p>We listen first, understand the context, then bring together the right thinking, people and execution to move the work forward.</p><strong>Strategic thinking. Practical delivery. Meaningful impact.</strong></div>
+          <div className="about-approach-note"><span>Clarify → Connect → Activate</span><p>We clarify what needs to be understood, connect the people and messages that matter, then activate the work with purpose and care.</p><strong>Strategy. Communication. Experience. Impact.</strong></div>
         </div>
       </section>
 
@@ -292,8 +292,8 @@ export default function Home() {
           <span className="vertical-rule" />
         </div>
         <div className="capabilities-intro" data-reveal>
-          <p className="section-deck">TLCG brings direction to the message, the moment and the way people remember both.</p>
-          <h2 id="capabilities-title">The practical,<br /><em>made remarkable.</em></h2>
+          <p className="section-deck">TLCG connects the message, the moment and the experience around a clear purpose.</p>
+          <h2 id="capabilities-title">Three connected<br /><em>capabilities.</em></h2>
         </div>
         <div className="capability-list" data-reveal>
           {capabilityItems.map((item, index) => {
@@ -326,15 +326,15 @@ export default function Home() {
           <div className="experience-content">
             <div data-reveal>
               <span className="eyebrow eyebrow-light">Selected Experience</span>
-              <h2 id="experience-title">Two decades of<br /><em>trusted delivery.</em></h2>
+              <h2 id="experience-title">Over two decades of<br /><em>making experiences matter.</em></h2>
             </div>
             <div className="experience-note" data-reveal>
               <span className="gold-rule" />
-              <p>Over the past two decades, our leadership has contributed to marketing, communications and event initiatives across respected national and international organizations.</p>
+              <p>For more than two decades, TLCG has brought strategy, communications and delivery together across marketing, corporate events, social events, launches, awards, incentive programmes, travel and corporate experiences.</p>
             </div>
           </div>
         </div>
-        <div className="experience-caption" data-reveal><span>Selected experience</span><span>Marketing · communications · events</span></div>
+        <div className="experience-caption" data-reveal><span>Evidence in action</span><span>Corporate experiences · events · incentive travel</span></div>
         <div className="experience-stills" aria-label="Selected TLCG event photography">
           <div className="experience-stills-viewport">
             <div className="experience-stills-track">
@@ -397,8 +397,8 @@ export default function Home() {
       <section id="why-tlcg" className="why chapter" aria-labelledby="why-title">
         <div className="why-frame" data-reveal>
           <span className="eyebrow eyebrow-light">Why TLCG</span>
-          <h2 id="why-title">The Top Line<br /><em>difference.</em></h2>
-          <p className="why-supporting-label">Why Organizations Choose Us</p>
+          <h2 id="why-title">Experience you can<br /><em>put to work.</em></h2>
+          <p className="why-supporting-label">What more than two decades makes possible</p>
           <div className="why-difference-list">
             {differenceItems.map((item, index) => {
               const isSelected = selectedDifference === index;
@@ -438,11 +438,31 @@ export default function Home() {
         <div className="why-ornament" aria-hidden="true"><span>T</span><i /></div>
       </section>
 
+      <section id="insights" className="insights chapter section-light" aria-labelledby="insights-title">
+        <div className="section-rail" data-reveal>
+          <span className="eyebrow">TLCG Insights</span>
+          <span className="vertical-rule" />
+        </div>
+        <div className="insights-intro" data-reveal>
+          <h2 id="insights-title">Ideas for the<br /><em>work ahead.</em></h2>
+          <p className="section-deck">A future space for practical thinking on the messages, moments and experiences that help organisations move forward.</p>
+          <p className="insights-status">Insights platform in development.</p>
+        </div>
+        <div className="insights-topics" data-reveal aria-label="Future TLCG Insights topics">
+          {[
+            ["Marketing & brand", "Making value clear to the audiences that matter."],
+            ["Business communication", "Communicating with clarity across teams and stakeholders."],
+            ["Corporate events", "Creating experiences with a clear purpose."],
+            ["Incentive travel", "Designing meaningful experiences beyond the itinerary."],
+          ].map(([topic, description]) => <article className="insights-topic" key={topic}><h3>{topic}</h3><p>{description}</p></article>)}
+        </div>
+      </section>
+
       <section id="talk" className="contact chapter section-light" aria-labelledby="contact-title">
         <div className="contact-intro" data-reveal>
           <span className="eyebrow">Let’s Talk</span>
-          <h2 id="contact-title">Let’s Start the<br /><em>Conversation.</em></h2>
-          <div className="contact-copy"><p>Whether you&apos;re launching a new brand, planning a high-impact event, strengthening stakeholder engagement or modernizing your marketing strategy, we&apos;re ready to partner with you.</p><p>We believe the best results come from strong relationships, strategic thinking and flawless execution. We&apos;d welcome the opportunity to learn more about your organization and explore how we can help you achieve your objectives.</p></div>
+          <h2 id="contact-title">Let&apos;s talk about your<br /><em>next project.</em></h2>
+          <div className="contact-copy"><p>Whether you&apos;re launching a brand, planning a corporate experience, strengthening stakeholder engagement or shaping a communications programme, we&apos;re ready to talk.</p><p>Tell us what needs to move forward. We&apos;ll bring strategic thinking, practical experience and hands-on delivery to the conversation.</p></div>
           <address className="contact-details">
             <div className="contact-detail contact-person"><UserRound size={18} strokeWidth={1.35} /><div><strong>Hellery Musas</strong><span>Managing Director | Principal Consultant</span><span>Top Line Communications Group</span></div></div>
             <div className="contact-detail"><Phone size={18} strokeWidth={1.35} /><a href="tel:+27837626871">+27 83 762 6871</a></div>

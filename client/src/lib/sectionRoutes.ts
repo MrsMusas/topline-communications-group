@@ -4,6 +4,7 @@ export const navigationSections = [
   { label: "Experience", id: "experience", path: "/experience" },
   { label: "Approach", id: "approach", path: "/approach" },
   { label: "Why TLCG", id: "why-tlcg", path: "/why-tlcg" },
+  { label: "Insights", id: "insights", path: "/insights" },
   { label: "Let’s Talk", id: "talk", path: "/lets-talk" },
 ] as const;
 

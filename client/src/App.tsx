@@ -19,6 +19,7 @@ function Router() {
       <Route path="/experience" component={Home} />
       <Route path="/approach" component={Home} />
       <Route path="/why-tlcg" component={Home} />
+      <Route path="/insights" component={Home} />
       <Route path="/lets-talk" component={Home} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/cookie-policy" component={CookiePolicy} />

@@ -6,6 +6,7 @@
     { "source": "/experience", "destination": "/index.html" },
     { "source": "/approach", "destination": "/index.html" },
     { "source": "/why-tlcg", "destination": "/index.html" },
+    { "source": "/insights", "destination": "/index.html" },
     { "source": "/lets-talk", "destination": "/index.html" },
     { "source": "/privacy-policy", "destination": "/index.html" },
     { "source": "/cookie-policy", "destination": "/index.html" }
