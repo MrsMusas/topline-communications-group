@@ -418,3 +418,10 @@
 - [x] Update the existing sitemap URLs only to use the canonical `https://www.toplinecommunicationsgroup.co.za` host while retaining the existing seven public routes: `/`, `/capabilities`, `/experience`, `/approach`, `/why-tlcg`, `/insights`, and `/lets-talk`.
 - [x] Run focused static-resource tests and the production build, then verify the built `robots.txt` and `sitemap.xml` are static resources rather than client-side routes.
 - [x] Push the isolated correction to the existing private GitHub `main` branch, wait for the Vercel deployment, and report HTTP status codes and response validation for the final production `robots.txt` and `sitemap.xml` URLs.
+
+## Technical search and AI crawlability audit
+
+- [x] Audit the seven production sitemap URLs, robots directives, HTTP headers, indexability signals, canonical hosts, rendered public content, crawlable navigation, metadata, Open Graph/Twitter metadata, and existing JSON-LD without changing website content or visual presentation.
+- [x] Determine whether Organization, WebSite, WebPage, and genuinely applicable Service structured data are already accurate and non-duplicative; use only factual on-site information for any minimum necessary correction.
+- [x] Identify and implement only genuine technical search/AI crawlability fixes, retaining the established robots file, seven-route sitemap, approved design, copy, imagery, animations, layout, navigation, forms, DNS, email, Brevo, Vercel configuration, and other functionality.
+- [ ] Run relevant tests, TypeScript, production build, and production verification; report PASS, FIX, and NOT NEEDED findings plus any changed files, then hold GitHub `main` push for approval.

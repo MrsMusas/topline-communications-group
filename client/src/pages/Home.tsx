@@ -77,6 +77,39 @@ const expertiseGroups = [
 
 const industries = ["Corporate Organizations", "Professional Associations", "Financial Services", "Technology", "Education", "Healthcare", "Manufacturing", "Retail", "SMEs & Startups", "Non-Profit Organizations"];
 
+const PRODUCTION_ORIGIN = "https://www.toplinecommunicationsgroup.co.za";
+
+const pageMetadata: Record<string, { title: string; description: string }> = {
+  "/": {
+    title: "Top Line Communications Group | Strategy, Communication & Experience",
+    description: "TLCG is a Johannesburg strategic partner with more than two decades of experience connecting marketing, communications and corporate experiences.",
+  },
+  "/capabilities": {
+    title: "Capabilities | Top Line Communications Group",
+    description: "Explore TLCG’s connected marketing, communications, events and experience capabilities.",
+  },
+  "/experience": {
+    title: "Selected Experience | Top Line Communications Group",
+    description: "Explore more than two decades of TLCG experience across marketing, communications and corporate experiences.",
+  },
+  "/approach": {
+    title: "Approach | Top Line Communications Group",
+    description: "Discover TLCG’s practical approach to strategy, communication and experiences with purpose.",
+  },
+  "/why-tlcg": {
+    title: "Why TLCG | Top Line Communications Group",
+    description: "See how TLCG connects strategic thinking, corporate fluency and practical delivery.",
+  },
+  "/insights": {
+    title: "Insights | Top Line Communications Group",
+    description: "Practical thinking on the messages, moments and experiences that help organisations move forward.",
+  },
+  "/lets-talk": {
+    title: "Let’s Talk | Top Line Communications Group",
+    description: "Talk to TLCG about your next marketing, communications or corporate experience project.",
+  },
+};
+
 type EnquiryState =
   | { status: "idle" }
   | { status: "sending" }
@@ -174,6 +207,39 @@ export default function Home() {
     };
   }, [location]);
 
+  useEffect(() => {
+    const path = location === "/" ? "/" : location.replace(/\/+$/, "");
+    const metadata = pageMetadata[path] ?? pageMetadata["/"];
+    const canonicalUrl = `${PRODUCTION_ORIGIN}${path}`;
+    document.title = metadata.title;
+
+    const setAttribute = (selector: string, attribute: "content" | "href", value: string) => {
+      document.querySelector(selector)?.setAttribute(attribute, value);
+    };
+
+    setAttribute('link[rel="canonical"]', "href", canonicalUrl);
+    setAttribute('meta[name="description"]', "content", metadata.description);
+    setAttribute('meta[property="og:title"]', "content", metadata.title);
+    setAttribute('meta[property="og:description"]', "content", metadata.description);
+    setAttribute('meta[property="og:url"]', "content", canonicalUrl);
+    setAttribute('meta[name="twitter:title"]', "content", metadata.title);
+    setAttribute('meta[name="twitter:description"]', "content", metadata.description);
+
+    const webpageSchema = document.getElementById("tlcg-webpage-schema");
+    if (webpageSchema) {
+      webpageSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: metadata.title,
+        description: metadata.description,
+        isPartOf: { "@id": `${PRODUCTION_ORIGIN}/#website` },
+        about: { "@id": `${PRODUCTION_ORIGIN}/#organization` },
+      });
+    }
+  }, [location]);
+
   const navigate = (id: string, path: string) => {
     setMenuOpen(false);
     setActiveSection(id);
@@ -237,7 +303,7 @@ export default function Home() {
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigationSections.map(({ label, id, path }) => (
-            <button className={activeSection === id ? "is-active" : ""} key={id} type="button" onClick={() => navigate(id, path)}>{label}</button>
+            <a className={activeSection === id ? "is-active" : ""} href={path} key={id} onClick={(event) => { event.preventDefault(); navigate(id, path); }}>{label}</a>
           ))}
         </nav>
 
@@ -249,9 +315,9 @@ export default function Home() {
         <nav className={`mobile-nav ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation">
           <span className="eyebrow">Navigate</span>
           {navigationSections.map(({ label, id, path }, index) => (
-            <button key={id} type="button" onClick={() => navigate(id, path)}>
+            <a href={path} key={id} onClick={(event) => { event.preventDefault(); navigate(id, path); }}>
               <span>0{index + 1}</span>{label}<ArrowUpRight size={18} strokeWidth={1.4} />
-            </button>
+            </a>
           ))}
         </nav>
       </header>
