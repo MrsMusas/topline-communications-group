@@ -410,4 +410,4 @@
 - [x] Restore the existing Industries We Support labels to their approved white/light color, keeping gold only on the original separators and accents without changing typography or layout.
 - [x] Ensure the industry labels and gold separators visibly reveal one by one on first viewport entry, and the four existing Insights blocks visibly fade and slide in sequentially on first viewport entry; retain the approved reduced-motion fallback and spacing reduction.
 - [x] Visually verify the rendered page before pushing: light industry labels, sequential labels and separators, sequential Insights blocks, and the tighter Insights-to–Let’s Talk transition on desktop and mobile.
-- [ ] Push only this verified correction to the existing private GitHub `main` branch and report the remote commit hash.
+- [x] Push only this verified correction to the existing private GitHub `main` branch and report the remote commit hash.
