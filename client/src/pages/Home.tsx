@@ -112,6 +112,18 @@ export default function Home() {
     );
 
     nodes.forEach((node) => observer.observe(node));
+    const stagedNodes = document.querySelectorAll<HTMLElement>("[data-industry-reveal], [data-insights-reveal]");
+    const stagedObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          stagedObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.22 },
+    );
+    stagedNodes.forEach((node) => stagedObserver.observe(node));
     const navigationNodes = document.querySelectorAll<HTMLElement>("main > section[id]");
     const navigationObserver = new IntersectionObserver(
       (entries) => {
@@ -127,6 +139,7 @@ export default function Home() {
 
     return () => {
       observer.disconnect();
+      stagedObserver.disconnect();
       navigationObserver.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
@@ -419,9 +432,9 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="why-industries">
+          <div className="why-industries" data-industry-reveal>
             <span>Industries we support</span>
-            <p>{industries.map((industry) => <i className="industry-item" key={industry}>{industry}</i>)}</p>
+            <p>{industries.map((industry, index) => <span className="industry-token" key={industry} style={{ "--industry-delay": `${index * 82}ms` } as React.CSSProperties}><i className="industry-item">{industry}</i>{index < industries.length - 1 && <b className="industry-separator" aria-hidden="true">•</b>}</span>)}</p>
           </div>
           <div className="expertise-ledger">
             <span className="eyebrow eyebrow-light">Where we add value</span>
@@ -448,13 +461,13 @@ export default function Home() {
           <p className="section-deck">A future space for practical thinking on the messages, moments and experiences that help organisations move forward.</p>
           <p className="insights-status">Insights platform in development.</p>
         </div>
-        <div className="insights-topics" data-reveal aria-label="Future TLCG Insights topics">
+        <div className="insights-topics" data-insights-reveal aria-label="Future TLCG Insights topics">
           {[
             ["Marketing & brand", "Making value clear to the audiences that matter."],
             ["Business communication", "Communicating with clarity across teams and stakeholders."],
             ["Corporate events", "Creating experiences with a clear purpose."],
             ["Incentive travel", "Designing meaningful experiences beyond the itinerary."],
-          ].map(([topic, description]) => <article className="insights-topic" key={topic}><h3>{topic}</h3><p>{description}</p></article>)}
+          ].map(([topic, description], index) => <article className="insights-topic" key={topic} style={{ "--insights-delay": `${index * 110}ms` } as React.CSSProperties}><h3>{topic}</h3><p>{description}</p></article>)}
         </div>
       </section>
 
