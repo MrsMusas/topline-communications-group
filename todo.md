@@ -425,3 +425,10 @@
 - [x] Determine whether Organization, WebSite, WebPage, and genuinely applicable Service structured data are already accurate and non-duplicative; use only factual on-site information for any minimum necessary correction.
 - [x] Identify and implement only genuine technical search/AI crawlability fixes, retaining the established robots file, seven-route sitemap, approved design, copy, imagery, animations, layout, navigation, forms, DNS, email, Brevo, Vercel configuration, and other functionality.
 - [ ] Run relevant tests, TypeScript, production build, and production verification; report PASS, FIX, and NOT NEEDED findings plus any changed files, then hold GitHub `main` push for approval.
+
+## Single-line footer refinement
+
+- [x] Keep the existing TLCG gold footer logo at far left and place © 2026 TLCG, Proudly developed by TLCG, Privacy Policy, Cookie Policy, and Back to top with its upward arrow on one horizontal desktop line, separated by light-grey vertical dividers.
+- [x] Preserve the dark footer background, set all non-Back-to-top footer text and dividers to soft light grey (`#D1D1D1`), keep Back to top and its arrow TLCG gold (`#D4AF37`), and retain the existing footer font direction.
+- [x] Make the footer responsive with even spacing and appropriate wrapping/stacking on tablet and mobile while preserving the existing Back to Top smooth-scroll behavior and all footer links.
+- [x] Validate desktop and mobile footer presentation, link behavior, type/build checks, and preserve the GitHub push hold for both the footer and pending technical crawlability update.

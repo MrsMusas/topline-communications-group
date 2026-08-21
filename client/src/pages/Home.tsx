@@ -585,7 +585,13 @@ export default function Home() {
 
       <footer className="site-footer">
         <a className="footer-logo" href="#home" aria-label="TLCG home"><img src={OFFICIAL_LOGO} alt="Official TLCG gold monogram" /></a>
-        <div className="footer-meta"><span>© {new Date().getFullYear()} TLCG</span><span className="footer-policies"><a href="/privacy-policy">Privacy Policy</a><i aria-hidden="true">|</i><a href="/cookie-policy">Cookie Policy</a></span><a href="#home">Back to top <ArrowUpRight size={14} strokeWidth={1.3} /></a></div>
+        <div className="footer-meta">
+          <span>© 2026 TLCG</span><i className="footer-divider" aria-hidden="true">|</i>
+          <span>Proudly developed by TLCG</span><i className="footer-divider" aria-hidden="true">|</i>
+          <a href="/privacy-policy">Privacy policy</a><i className="footer-divider" aria-hidden="true">|</i>
+          <a href="/cookie-policy">Cookie policy</a><i className="footer-divider" aria-hidden="true">|</i>
+          <a className="footer-back-top" href="#home" onClick={(event) => { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Back to top <ArrowUpRight size={14} strokeWidth={1.3} /></a>
+        </div>
       </footer>
     </main>
   );
