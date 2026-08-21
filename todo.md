@@ -424,7 +424,7 @@
 - [x] Audit the seven production sitemap URLs, robots directives, HTTP headers, indexability signals, canonical hosts, rendered public content, crawlable navigation, metadata, Open Graph/Twitter metadata, and existing JSON-LD without changing website content or visual presentation.
 - [x] Determine whether Organization, WebSite, WebPage, and genuinely applicable Service structured data are already accurate and non-duplicative; use only factual on-site information for any minimum necessary correction.
 - [x] Identify and implement only genuine technical search/AI crawlability fixes, retaining the established robots file, seven-route sitemap, approved design, copy, imagery, animations, layout, navigation, forms, DNS, email, Brevo, Vercel configuration, and other functionality.
-- [ ] Run relevant tests, TypeScript, production build, and production verification; report PASS, FIX, and NOT NEEDED findings plus any changed files, then hold GitHub `main` push for approval.
+- [ ] Run relevant tests, TypeScript, production build, and production verification; report PASS, FIX, and NOT NEEDED findings plus any changed files after the approved GitHub `main` push.
 
 ## Single-line footer refinement
 
@@ -432,3 +432,15 @@
 - [x] Preserve the dark footer background, set all non-Back-to-top footer text and dividers to soft light grey (`#D1D1D1`), keep Back to top and its arrow TLCG gold (`#D4AF37`), and retain the existing footer font direction.
 - [x] Make the footer responsive with even spacing and appropriate wrapping/stacking on tablet and mobile while preserving the existing Back to Top smooth-scroll behavior and all footer links.
 - [x] Validate desktop and mobile footer presentation, link behavior, type/build checks, and preserve the GitHub push hold for both the footer and pending technical crawlability update.
+
+## Approved combined footer and crawlability GitHub push
+
+- [x] Verify the combined reviewed checkpoint includes only the single-line footer refinement, Back to Top correction, canonical www metadata, factual linked structured data, route-aware metadata, semantic navigation anchors, associated tests, and tracker documentation.
+- [x] Push the approved combined update to the existing private GitHub `main` branch without changing DNS, domains, email, Brevo, Vercel configuration, public copy, imagery, or other functionality.
+- [ ] Verify the remote main revision and the deployed production route metadata, robots.txt, sitemap.xml, and final footer behavior; then report final status codes and the commit hash.
+
+## Crawler-visible per-route metadata correction
+
+- [ ] Ensure the raw production HTML for each existing public route (`/`, `/capabilities`, `/experience`, `/approach`, `/why-tlcg`, `/insights`, and `/lets-talk`) delivers its own canonical `www` URL, title, description, Open Graph URL, and WebPage JSON-LD without depending on client-side rendering.
+- [ ] Preserve existing Vercel route handling, visual presentation, navigation behavior, footer, forms, Brevo, DNS, domains, email, and all public content while adding only the minimum static metadata-delivery mechanism.
+- [ ] Run focused raw-HTML metadata tests and the production build, push the correction to the existing private GitHub `main` branch, and verify all seven live route responses plus robots.txt, sitemap.xml, and the final footer before reporting the final commit hash.

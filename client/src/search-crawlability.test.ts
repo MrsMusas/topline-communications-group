@@ -4,6 +4,8 @@ import { describe, expect, it } from "vitest";
 const documentHead = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const home = readFileSync(new URL("./pages/Home.tsx", import.meta.url), "utf8");
 const stylesheet = readFileSync(new URL("./index.css", import.meta.url), "utf8");
+const viteConfig = readFileSync(new URL("../../vite.config.ts", import.meta.url), "utf8");
+const vercelConfig = readFileSync(new URL("../../vercel.json", import.meta.url), "utf8");
 
 const origin = "https://www.toplinecommunicationsgroup.co.za";
 
@@ -32,5 +34,14 @@ describe("TLCG search and AI crawlability metadata", () => {
     expect(home).toContain('<a href={path} key={id}');
     expect(stylesheet).toContain(".desktop-nav a {");
     expect(stylesheet).toContain(".mobile-nav a {");
+  });
+
+  it("emits crawler-visible route-specific HTML heads for every non-root sitemap route", () => {
+    for (const route of ["/capabilities", "/experience", "/approach", "/why-tlcg", "/insights", "/lets-talk"]) {
+      expect(viteConfig).toContain(`path: "${route}"`);
+      expect(vercelConfig).toContain(`"source": "${route}", "destination": "${route}/index.html"`);
+    }
+    expect(viteConfig).toContain("vitePluginStaticRouteMetadata");
+    expect(viteConfig).toContain("tlcg-static-route-metadata");
   });
 });

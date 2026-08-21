@@ -2,12 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/capabilities", "destination": "/index.html" },
-    { "source": "/experience", "destination": "/index.html" },
-    { "source": "/approach", "destination": "/index.html" },
-    { "source": "/why-tlcg", "destination": "/index.html" },
-    { "source": "/insights", "destination": "/index.html" },
-    { "source": "/lets-talk", "destination": "/index.html" },
+    { "source": "/capabilities", "destination": "/capabilities/index.html" },
+    { "source": "/experience", "destination": "/experience/index.html" },
+    { "source": "/approach", "destination": "/approach/index.html" },
+    { "source": "/why-tlcg", "destination": "/why-tlcg/index.html" },
+    { "source": "/insights", "destination": "/insights/index.html" },
+    { "source": "/lets-talk", "destination": "/lets-talk/index.html" },
     { "source": "/privacy-policy", "destination": "/index.html" },
     { "source": "/cookie-policy", "destination": "/index.html" }
   ]

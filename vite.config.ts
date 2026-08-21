@@ -252,7 +252,63 @@ function vitePluginEnquiryDelivery(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginEnquiryDelivery()];
+const PRODUCTION_ORIGIN = "https://www.toplinecommunicationsgroup.co.za";
+
+const staticRouteMetadata = [
+  { path: "/capabilities", title: "Capabilities | Top Line Communications Group", description: "Explore TLCG’s connected marketing, communications, events and experience capabilities." },
+  { path: "/experience", title: "Selected Experience | Top Line Communications Group", description: "Explore more than two decades of TLCG experience across marketing, communications and corporate experiences." },
+  { path: "/approach", title: "Approach | Top Line Communications Group", description: "Discover TLCG’s practical approach to strategy, communication and experiences with purpose." },
+  { path: "/why-tlcg", title: "Why TLCG | Top Line Communications Group", description: "See how TLCG connects strategic thinking, corporate fluency and practical delivery." },
+  { path: "/insights", title: "Insights | Top Line Communications Group", description: "Practical thinking on the messages, moments and experiences that help organisations move forward." },
+  { path: "/lets-talk", title: "Let’s Talk | Top Line Communications Group", description: "Talk to TLCG about your next marketing, communications or corporate experience project." },
+] as const;
+
+function escapeHtml(value: string) {
+  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function vitePluginStaticRouteMetadata(): Plugin {
+  return {
+    name: "tlcg-static-route-metadata",
+    closeBundle() {
+      const outputDirectory = path.join(PROJECT_ROOT, "dist");
+      const rootDocumentPath = path.join(outputDirectory, "index.html");
+      if (!fs.existsSync(rootDocumentPath)) return;
+
+      const rootDocument = fs.readFileSync(rootDocumentPath, "utf8");
+      for (const metadata of staticRouteMetadata) {
+        const canonicalUrl = `${PRODUCTION_ORIGIN}${metadata.path}`;
+        const webPageSchema = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: metadata.title,
+          description: metadata.description,
+          isPartOf: { "@id": `${PRODUCTION_ORIGIN}/#website` },
+          about: { "@id": `${PRODUCTION_ORIGIN}/#organization` },
+        }, null, 2);
+
+        const routeDocument = rootDocument
+          .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(metadata.title)}</title>`)
+          .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${escapeHtml(metadata.description)}" />`)
+          .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
+          .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${escapeHtml(metadata.title)}" />`)
+          .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${escapeHtml(metadata.description)}" />`)
+          .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
+          .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${escapeHtml(metadata.title)}" />`)
+          .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${escapeHtml(metadata.description)}" />`)
+          .replace(/<script id="tlcg-webpage-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, `<script id="tlcg-webpage-schema" type="application/ld+json">\n      ${webPageSchema}\n    </script>`);
+
+        const routeDirectory = path.join(outputDirectory, metadata.path.slice(1));
+        fs.mkdirSync(routeDirectory, { recursive: true });
+        fs.writeFileSync(path.join(routeDirectory, "index.html"), routeDocument, "utf8");
+      }
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginEnquiryDelivery(), vitePluginStaticRouteMetadata()];
 
 export default defineConfig({
   plugins,

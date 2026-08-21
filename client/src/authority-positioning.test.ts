@@ -22,7 +22,7 @@ describe("TLCG authority positioning", () => {
     expect(app).toContain('<Route path="/insights" component={Home} />');
     expect(home).toContain('<section id="insights" className="insights chapter section-light"');
     expect(home).toContain("Insights platform in development.");
-    expect(vercelConfig).toContain('{ "source": "/insights", "destination": "/index.html" }');
+    expect(vercelConfig).toContain('{ "source": "/insights", "destination": "/insights/index.html" }');
     expect(sitemap).toContain("https://www.toplinecommunicationsgroup.co.za/insights");
   });
 
