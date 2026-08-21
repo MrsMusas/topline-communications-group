@@ -444,3 +444,9 @@
 - [x] Ensure the raw production HTML for each existing public route (`/`, `/capabilities`, `/experience`, `/approach`, `/why-tlcg`, `/insights`, and `/lets-talk`) delivers its own canonical `www` URL, title, description, Open Graph URL, and WebPage JSON-LD without depending on client-side rendering.
 - [x] Preserve existing Vercel route handling, visual presentation, navigation behavior, footer, forms, Brevo, DNS, domains, email, and all public content while adding only the minimum static metadata-delivery mechanism.
 - [x] Run focused raw-HTML metadata tests and the production build, push the correction to the existing private GitHub `main` branch, and verify all seven live route responses plus robots.txt, sitemap.xml, and the final footer before reporting the final commit hash.
+
+## Footer content-group centering refinement
+
+- [x] Center the existing footer text-and-link group as one horizontal group within the desktop footer while preserving the existing gold TLCG logo at far left and the PDF icon at far right.
+- [x] Keep the current item order, colors, font sizes, dividers, hover behavior, and Back to Top interaction unchanged; retain centered wrapping for tablet and mobile.
+- [x] Validate desktop, tablet, and mobile alignment plus relevant tests and build, then save for review without pushing to GitHub `main`.

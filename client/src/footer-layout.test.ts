@@ -17,11 +17,12 @@ describe("TLCG single-line footer", () => {
   });
 
   it("uses the requested dark, light-grey, gold, and responsive inline footer treatment", () => {
-    expect(stylesheet).toContain('.site-footer { display: flex;');
+    expect(stylesheet).toContain('.site-footer { display: grid; grid-template-columns: minmax(5rem, 1fr) auto minmax(5rem, 1fr);');
     expect(stylesheet).toContain('color: #D1D1D1;');
     expect(stylesheet).toContain('.footer-meta .footer-back-top { color: #D4AF37; }');
-    expect(stylesheet).toContain('.footer-meta { display: flex; flex: 1 1 auto; flex-wrap: wrap;');
-    expect(stylesheet).toContain('.site-footer { align-items: flex-start; gap: 1rem; padding: 1.25rem; }');
+    expect(stylesheet).toContain('.footer-meta { grid-column: 2; display: flex; flex: 0 1 auto; flex-wrap: wrap; align-items: center; justify-content: center;');
+    expect(stylesheet).toContain('.site-footer { grid-template-columns: 1fr; justify-items: center; align-items: center; gap: 1rem; padding: 1.25rem; }');
+    expect(stylesheet).toContain('.footer-logo { justify-self: center; }');
   });
 
   it("retains the Back to Top anchor and its upward arrow icon", () => {
