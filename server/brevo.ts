@@ -97,8 +97,9 @@ async function getBrevoErrorMessage(response: Response) {
 export async function deliverWebsiteEnquiry(
   enquiry: WebsiteEnquiry,
   fetchImpl: typeof fetch = fetch,
+  configuredApiKey?: string,
 ) {
-  const apiKey = process.env.BREVO_API_KEY;
+  const apiKey = configuredApiKey ?? process.env.BREVO_API_KEY;
   if (!apiKey) {
     throw new EnquiryDeliveryError("The Brevo API key is not configured on the server.", 500);
   }
@@ -132,7 +133,7 @@ export async function deliverWebsiteEnquiry(
   }
 }
 
-export async function submitWebsiteEnquiry(payload: unknown): Promise<EnquirySubmissionResult> {
+export async function submitWebsiteEnquiry(payload: unknown, configuredApiKey?: string): Promise<EnquirySubmissionResult> {
   const parsed = websiteEnquirySchema.safeParse(payload);
   if (!parsed.success) {
     return {
@@ -145,7 +146,7 @@ export async function submitWebsiteEnquiry(payload: unknown): Promise<EnquirySub
   }
 
   try {
-    await deliverWebsiteEnquiry(parsed.data);
+    await deliverWebsiteEnquiry(parsed.data, fetch, configuredApiKey);
     return { status: 200, body: { success: true } };
   } catch (error) {
     if (error instanceof EnquiryDeliveryError && error.providerStatus === 500) {
