@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "tlcg-website",
+  "name": "topline-communications-group",
   "compatibility_date": "2026-08-31",
   "main": "./worker.ts",
   "assets": {
