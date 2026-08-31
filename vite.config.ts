@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import path from "node:path";
+import { cloudflare } from "@cloudflare/vite-plugin";
 import { defineConfig, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 import { submitWebsiteEnquiry } from "./server/brevo";
@@ -308,10 +309,18 @@ function vitePluginStaticRouteMetadata(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginEnquiryDelivery(), vitePluginStaticRouteMetadata()];
-
 export default defineConfig({
-  plugins,
+  plugins: [
+    react(),
+    tailwindcss(),
+    jsxLocPlugin(),
+    vitePluginManusRuntime(),
+    vitePluginManusDebugCollector(),
+    vitePluginStorageProxy(),
+    vitePluginEnquiryDelivery(),
+    vitePluginStaticRouteMetadata(),
+    ...(process.env.VITEST ? [] : [cloudflare()]),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
